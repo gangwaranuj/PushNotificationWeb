@@ -1,0 +1,174 @@
+<div class="main">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">
+							 SIDE BAR LAYOUT CUSTOMISATION
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>
+											Create a custom notifcation that can be used to display special offers and deals through a little pop up box in the users'
+											browser.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		<div class="io-page-body subscription-layout no-pdd-bot">
+			<form name="saveForm">
+	           <div class="cmpn-container welcome-page">
+	                <div class="grp-select-box border-gray-bot pdd-bot-20">
+				       <input type="checkbox" name="pushSecond" id="pushSecond" ng-model="vm.customNotificationDetails.checkFlag" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                       <label class="io-icon io-checkbox-uncheck" for="pushSecond"></label> Display push notifications permission box after <input  type="number" step="any" name="second" min="0" value="0" ng-model="vm.customNotificationDetails.delayTime" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" class="sbscrpsn-number" /> seconds.       
+				      </div>
+				      <div class="row">
+				        <div class="col-sm-12">
+				         <div class="add-content-box add-without-content">
+				          <div class="row">
+				           <div class="col-sm-12">
+				           	<div class="cmpn-title-head">
+				             <div class="" id="title">
+				             	<input type="text" id="sidebarInput" maxlength="35" class="" ng-model="vm.customNotificationDetails.title" placeholder="Title"/>
+				             	<span id="sbInputedTxt"></span>
+				             </div>
+				            </div>
+				            <div class="cmpn-title-head">
+				            	<div class="row cmpn-title-head box-clr-pkr">
+				            	<div class="col-sm-12">
+				            	<div class="border-gray-bot pdd-bot-20">
+				            	<div class="row">
+						         	<div class="col-sm-3 clpkr-clrfloat">
+						         		
+							         			Background Color
+							         			
+							         			      <div id="cp1" class="input-group colorpicker-component colorpicker-element mrg-top-10">
+										          <input type="text" value="#eeeeee" ng-model="vm.customNotificationDetails.allowBtnBackgroundColor" class="form-control" placeholder="Color code">
+										          <span class="input-group-addon">
+											          <span class="arrow-bg">
+											          	<i style="background-color: {{vm.customNotificationDetails.allowBtnBackgroundColor}};"></i>
+											          	<span class="caret"></span>
+											          </span>
+											      </span>
+										      </div>
+										      
+							         		
+						         	</div>
+						         	<div class="col-sm-3 clpkr-clrfloat">
+						         		
+							         			Text Color
+							         			     <div id="cp2" class="input-group colorpicker-component colorpicker-element mrg-top-10">
+										          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.allowBtnColor" class="form-control" placeholder="Color code">
+										          <span class="input-group-addon">
+										          	<span class="arrow-bg">
+										          		<i style="background-color: {{vm.customNotificationDetails.allowBtnColor}};"></i>
+										          		<span class="caret"></span>
+										          	</span>
+										          </span>
+										      </div>
+							         	
+						         	</div>
+						         	<div class="clearfix"></div>
+						         	</div>
+						         	</div>
+						         	</div>
+						         </div> 
+				            </div>				            
+				          </div>
+				         </div>
+				         <div class="clear "></div>
+				        
+				        </div>
+				       </div>
+				      </div>  
+				     </div>
+					 </form>
+				</div>
+				<div class="subscription-button-spance no-border no-pdd-top">
+					<a ui-sref="iopush.auth.subscriptionLayouts" class="welcome-page"><button class="updrade-btn">Back</button></a>
+					<button ng-click="vm.saveCustomNotification(vm.customNotificationDetails)" class="updrade-btn  green-btn pull-right">Save</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4 parent-container-column">
+			<div class="io-box box-shadow subsc-lyot-prv-box">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">PREVIEW</div>
+					</div>
+				</div>
+				<div class="io-page-body subscription-preview">
+					<div class="preview-notications">
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Android <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.android[1]}}" ng-click="vm.showhidePreview('android');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.android[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div class="prev-sidebar-box">
+									<div class="ng-binding prev-sidebar" style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}}">{{vm.customNotificationDetails.title}}&nbsp;</div>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Chrome <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.chrome[1]}}" ng-click="vm.showhidePreview('chrome');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.chrome[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div class="prev-sidebar-box">
+									<div class="ng-binding prev-sidebar" style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}}">{{vm.customNotificationDetails.title}}&nbsp;</div>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Firefox <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.firefox[1]}}" ng-click="vm.showhidePreview('firefox');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.firefox[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div class="prev-sidebar-box">
+									<div class="ng-binding prev-sidebar" style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}}">{{vm.customNotificationDetails.title}}&nbsp;</div>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Opera <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.opera[1]}}" ng-click="vm.showhidePreview('opera');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.opera[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div class="prev-sidebar-box">
+									<div class="ng-binding prev-sidebar" style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}}">{{vm.customNotificationDetails.title}}&nbsp;</div>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<!--<div class="notific-preview">
+							<h5>Safari</h5>
+							<a class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div>
+									<div class="notify-img">
+										<div class="preview-imgbox">
+											<img src="{{vm.selectedImage}}"><br>
+										</div>
+									</div>
+									<div class="notify-url">
+										<p class="ng-binding">{{vm.headline}}</p>
+										<p class="ng-binding">{{vm.textdescription}}</p>
+										<p class="ng-binding">{{vm.url}}</p>
+									</div>
+								</div>
+							</a>
+						</div>-->
+						<!-- Notification Preview Items -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

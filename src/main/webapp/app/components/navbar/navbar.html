@@ -1,0 +1,60 @@
+<nav class="navbar-default navbar-style" role="navigation">
+    <div id="navbar" class="navbar-collapse collapse">
+	    <div class="navbar-left updrade-box">
+	    	<a ui-sref="iopush.auth.upgradeplan" class="updrade-btn green-btn">Upgrade</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<li class="iopush-topnav">
+	    		<a data-ng-click="vm.messageBox('Hi')">
+	    			<div class="nav-bell">
+            	        <i class="support-icon" aria-hidden="true"></i>
+                	</div>
+               	</a>
+	    	</li>
+	    	<li class="dropdown iopush-topnav">
+	    		<a class="bottom-arrow" data-hover="dropdown">
+	    			<div class="nav-bell">
+            	        <i class="bell-icon" aria-hidden="true"></i>
+                	    <span>3</span>
+                	</div>
+               	</a>
+               	<ul class="dropdown-menu">
+				    <li><a href="javascript:void(0)">No System Updates.</a></li>
+				</ul>
+            </li>
+	    	<li class="iopush-topnav">
+	    		<a class="dropdown-toggle" data-toggle="dropdown"  style="padding:9px 29px">
+	            	<i>
+	                	<img ng-if="!vm.imageUpdating" ng-src="{{vm.imageSrc}}"  alt="Name" />
+	                    <img ng-if="vm.imageUpdating" class="head-spnr" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+	                </i>  
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="" ui-sref="iopush.auth.profile"><a><i class="fa fa-cog fa-lg" aria-hidden="true"></i> Profile</a></li>
+                    <li ng-click="vm.logout()"><a><i class="fa fa-power-off fa-lg" aria-hidden="true"></i> Logout</a></li>
+                </ul>
+            </li>
+	    </ul>
+    
+       <!--  <div class="navbar-form navbar-right">
+            <div class="pull-left nav-icons">
+                <div class="nav-bell">
+                    <i class="bell-icon" aria-hidden="true"></i>
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="dropdown pull-left nav-icons">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <i>
+                        <img ng-if="!vm.imageUpdating" ng-src="{{vm.imageSrc}}"  alt="Name" />
+                        <img ng-if="vm.imageUpdating" class="head-spnr" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </i>  
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="" ui-sref="iopush.auth.profile"><a><i class="fa fa-cog fa-lg" aria-hidden="true"></i> Profile</a></li>
+                    <li ng-click="vm.logout()"><a><i class="fa fa-power-off fa-lg" aria-hidden="true"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+</nav>

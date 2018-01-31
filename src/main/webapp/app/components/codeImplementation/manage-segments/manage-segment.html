@@ -1,0 +1,100 @@
+<div class="main">
+    <div class="row">
+        <div class="col-sm-12 manage-cpn-page">
+            <div class="io-box box-shadow">
+                <div class="io-box-header">
+                    <div class="pull-left">
+                        <div class="heading">
+                            <i aria-hidden="true" class="io-icon io-info topsite-info"></i> MANAGE SEGMENTATION
+                            <div class="io-info-container">
+                                <div class="io-info-box box-shadow">
+                                    <div class="info-body">
+                                        <p>Overview of all existing subscriber segmentation and the option to access and change segmentation info.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="pull-left searchbtnmng"><input type="search" class="form-control border-gray" ng-model="vm.campaignName" placeholder="Search campaign"  ng-blur="vm.search()" ng-enter="vm.search()"></div>-->
+                    <div class="pull-right clr-white text-center paging">
+                        <paging onaction="vm.onAction" handler="vm.handler"></paging>
+                    </div>
+
+                </div>
+
+                <div class="info-body manage-cpn-body" style="padding: 0;">
+                    <div class="table-responsive">
+                        <table class="table manage-campagin">
+                            <thead>
+                                <tr>
+                                    <th class="td-pdd iosortdown" width="15%" ng-click="vm.sortingFunc('segmentId')" id="segmentId">ID</th>
+                                    <th class="td-pdd iosortsearch" width="30%" ng-click="vm.sortingFunc('segmentName')" id="segmentName">NAME</th>
+                                    <th class="td-pdd iosortsearch" width="15%" ng-click="vm.sortingFunc('segmentType.segmentTypeName')" id="segmentType.segmentTypeName">TYPE</th>
+                                    <th class="td-pdd iosortsearch" width="15%" ng-click="vm.sortingFunc('createdOn')" id="createdOn">CREATED DATE</th>
+                                    <th class="td-pdd iosortsearch" width="15%" ng-click="vm.sortingFunc('modifiedOn')" id="modifiedOn">LAST UPDATE</th>
+                                    <th class="td-pdd" width="10%">OPTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="segment in vm.segments track by segment.segmentId">
+                                    <td class="">{{:: segment.segmentId}}</td>
+                                    <td class="">
+                                        <div class="overlap-text-field">
+                                            <div>{{:: segment.segmentName}}</div>
+                                        </div>
+                                    </td>
+                                    <td><div class="overlap-text-field">
+                                    		<div>{{:: segment.segmentTypeName}}</div>
+                                    	</div>
+                                    </td>
+                                    <td class="">{{:: segment.createdOn | date2 }}</td>
+                                    <td class="">{{:: segment.modifiedOn | date2 }}</td>
+                                    <td style="padding: 0;">
+                                        <div class='mng-cmpn-status'>
+
+                                            <a ng-click="vm.deleteconfirmationMessage('Delete segmentation?',segment.segmentId)" class="manage-anchor io-icon io-cpn-delete">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Delete Segmentation
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a ng-click="vm.edit(segment.segmentId,segment.campaign_type_id)" class="manage-anchor io-icon io-cpn-edit">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Edit Segment
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a ng-click="vm.viewSummary(segment.segmentId)" class="manage-anchor io-icon io-segcode-view">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>Full overview of all existing segment</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

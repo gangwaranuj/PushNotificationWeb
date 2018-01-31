@@ -1,0 +1,40 @@
+<div class="col-md-6">
+    <div class="io-box box-shadow io-height">
+        <div class="io-box-header">
+            <div class="pull-left">
+                <div class="heading">
+                    <i aria-hidden="true" class="io-icon io-info topsite-info"></i>  TOTAL DELIVERED /CLICKED
+                    <div class="io-info-container">
+                        <div class="io-info-box box-shadow">
+                            <div class="info-body">
+                                <p><b>Total delivered</b><br/> The number of notifications delivered (new updates from the website and
+                                    campaigns)
+                                    <br/>
+                                    <b>Total clicked</b><br/> The number of clicks on the viewed notifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right">
+                <ul class="hdr-right-info">
+                    <li ng-click="vm.oneDay(active)" ng-class="{'important-blue' : vm.chartType == 'day'}" id="1D" style="border-right:none"><i>TODAY</i></li>
+                    <li ng-click="vm.oneWeek(active)" ng-class="{'important-blue' : vm.chartType == 'week'}" id="1W"  style="border-right:none"><i>WEEKLY</i></li>
+                    <li ng-class="{'io-calender-d' : !vm.showCal , 'io-calender' : vm.showCal || vm.chartType == 'cal'}" id='calView'>
+                        <i cname='io-calender' class="io-icon calender-b-space" aria-hidden="true" ng-class="{'io-calender-d' : !vm.showCal , 'io-calender' : vm.showCal || vm.chartType == 'cal'}"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="io-body plt-btn" style="padding: 7px 13px;">
+            <area-chart nextbtnid="vm.nextbtnid" prevbtnid="vm.prevbtnid" config="chartConfig" next="vm.next()" previous="vm.previous()"
+                tid='"viewsclick"' height="224"></area-chart>
+                <div class="view-backward">
+	<i aria-hidden="true" class="io-icon io-backward" ng-click="vm.previous()"></i>
+	</div>
+	<div class="view-forward">
+	<i aria-hidden="true" class="io-icon io-forward" ng-click="vm.next()"></i>
+	</div>
+        </div>
+    </div>
+</div>

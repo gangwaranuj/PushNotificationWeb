@@ -1,0 +1,95 @@
+<style>
+	.modal-footer {
+		border-top: 0px;
+	}
+</style>
+<div class="login-container">
+	<div class="login-header">
+		<div class="row">
+			<div class="col-xs-10"><img src="images/logo.png" alt="ioPUSH" /></div>
+		</div>
+	</div>
+	<div class="login-box">
+		<div class="login-box-container">
+			<div class="login-heading">{{ vm.loginTexts }}</div>
+			<div class="login-body">
+				<div class="loginbody-box" ng-show="vm.isforgetPassword">
+					<div class="form-fields">
+						<form class="form-horizontal">
+							<div class="form-field form-user">
+								<input id="username" placeholder="Username" ng-model="vm.loginModel.username" type="text" autocomplete="off" />
+							</div>
+							<div class="form-field form-password">
+								<input id="password" placeholder="Password" ng-enter="vm.login()" ng-model="vm.loginModel.password" type="password" autocomplete="off"
+								/>
+							</div>
+							<div class="form-forget-box">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="checkbox" name="loginRemember" id="loginRemember" ng-model="vm.remember" /><label for="loginRemember">Remember me</label>
+									</div>
+									<div class="col-md-6">
+										<div class="text-right">
+										 <a ng-click="vm.forgetPassword()">Forgot password?</a> 
+											<!--<a>Forgot password?</a>-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-field form-submit-box">
+								<a class="form-submit green-btn" ng-click="vm.login()">Enter</a>
+							</div>
+							<div class="login-error {{vm.error.errmsgclass}}" ng-show="vm.error">
+								<div class="row">
+									<br>
+									<div class="bg-danger col-md-12 {{vm.error.errmsgclass}}">
+										{{vm.error.msg}}
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="forget-password-box" ng-show="vm.isforgetPasswordReset">
+					<div class='forget-back-btn'><a ng-click="vm.backtoSignIn()">Back</a></div>
+					<div class="text-center">
+						<div>
+							<fieldset>
+								<form name="personForm" novalidate ng-submit="personForm.$valid ? vm.resetPassword() : ''">
+									<div class="form-group forget-box">
+										<input type="text" name="email" placeholder="Enter your email" ng-blur="vm.visitedEmail = true" ng-focus="vm.visitedEmail = false" ng-model="vm.emailAdderess" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
+											required />
+											
+										<span class="forget-valid" style="color:Red" ng-show="vm.showEmailRequiredError">{{vm.invalidEmailId}}</span>
+										<span class="forget-valid" ng-show="personForm.email.$dirty&&personForm.email.$error.pattern && vm.visitedEmail &&vm.hideEmailRequiredErrorMsg()">{{vm.invalidEmailId}}</span>
+									</div>
+									<div class="reset-password-btn-box">
+										<div class="form-field form-submit-box">
+											<button type="submit" class="sendmail-submit green-btn" ng-click="vm.setErrorMessage()">Reset password</button>
+										</div>
+									</div>
+								</form>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="forget-password-alert-box" ng-show="vm.isforgetPasswordSent">
+					<div class="text-center">
+						<div class="pswdsent">
+							<fieldset>
+								<div ng-show="vm.isSent" class="form-group">
+									<div class="forget-plane-icon"></div>
+									<p>We have sent an email to {{vm.emailAdderess}} <br />with your new password</p>
+								</div>
+								<div ng-hide="vm.isSent" class="form-group mailsent-response">
+									<p>{{vm.message}}</p>
+								</div>
+								<div><a class="back-form-submit green-btn" ng-click="vm.backtoSignIn()">Back to Sign in</a></div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

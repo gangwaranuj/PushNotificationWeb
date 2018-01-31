@@ -1,0 +1,67 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+body{
+	font:15px/1.3 'Open Sans', sans-serif;
+	color: #5e5b64;
+	text-align:center;
+}
+
+a, a:visited {
+	outline:none;
+	color:#389dc1;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+section, footer, header, aside, nav{
+  display: block;
+
+}
+
+
+body {
+  text-align:center;
+}
+
+
+.chart {
+  border-left:1px solid black;
+  border-bottom:1px solid black;
+  margin:60px auto;
+  position:relative;
+  list-style:none;
+  padding:0;
+}
+
+.y {
+  position:absolute;
+  transform:rotate(-90deg);
+  transform-origin: bottom left;
+  bottom:0;
+  padding:5px;
+}
+
+.x {
+  position:absolute;
+  top:100%;
+  width:100%;
+  padding:5px;
+}
+
+

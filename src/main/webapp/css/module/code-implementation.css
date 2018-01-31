@@ -1,0 +1,50 @@
+.subscriber-segment .io-info-box {
+	width: 100%;
+}
+.code-implementation-section .cmpn-container{
+	padding: 0;
+    margin-bottom: 5px;
+    border-bottom: 0px solid #eeeeee;
+}
+.addbutton-box {
+	position: relative;
+}
+.cmpn-title-head.addbutton-box input[type='text'] {
+	float: left;
+	width: calc(100% - 80px);
+}
+.cmpn-title-head.addbutton-box button {
+	float: left;
+	width: 80px;
+	background-color: #a0a0a0;
+	color: #fff;
+	height: 36px;
+	text-align: center;
+	margin-left: -2px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	outline: none;
+}
+.segment-deleted .send-notification-btn button {
+	width: 120px;
+	min-width: 130px;
+	border-radius: 3px;	
+}
+.segment-deleted .send-notification-btn button.grdnt-btn {
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+.modal.messages-sm-modal .modal-dialog.modal-sm {
+	width: 352px;
+}
+
+.modal.messages-sm-modal .modal-dialog.modal-sm .modal-content {
+	border-width: 0;
+}
+
+.modal.messages-sm-modal .modal-dialog.modal-sm .modal-content .heading {
+	font-weight: normal;
+	font-size: 14px;
+	text-transform: initial !important;
+	color: #000;
+}

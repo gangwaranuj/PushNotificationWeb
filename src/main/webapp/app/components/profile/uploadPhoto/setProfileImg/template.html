@@ -1,0 +1,48 @@
+<form id="upload" method="POST" enctype="multipart/form-data" ng-show>
+	<fieldset>
+		<!--<legend>HTML File Upload</legend>-->
+		<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+		<div>
+			<!--<label for="fileselect">Files to upload:</label>-->
+			<input type="file" id="fileselect" name="fileselect" />
+		</div>
+		<div id="submitbutton">
+			<button type="submit">Upload Image</button>
+		</div>
+	</fieldset>
+</form>
+
+
+		<div id="outerDiv" class="col-sm-3">
+			<ul style="margin:0px; padding:0px; list-style:none">
+				<li ng-repeat="image in images">
+					<div class="text-center">
+						<div class="profile-photo-box" style="display: table; margin: auto; position: relative;">
+							<img style="height:97px; width:97px; border: 0;" ng-src="{{image.imageSrc}}" border="0"  class="img-circle"/>
+							
+							<div ng-show="{{showremove}}">
+								<div class="upload-upper-image" data-toggle-s="tooltip" data-placement="top" title="Photo should be at least 300px X 300px">
+									<div style="position:relative;">
+										<div class="rmvtxt">Remove</div>
+										<div class="remove-box" ng-click="remove();"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li ng-show="showUploadControl()">
+					<div id="imgdrag" class="text-center" style="position:relative;" ng-click="remove()">
+						<img src="./images/icons/user-icon-1.png">
+						<div style="position: absolute;top: 0;width: 100%;" ng-click="selectImage(image)" data-toggle="tooltip" data-placement="top" title="Photo should be at least 300px X 300px" ng-repeat="image in images" class="">
+							<img ng-src="{{image.imageSrc}}" style="width:100%; height: 420px;">
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $('[data-toggle="tooltip"]').tooltip();   
+			});
+		</script>

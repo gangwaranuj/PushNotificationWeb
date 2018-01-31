@@ -1,0 +1,20 @@
+<div class="btn-group {{handler.containerClass}} multi-select-contain" uib-dropdown uib-dropdown-toggle>
+<div class="btn-none multi-segment">
+    <button id="simple-btn-keyboard-nav" type="button" class="btn-none">
+        <span ng-if="getSelectedOptions().length>0" >({{getSelectedOptions().length}})</span> {{handler.name}} <span class="downArrow bg-white mrg-lt-20"><i class="fa fa-angle-down" aria-hidden="true"></i>
+</span>
+    </button>
+</div>
+    <ul  class="multiSelectMenu dropdown-menu multi-select" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li>
+            <input id="{{initTime}}" ng-model="selectAllModel" type="checkbox" ng-change="selectAll()">
+            <label for="{{initTime}}" class="io-icon io-checkbox-uncheck">Select All</label>
+
+        </li>
+        <li ng-repeat="option in options">
+            <input id="{{option.$$hashKey}}" ng-model="option.selected" type="checkbox" ng-change="changeCheckBox()">
+            <label for="{{option.$$hashKey}}" class="io-icon io-checkbox-uncheck">{{option[getDisplayProp()]}}</label>
+
+        </li>
+    </ul>
+</div>

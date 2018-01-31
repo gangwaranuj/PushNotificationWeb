@@ -1,0 +1,41 @@
+<div class="bg-white">
+    <button type="button" class="dril-closeicon" ng-click="vm.closeModal()" data-dismiss="modal"><img src="images/icons/close.png" alt="close Icon"></button>
+
+    <div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="io-box box-shadow">
+                    <div class="io-box-header">
+                        <div class="pull-left">
+                            <div class="heading">{{vm.headerMsg}}
+                                <div class="io-info-container">
+                                    <div class="io-info-box box-shadow">
+                                        <div class="info-body">
+                                            <p>Copy and paste the code below into the web page where you would like your subscribers
+                                                to be grouped, just before body closing tag.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="io-body">
+                        <div class="">
+                            <p>Copy and paste the code below into the web page where you would like your subscribers to be grouped,
+                                just before body closing tag.</p>
+                            <div class="mrg-top-20">
+                                <textarea class="code-placed pdd-lt-rt-15 pdd-top-bot-15" cols="30" id="smart_code" name="smart_code" placeholder="Code will be here"
+                                    readonly rows="5" onclick="this.focus();this.select()">{{vm.scriptCode}}
+							</textarea>
+                            </div>
+                        </div>
+                        <div class="send-notification-btn mrg-top-15 pdd-top-bot-15">
+                            <button class="updrade-btn green-btn" ng-click="vm.navigateToOtherState('new')">Create another segment</button>
+                            <button class="grdnt-bdr-btn green-btn pull-right" ng-click="vm.navigateToOtherState('manage')">Manage Segments</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,242 @@
+.font-size-16{
+	font-size:16px;
+}
+
+.profile-img{
+
+text-align: center;
+margin-left:55px; 	
+}
+
+.profile-img img{
+	border-radius:50%;
+	width:100px;
+}
+
+.profile-textbox {
+	  padding-left: 18px;
+}
+.io-page-body.col-sm-12.profile-textbox {
+	padding-right: 18px;
+}
+.remove-btn{
+    background: #fff;
+    border: 1px solid #757785;
+    border-radius: 50px;
+    padding: 8px 26px;
+    font-size: 16px;
+    outline: none;
+
+}
+
+.add-user-block {
+	position: relative;
+}
+.add-form label{
+	width: 100px;
+}
+
+.add-form input{
+	width: calc(98% - 100px);
+}
+.add-popup-btn {
+	text-align: right;
+	border-top: 1px solid #dce1e6;
+    padding: 20px 30px;
+}
+
+.add-user-block .io-popup-container.manage-authority {
+	width: 700px;
+}
+.add-user-block .io-popup-container.manage-authority .add-form .row div.col-xs-6 h5 {
+	background-color: #dbe0e5;
+	text-align: center;
+	color: #757785;
+	line-height: 32px;
+	font-size: 18px;
+}
+.add-user-block .io-popup-container.manage-authority .add-form .row div.col-xs-6 .avail-auth {
+	height: 300px;
+	overflow: auto;
+}
+
+.profile-uploadbox {
+	margin-top: 50px;
+}
+.profile-uploadbox .total-view-click.profile-textbox {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.upload-img-box profileimg #outerDiv ul input {
+	/* display: none !important; */
+}
+.upload-img-box .upload-btn {
+	border: 2px solid #757785;
+}
+
+.upload-remove-photo p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.profile-textbox .row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.profile-textbox .row div.col-sm-3 {
+	padding-top: 10px;
+	white-space: nowrap;
+}
+.profile-textbox .row div.col-sm-3.withouttxtbox {
+	padding-top: 0px;
+}
+
+.profile-textbox input[type="text"], input[type="password"], input[type="email"]{
+	border: 1px solid #dce1e5;
+	box-shadow:none !important;
+	height:40px;
+   padding: 0 43px;
+	
+}
+.wrong-password{
+	  background-image: url(../../images/icons/close-icon-red.png);
+    background-repeat: no-repeat;
+    background-position: 96% 13px;
+}
+.success-password{
+    background-image: url(../../images/icons/check-blue-icon-1.png);
+    background-repeat: no-repeat;
+    background-position: 96% 13px;
+}
+.salutation[type="radio"]:checked + label.io-icon.radio-check:before{
+    background-position: -364px -79px;
+}
+.edit-pos-required {
+	position: absolute;
+	left: 108px;
+	color: gray; 
+	line-height: 22px;
+	top: 8px;
+	font-size: 22px;
+}
+.edit-required {
+	position: absolute;
+	right: 0;
+	color:Red; 
+	line-height: 22px;
+	top: 13px;
+	font-size: 22px;	
+}
+
+.io-box-profileedit {
+	height: 700px;
+	overflow: hidden;
+}
+
+.profile-pass-box {
+	padding-bottom: 40px;
+	position: relative;
+	height: 400px;
+}
+.profile-pass-btn {
+	position: absolute;
+	left: 30px;
+	bottom: 40px;
+}
+.profile-btn {
+	width: 125px;
+}
+
+.password-section {
+	font-size: 12px;
+	padding-left: 24px;
+}
+.password-section ul.password-hints li {
+	margin: 0;
+}
+.password-section .row ul {
+	list-style-type: circle;
+}
+
+.password-section p {
+	margin-bottom: 0;
+}
+.password-section ul{
+	margin: 0;
+	padding: 0;
+}
+.password-section ul li{
+	margin: 5px 0;
+}
+
+.upload-upper-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* background: url(../../images/icons/user-icon-1.png) no-repeat center; */
+	display: none;
+	z-index: 999999;
+	transition: all 1s;
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.5s;
+	cursor: pointer;
+	background: rgba(117, 119,133, 0.9);
+	color: #fff;
+	border-radius: 100%;
+}
+.upload-upper-image .rmvtxt {
+	padding-top: 38px;
+}
+.upload-upper-image .remove-box {
+	background: url(../../images/icons/rmv-icon.png);
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	
+}
+.profile-photo-box:hover .upload-upper-image {
+	display: block;
+}
+.profile-validation {
+	position: absolute;
+	top: 100%;
+	left: 15px;
+}
+
+@media(max-width: 1100px) {
+	.io-box-profileedit {
+		height: 700px;
+		overflow: hidden;
+	}
+}
+@media(max-width: 1600px) {
+	.io-box-profileedit {
+		height: 677px;
+		overflow: hidden;
+	}
+	.profile-pass-box {
+		height: 387px;
+	}
+}
+@media(max-width: 1366px) {
+	.io-box-profileedit {
+		height: 656px;
+		overflow: hidden;
+	}
+	.edit-pos-required {
+		left: 70px;
+	}
+	.profile-btn {
+		width: 100px;
+	}
+	.profile-pass-box {
+		height: 376px;
+	}
+	.io-box-profileedit .profile-textbox form div.mrg-bot-30 {
+		margin-bottom: 28px;
+	}
+}
+

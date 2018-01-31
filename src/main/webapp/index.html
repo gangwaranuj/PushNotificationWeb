@@ -1,0 +1,232 @@
+<!doctype html>
+<html ng-app="app" ng-cloak>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ioPUSH - Overview</title>
+    <link href="images/favicon.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="lib/flex-slider/flexslider.css">
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css?t=15852423309391">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css?t=15852423309391" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-colorpicker.css?t=15852423309391" />
+    <link href="lib/angular-slider/css/slider.min.css?t=15852423309391" rel="stylesheet" />
+    <link type="text/css" href="lib/font-awesome/css/font-awesome.min.css?t=15852423309391" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css?t=15852423309391">
+    <link rel="stylesheet" href="lib/angular-wizard/angular-wizard.css?t=15852423309391">
+    <link rel="stylesheet" href="lib/angular-wizard/angular-wizard.min.css?t=15852423309391">
+    <link rel='stylesheet' href='lib/textAngular/dist/textAngular.css?t=15852423309391'>
+    <link rel='stylesheet' href='lib/angular-bootstrap-colorpicker/css/colorpicker.min.css?t=15852423309391'>
+    <link rel="stylesheet" href="lib/angular-editor-master/css/simditor.css?t=15852423309391" />
+    <link rel="stylesheet" href="lib/angular-block-ui/dist/angular-block-ui.min.css?t=15852423309391" />
+    <link href="lib/ng-emojis/lib/css/nanoscroller.css?t=15852423309391" rel="stylesheet">
+    <link href="lib/ng-emojis/lib/css/emoji.css?t=15852423309391" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-dropdownhover.min.css" />
+
+
+    <!-- 3rd party Libraries -->
+    <script src="lib/jquery/dist/jquery.min.js?t=15852423309391"></script>
+
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>-->
+    <!--<script src="//cdn.jsdelivr.net/flexslider/2.2.2/jquery.flexslider-min.js"></script>-->
+    <script src="lib/flex-slider/jquery.flexslider.js"></script>
+
+</head>
+
+<body ng-app="app" ng-cloak class="">
+    <app>
+        <div style="text-align: center; padding:250px 100px 10px;"><img width="130" src="images/loading-icon.gif" /></div>
+    </app>
+
+    <script src="lib/angular/angular.min.js?t=15852423309391"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js?t=15852423309391"></script>
+    <script src="lib/angular-cookies/angular-cookies.min.js?t=15852423309391"></script>
+    <script src="lib/angular-resource/angular-resource.min.js?t=15852423309391"></script>
+    <script src="lib/angular-ui-bootstrap/ui-bootstrap.js?t=15852423309391"></script>
+    <script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls.js?t=15852423309391"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js?t=15852423309391"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap-colorpicker.min.js?t=15852423309391"></script>
+    <script src="lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js?t=15852423309391"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap-dropdownhover.js?t=15852423309391"></script>
+    <script src="lib/angular-editor-master/js/simditor/simditor-all.js?t=15852423309391"></script>
+    <script src="lib/angular-editor-master/js/angular-editor.js?t=15852423309391"></script>
+
+
+    <script src='lib/textAngular/dist/textAngular-rangy.min.js?t=15852423309391'></script>
+    <script src='lib/textAngular/dist/textAngular-sanitize.min.js?t=15852423309391'></script>
+    <script src='lib/textAngular/dist/textAngular.min.js?t=1485242330939'></script>
+
+    <script src="lib/angular-wizard/angular-wizard.js?t=15852423309391"></script>
+    <script src="lib/angular-wizard/angular-wizard.min.js?t=15852423309391"></script>
+    <script src="lib/angular-droplets/ng-droplet.js?t=15852423309391"></script>
+    <script src="lib/datetime/datetime-picker.js?t=15852423309391"></script>
+    <script src="lib/datetime/datetime-picker.tpls.js?t=15852423309391"></script>
+    <script src="lib/angular-block-ui/dist/angular-block-ui.min.js?t=15852423309391"></script>
+    <!--<script src="lib/iopush-notification/embeddedHtml.js?t=1485242330939"> </script>-->
+    <!-- Module -->
+
+    <script src="lib/angular-slider/js/slider.min.js?t=15852423309391"></script>
+    <script src="lib/angular-slider/js/nouislider.js?t=15852423309391"></script>
+
+    <script src="app/app.js?t=15852423309391"></script>
+    <script src="app/httpRequestResponseInterceptor.js?t=15852423309391"></script>
+    <script src="app/constants.js?t=15852423309391"></script>
+    <script src="app/message.js?t=15852423309391"></script>
+    <script src="app/app.config.js?t=15852423309391"></script>
+    <script src="app/app.run.js?t=15852423309391"></script>
+    <!-- ** Don't forget to Add jQuery here ** -->
+    <script src="lib/ng-emojis/lib/js/nanoscroller.min.js?t=15852423309391"></script>
+    <script src="lib/ng-emojis/lib/js/tether.min.js?t=15852423309391"></script>
+    <script src="lib/ng-emojis/lib/js/config.js?t=15852423309391"></script>
+    <script src="lib/ng-emojis/lib/js/util.js?t=15852423309391"></script>
+    <script src="lib/ng-emojis/lib/js/jquery.emojiarea.js?t=15852423309391"></script>
+    <script src="lib/ng-emojis/lib/js/emoji-picker.js?t=15852423309391"></script>
+    <script src="app/emoji.js?t=15852423309391"></script>
+
+
+    <!-- Components -->
+    <script src="app/app.component.js?t=15852423309391"></script>
+    <script src="app/components/login/login.component.js?t=15852423309391"></script>
+    <script src="app/components/login/login.controller.js?t=15852423309391"></script>
+    <script src="app/components/navbar/navbar.component.js?t=15852423309391"></script>
+    <script src="app/components/navbar/navbar.controller.js?t=15852423309391"></script>
+    <script src="app/components/sidebar/sidebar.component.js?t=15852423309391"></script>
+    <script src="app/components/codeImplementation/codeImplementation.component.js?t=15852423309391"></script>
+
+    <script src="app/components/codeImplementation/manage-segments/manage-segment.component.js?t=15852423309391"></script>
+    <script src="app/components/codeImplementation/manage-segments-type/manage-segment-type.component.js?t=15852423309391"></script>
+    <script src="app/components/codeImplementation/subscriber-segmentation/subscriber-segmentation.component.js?t=15852423309391"></script>
+
+    <script src="app/components/codeImplementation/code-implementation.js?t=15852423309391"></script>
+    <script src="app/components/codeImplementation/code-implementation.srvc.js?t=15852423309391"></script>
+
+    <script src="app/components/upgrade/upgrade-plan.srvc.js?t=15852423309391"></script>
+    <script src="app/components/upgrade/upgrade-plan.js?t=15852423309391"></script>
+    <script src="app/components/upgrade/upgrade-plan.component.js?t=15852423309391"></script>
+    <script src="app/components/upgrade/plan-error.component.js?t=15852423309391"></script>
+    <script src="app/components/upgrade/plan-summary.component.js?t=15852423309391"></script>
+
+    <script src="app/components/welcomeNotification/welcomeNotification.component.js?t=15852423309391"></script>
+    <script src="app/components/manageNotification/manageNotification.component.js?t=15852423309391"></script>
+
+    <script src="app/components/subscriptionLayouts/subscriptionLayouts.component.js?t=15852423309391"></script>
+    <script src="app/components/subscriptionLayouts/subscriptionLayoutsBox.component.js?t=15852423309391"></script>
+
+    <script src="app/components/subscriptionLayouts/create/overlay.component.js?t=15852423309391"></script>
+
+
+    <script src="app/components/subscriptionLayouts/mobile-subscriptionLayouts.component.js?t=15852423309391"></script>
+    <script src="app/components/subscriptionLayouts/create/mobile.component.js?t=15852423309391"></script>
+
+    <script src="app/components/subscriptionLayouts/subscriptionLayout.js?t=15852423309391"></script>
+    <script src="app/components/subscriptionLayouts/create/icon.component.js?t=15852423309391"></script>
+
+    <script src="app/components/subscriptionLayouts/create/subscriptionsidebar.component.js?t=15852423309391"></script>
+    <script src="app/components/subscriptionLayouts/create/buttonlink.component.js?t=15852423309391"></script>
+    <script src="app/components/subscriptionLayouts/subscription-layout.srvc.js?t=15852423309391"></script>
+
+    <script src="app/components/dashboard/dashboard.component.js?t=15852423309391"></script>
+    <script src="app/components/dashboard/geo/geo.component.js?t=15852423309391"></script>
+    <script src="app/components/dashboard/isp/isp.component.js?t=15852423309391"></script>
+    <script src="app/components/dashboard/platform/platform.component.js?t=15852423309391"></script>
+    <script src="app/components/dashboard/viewclick/viewclick.component.js?t=15852423309391"></script>
+    <script src="app/components/profile/profile.component.js?t=15852423309391"></script>
+    <script src="app/components/profile/edit/profile-edit.component.js?t=15852423309391"></script>
+    <script src="app/components/profile/edit/profile-edit.controller.js?t=15852423309391"></script>
+    <script src="app/components/profile/changePassword/profile-changePassword.component.js?t=15852423309391"></script>
+    <script src="app/components/profile/changePassword/profile-changePassword.controller.js?t=15852423309391"></script>
+    <script src="app/components/profile/uploadPhoto/profile-uploadPhoto.component.js?t=15852423309391"></script>
+    <script src="app/components/profile/uploadPhoto/profile-uploadPhoto.controller.js?t=15852423309391"></script>
+    <script src="app/components/profile/uploadPhoto/setProfileImg/directive.js?t=15852423309391"></script>
+    <script src="app/shared/components/drop-uploadimg/directive.js?t=15852423309391"></script>
+    <script src="app/components/profile/profile.js?t=15852423309391"></script>
+    <script src="app/components/dashboard/subscriberNotification/subscriberNotification.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/campaign.js?t=15852423309391"></script>
+    <script src="app/components/campaign/campaign.srvc.js?t=15852423309391"></script>
+    <script src="app/components/campaign/list/manage.campaign.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/pushtorsslist/managepushtorss.campaign.component.js?t=15852423309391"></script>
+
+    <script src="app/components/campaign/sentnotification.component.js?t=15852423309391"></script>
+
+    <script src="app/components/campaign/notificationcampaign/notificationcampaign.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/create/notification/notification.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/create/notification/drop-grid/directive.js?t=15852423309391"></script>
+    <script src="app/components/campaign/create/notification/drop-builderimg/directive.js?t=15852423309391"></script>
+    <script src="app/components/campaign/segment/segment.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/summary/summary.component.js?t=15852423309391"></script>
+
+    <script src="app/components/campaign/create/pushtorss/pushtorss-create.component.js?t=15852423309391"></script>
+    <script src="app/components/campaign/create/pushtorss/pushtorss-create.controller.js?t=15852423309391"></script>
+
+    <script src="app/components/analytics/analytic.js?t=15852423309391"></script>
+    <script src="app/components/analytics/analytic.srvc.js?t=15852423309391"></script>
+    <script src="app/components/analytics/view/analytic-view.component.js?t=15852423309391"></script>
+    <script src="app/components/analytics/view/analytic-view.controller.js?t=15852423309391"></script>
+
+    <script src="app/components/analytics/welcome/welcome.analytic-view.component.js?t=15852423309391"></script>
+    <script src="app/components/analytics/welcome/welcome.analytic-view.controller.js?t=15852423309391"></script>
+
+    <script src="app/components/analytics/rsspush/rsspush.analytic-view.component.js?t=15852423309391"></script>
+    <script src="app/components/analytics/rsspush/rsspush.analytic-view.controller.js?t=15852423309391"></script>
+
+    <!-- shared Components -->
+
+
+    <script src="app/shared/components/datetimepicker/datetimepicker.component.js?t=15852423309391"></script>
+      <script src="app/shared/components/GetInTouch/getintouch.component.js?t=15852423309391"></script>
+    <script src="app/shared/components/paging/paging.component.js?t=15852423309391"></script>
+    <script src="app/shared/directives/drop-grid/directive.js?t=15852423309391"></script>
+    <script src="app/shared/directives/access.js?t=15852423309391"></script>
+    <script src="app/shared/directives/drop-grid-icon/directive.js?t=15852423309391"></script>
+    <script src="app/shared/directives/angular-flexslider.js?t=15852423309391"></script>
+    <script src="app/shared/directives/emojiPicker/emoji.js?t=15852423309391"></script>
+
+    <script type="text/javascript" src="lib/moment/moment.min.js?t=15852423309391"></script>
+    <script src="lib/moment/moment-timezone-with-data.js?t=15852423309391"></script>
+    <script src="lib/angular/daterangepicker.js?t=15852423309391"></script>
+    <script src="app/shared/services/authSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/geoSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/platformSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/viewsSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/urlMetaSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/master.srvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/utility.service.js?t=15852423309391"></script>
+    <script src="app/shared/services/authorization.srvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/profileSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/messageBoxSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/fileReader.js?t=15852423309391"></script>
+    <script src="app/shared/services/geoSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/ispSrvc.js?t=15852423309391"></script>
+    <script src="app/shared/services/subscriberNotificationSrvc.js?t=15852423309391"></script>
+
+
+    <!-- Directives -->
+
+    <script src="app/shared/directives/setTooltip.js?t=15852423309391"></script>
+    <script src="app/shared/directives/setInputWidth.js?t=15852423309391"></script>
+    <script src="app/shared/directives/enterevent.js?t=15852423309391"></script>
+    <script src="app/shared/directives/fileselect.js?t=15852423309391"></script>
+    <script src="app/shared/directives/multiselect/multiselect.js?t=15852423309391"></script>
+    <script src="app/shared/directives/validations.js?t=15852423309391"></script>
+    <script src="app/shared/directives/areaChartDirective.js?t=15852423309391"></script>
+    <script src="app/shared/directives/donutChartDirective.js?t=15852423309391"></script>
+    <script src="app/shared/directives/checklist-model.js?t=15852423309391"></script>
+
+    <!-- Filters -->
+    <script src="app/shared/filters/cutText.js?t=15852423309391"></script>
+    <script src="app/shared/filters/truncate.js?t=15852423309391"></script>
+    <script src="app/shared/filters/datetime.js?t=15852423309391"></script>
+    <script src="lib/angular/calender.js?t=15852423309391"></script>
+    <script src="lib/angular/highcharts.js?t=15852423309391"></script>
+
+    <script src="lib/ngmap/ng-map.min.js?t=15852423309391"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcHKJuVeqfO-m23LQhpGP9qdDghnWK-aE&sensor=false"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFftfK4r4-XEXHtr7xWQYEhJANs4ZBOPM&sensor=false"></script>
+</body>
+
+</html>

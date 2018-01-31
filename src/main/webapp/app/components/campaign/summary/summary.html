@@ -1,0 +1,421 @@
+<div class="main">
+<div class="row">
+    <div class="col-sm-12 mrg-bot-70">
+        <div class="io-box box-shadow">
+            <div class="io-box-header">
+                <div class="pull-left">
+                    <div class="heading">
+                        Summary
+                    </div>
+                </div>
+            </div>
+
+            <div class="row info-body">
+                <div class="col-sm-12">
+                    <div class=" bg-gray-2 border-gray-2 pdd-15">
+
+                        <div class="row">
+                            <div class="col-xs-5">
+                            	<ul class="last-summary-list">
+                            	
+                            	
+                                <li><b>Campaign name: {{vm.formdata.segment.name}}</b></li>
+                                <li ng-show="vm.formdata.segment.product"><b>Products:  </b> <span ng-repeat="product in vm.formdata.segment.products.selectedOptions">{{product.DisplayText}}<span ng-show="$index < vm.formdata.segment.products.selectedOptions.length-1 " > , </span></span></li>
+
+                                <li><b>Active on: </b> {{vm.formdata.segment.campignStartDate | datetime2}} - {{vm.formdata.segment.campignEndDate | datetime2}}</li>
+                                <li ng-show="vm.formdata.segment.installed"><b>Installed between:  </b>{{vm.formdata.segment.installedStartDate | date2}} - {{vm.formdata.segment.installedEndDate
+                                    | date2}}</li>
+                                <li ng-show="vm.formdata.segment.notClicked">><b>Not clicked between:  </b> {{vm.formdata.segment.notClickedStartDate | date2}} - {{vm.formdata.segment.notClickedEndDate | date2}}</li>
+                                <li ng-show="vm.formdata.segment.country"><b>Countries:  </b> <span ng-repeat="country in vm.formdata.segment.countries.selectedOptions">{{country.DisplayText}}<span ng-show="$index < vm.formdata.segment.countries.selectedOptions.length-1 " > , </span></span></li>
+                                <li ng-show="vm.formdata.segment.city"><b>Cities:  </b> <span ng-repeat="city in vm.formdata.segment.cities.selectedOptions">{{city.city_name}}<span ng-show="$index < vm.formdata.segment.cities.selectedOptions.length-1 " > , </span></span></li>
+                                <li ng-show="vm.formdata.segment.browser"><b>Browsers: </b> <span ng-repeat="browser in vm.formdata.segment.browsers.selectedOptions">{{browser.DisplayText}}<span ng-show="$index < vm.formdata.segment.browsers.selectedOptions.length-1 " > , </span></span></li>
+
+                                <li ng-show="vm.formdata.segment.version"><b>Versions: </b> <span ng-repeat="version in vm.formdata.segment.extensionVersion.selectedOptions">{{version.DisplayText}}<span ng-show="$index < vm.formdata.segment.extensionVersion.selectedOptions.length-1 " > , </span></span></li>
+
+                                  <li ng-show="vm.formdata.segment.internetProvider"><b>Internet Providers: </b> <span ng-repeat="ip in vm.formdata.segment.internetProviders.selectedOptions">{{ip.DisplayText}}<span ng-show="$index < vm.formdata.segment.extensionVersion.selectedOptions.length-1 " > , </span></span></li>
+
+                                <li ng-show="vm.formdata.segment.accessWebsite"><b>Websites accessed:  </b><span ng-repeat="url  in  vm.formdata.segment.urls">{{url.DisplayText}}<span ng-show="$index < vm.formdata.segment.urls.length-1 " > , </span>                                    </span> <span>          <span ng-show="vm.formdata.segment.accessedWebsiteStartDate!=''">  |</span>                                    <span ng-show="vm.formdata.segment.accessedWebsiteStartDate!=''"> {{vm.formdata.segment.accessedWebsiteStartDate | date2}} - {{vm.formdata.segment.accessedWebsiteEndDate| date2}}</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="browser-summary">
+                                    <img src="images/browser-summary.png" class="browser-summary-img" align="right" />
+
+                                    <div class="summary-layout-box" ng-switch="vm.formdata.segment.typeId">
+                                       <div ng-switch-when="1">
+                                            <!--Newsfedd-->
+                                            <div class="summary-container">
+                                        		<span class="mpd-summary-arrow"></span>
+	                                        	<div class="mpd-summary" style="background: #f8f9fa;">
+	                                        	
+		                                        	<div class="bg-white border-blue pdd-10" ng-hide="vm.formdata.newsfeed.position == 1">
+			                                            <div class="smry-newsfeedrow">
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-thumb-1.png" alt="img-thumb-1" class="img-responsive">
+			                                                </div>
+			
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-content.png" alt="img-content" class="img-responsive">
+			                                                </div>
+			                                            </div>
+			                                            <div class="clearfix"></div>
+			
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10" ng-show="vm.formdata.newsfeed.position == 1">
+			                                            <div class="smry-newsfeedrow">
+				                                            <div class="smry-newsfeedcol">
+				                                                <img src="{{vm.formdata.newsfeed.imageSrc}}" alt="img-thumb-1" class="img-responsive">
+				                                            </div>
+				                                            <div class="smry-newsfeedcol">
+				                                                <h4 class="no-margin newsfeed-heading">{{vm.formdata.newsfeed.title}}</h4>
+				                                                <p class="font-12-md">{{vm.formdata.newsfeed.description | truncate:30}}</p>
+				                                            </div>
+				                                        </div>
+			                                            <div class="clearfix"></div>
+			                                        </div>
+			
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-hide="vm.formdata.newsfeed.position == 2">
+			                                            <div class="smry-newsfeedrow">
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-thumb-1.png" alt="img-thumb-1" class="img-responsive">
+			                                                </div>
+			
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-content.png" alt="img-content" class="img-responsive">
+			                                                </div>
+			                                                <div class="clearfix"></div>
+			                                            </div>
+			
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-show="vm.formdata.newsfeed.position == 2">
+			                                            <div class="smry-newsfeedrow">
+				                                            <div class="smry-newsfeedcol">
+				                                                <img src="{{vm.formdata.newsfeed.imageSrc}}" alt="img-thumb-1" class="img-responsive">
+				                                            </div>
+				                                            <div class="smry-newsfeedcol">
+				                                                <h4  class="no-margin newsfeed-heading">{{vm.formdata.newsfeed.title}}</h4>
+				                                                <p class="font-12-md">{{vm.formdata.newsfeed.description | truncate:30}}</p>
+				                                            </div>
+				                                        </div>
+			                                            <div class="clearfix"></div>
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-hide="vm.formdata.newsfeed.position == 3">
+			                                            <div class="smry-newsfeedrow">
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-thumb-1.png" alt="img-thumb-1" class="img-responsive">
+			                                                </div>
+			
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-content.png" alt="img-content" class="img-responsive">
+			                                                </div>
+			                                                <div class="clearfix"></div>
+			                                            </div>
+			
+			
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-show="vm.formdata.newsfeed.position == 3">
+			                                            <div class="smry-newsfeedrow">
+				                                            <div class="smry-newsfeedcol">
+				                                                <img src="{{vm.formdata.newsfeed.imageSrc}}" alt="img-thumb-1" class="img-responsive">
+				                                            </div>
+				                                            <div class="smry-newsfeedcol">
+				                                                <h4  class="no-margin newsfeed-heading">{{vm.formdata.newsfeed.title}}</h4>
+				                                                <p class="font-12-md">{{vm.formdata.newsfeed.description | truncate:30}}</p>
+				                                            </div>
+				                                        </div>
+			                                            <div class="clearfix"></div>
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-hide="vm.formdata.newsfeed.position == 4">
+			                                            <div class="smry-newsfeedrow">
+			                                                <div class="smry-newsfeedcol">
+			                                                    <img src="images/img-thumb-1.png" alt="img-thumb-1" class="img-responsive">
+			                                                </div>
+			
+			                                                <div class="smry-newsfeedcol">
+			                                                	<img src="images/img-content.png" alt="img-content" class="img-responsive" />
+			                                                </div>
+			                                                <div class="clearfix"></div>
+			                                            </div>
+			                                        </div>
+			                                        <div class="bg-white border-blue pdd-10 mrg-top-15" ng-show="vm.formdata.newsfeed.position == 4">
+			                                            <div class="smry-newsfeedrow">
+				                                            <div class="smry-newsfeedcol">
+				                                                <img src="{{vm.formdata.newsfeed.imageSrc}}" alt="img-thumb-1" class="img-responsive">
+				                                            </div>
+				                                            <div class="smry-newsfeedcol">
+				                                                <h4 class="no-margin newsfeed-heading">{{vm.formdata.newsfeed.title}}</h4>
+				                                                <p class="font-12-md">{{vm.formdata.newsfeed.description | truncate:30}}</p>
+				                                            </div>
+			                                            </div>
+			                                            <div class="clearfix"></div>
+			                                        </div>
+	                                        	
+												</div>
+											</div>
+                                        </div>
+                                        <div ng-switch-when="2" ng-switch="vm.formdata.action">
+                                            <!--newtab-->
+                                            <div class="newtab-summary pull-left">
+                                            <div ng-switch-when="EDIT">
+                                                <!--EDIT {{vm.formdata.newtab.htmlContent}}-->
+
+												<div class="mrg-bot-15">
+                                                    <!--<p ng-bind-html="trustAsHtml(htmlContent)"></p>-->
+                                                    <div id="newtabSmrycan">
+                                                    	<object id="newtabCanvas" data-ng-bind-html="vm.trustAsHtmlSummary(vm.formdata.newtab.htmlContent)"></object>
+                                                    </div>
+                                                </div>
+
+                                                <!--<div>
+                                                    <object id="newtabCanvasEdit" type="text/html" data={{vm.formdata.newtab.htmlContent}} width="800px" height="600px" style="overflow:auto;"></object>
+                                                </div>-->
+                                            </div>
+                                            <div ng-switch-default>
+                                                <div class="mrg-bot-15">
+                                                    <!--<p ng-bind-html="trustAsHtml(htmlContent)"></p>-->
+                                                    <div id="newtabSmrycan">
+                                                    	<object id="newtabCanvas" data-ng-bind-html="vm.trustAsHtmlSummary(vm.formdata.newtab.htmlContent)"></object>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="3">
+                                            <!--Notification-->
+                                            <div class="notification-smry-container">
+                                            <div class="notification-summary">
+                                            <div class="row bg-gray-3 pdd-top-bot-15 mrg-bot-15">
+                                                <div class="col-sm-3 mrg-bot-20 no-pdd-lt"><img ng-src={{vm.formdata.notification.selectedImage}} class="img-responsive"></div>
+
+                                                <div class="col-xs-9 pdd-top-15">
+                                                    <h5 class="clr-black-1 word-break"><b>{{vm.formdata.notification.headline}}</b></h5>
+                                                    <p class="clr-black-1 word-break">
+                                                        {{vm.formdata.notification.textdescription}} <br/>
+                                                        {{vm.formdata.notification.url}}
+                                                        </p>
+                                                    
+                                                        
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div ng-switch-when="7">
+                                            <!--ondemamd notificaton-->
+                                            <div class="notification-smry-container">
+                                            <div class="notification-summary">
+                                            <div class="row bg-gray-3 pdd-top-bot-15 mrg-bot-15">
+                                                <div class="col-sm-3 mrg-bot-20 no-pdd-lt"><img ng-src={{vm.formdata.notification.selectedImage}} class="img-responsive"></div>
+
+                                                <div class="col-xs-9 pdd-top-15">
+                                                    <h5 class="clr-black-1 word-break"><b>{{vm.formdata.notification.headline}}</b></h5>
+                                                    <p class="clr-black-1 word-break">
+                                                        {{vm.formdata.notification.textdescription}}</br >
+                                                        {{vm.formdata.notification.url}}</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!--
+                                               <div ng-switch-when="5|6" ng-switch-when-separator="|">-->
+                                        <div ng-switch-when="5">
+                                            <!--widget-->
+                                            <div class="widget-summary">
+                                            <!--vm.formdata.widget.url-->
+                                            <div class="preview-summary">
+                                                <div class="preview-modal-summary">
+
+                                                    <div class="col-sm-12" style="padding:0px;"><img ng-src={{vm.formdata.widget.selectedImage}} class="img-responsive">
+
+                                                    </div>
+                                                    <div class="col-xs-12 bg-white pdd-top-bot-15 text-center not-now-smry">
+                                                        <a class="clr-gray" style="pointer-events: none;">Not Now</a>
+                                                    </div>
+                                                    <div class="col-sm-4 mrg-bot-20 no-pdd-lt pull-right" style="padding:0px;"><img ng-src={{vm.formdata.widget.selectedIcon}} class="img-responsive"></div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div ng-switch-when="6">
+
+                                            <!-- ondemand widget-->
+                                            <!--vm.formdata.widget.url-->
+                                            <div class="widget-summary">
+                                            <div class="preview-summary">
+                                                <div class="preview-modal-summary">
+                                                    <div class="col-sm-12" style="padding:0px;"><img ng-src={{vm.formdata.widget.selectedImage}} class="img-responsive">
+
+                                                    </div>
+                                                    <div class="col-xs-12 bg-white pdd-top-bot-15 text-center not-now-smry">
+                                                        <a class="clr-gray" style="pointer-events: none;">Not Now</a>
+                                                    </div>
+                                                    <div class="col-sm-4 mrg-bot-20 no-pdd-lt pull-right" style="padding:0px;"><img ng-src={{vm.formdata.widget.selectedIcon}} class="img-responsive"></div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                           <div ng-switch-when="8">
+                                            <!--Video ADS-->
+                                            
+                                            <div class="summary-container">
+                                        		<span class="mpd-summary-arrow"></span>
+	                                        	<div class="mpd-summary">
+	                                            <!--ng-show="vm.formdata.newsfeed.position == 3"-->
+		                                            <div class="bg-white" style="position: absolute; bottom: 0; left: 0;right: 0;">
+		                                            	<div class="smry-videoads-parent">
+			                                            	<div class="smry-videoads" ng-hide="vm.formdata.videoads.position == 1">
+						                                        <div class="bg-white" >
+						                                            <img src="images/video-demo-img.png" alt="img-content" class="img-responsive" />
+																</div>
+						                                    </div>
+						                                    <div class="smry-videoads" ng-show="vm.formdata.videoads.position == 1">
+						                                        <div class="bg-white vdo-selected-img">
+						                                            <div class="vdo-selected-img-box" style="background-image: url({{vm.formdata.videoads.imageSrc}});">
+						                                                <!-- <img src="{{vm.formdata.videoads.imageSrc}}" alt="img-thumb-1" class="img-responsive news-feed-thumb-img"> -->
+						                                            </div>
+						                                        </div>
+						                                    </div>
+						                                        
+															<div class="smry-videoads" ng-hide="vm.formdata.videoads.position == 2">
+						                                        <div class="bg-white">
+						                                            <img src="images/video-demo-img.png" alt="img-content" class="img-responsive" />
+						                                        </div>
+						                                    </div>
+						                                    <div class="smry-videoads" ng-show="vm.formdata.videoads.position == 2">
+						                                        <div class="bg-white vdo-selected-img">
+						                                            <div class="vdo-selected-img-box" style="background-image: url({{vm.formdata.videoads.imageSrc}});">
+						                                                <!-- <img src="{{vm.formdata.videoads.imageSrc}}" alt="img-thumb-1" class="img-responsive news-feed-thumb-img"> -->
+						                                            </div>
+						                                        </div>
+						                                        </div>
+						                                    <div class="smry-videoads"  ng-hide="vm.formdata.videoads.position == 3">
+						                                        <div class="bg-white">
+						                                            <img src="images/video-demo-img.png" alt="img-content" class="img-responsive" />
+						                                        </div>
+						                                    </div>
+						                                    <div class="smry-videoads"  ng-show="vm.formdata.videoads.position == 3">
+						                                        <div class="bg-white vdo-selected-img">
+						                                            <div class="vdo-selected-img-box" style="background-image: url({{vm.formdata.videoads.imageSrc}});">
+						                                                <!-- <img src="{{vm.formdata.videoads.imageSrc}}" alt="img-thumb-1" class="img-responsive news-feed-thumb-img"> -->
+						                                            </div>
+						                                        </div>
+						                                    </div>
+						                                </div>
+		                                            	
+		                                            	
+		                                            	
+		                                               <!--  <div class="" style="position: relative; background: url({{vm.formdata.videoads.imageSrc}}) no-repeat #ccc; background-size: cover;margin: 0 auto; width: 140px; height: 70px;">
+                                                            <div class="play-icon"></div>
+                                                            <p class="no-margin videoads-heading" style="position: absolute; font-size: 16px; color: #fff; text-align: center; padding: 5px 0; bottom:0; left:0; right: 0;background: rgba(0,0,0,0.5);">{{vm.formdata.videoads.title}}</p>
+		                                                </div>
+		                                                <div class="clearfix"></div> -->
+		                                            </div>
+												</div>
+											</div>
+                                        </div>
+
+                                        <div ng-switch-when="4" ng-switch="vm.formdata.mpdType">
+                                        	<div class="summary-container">
+                                        	<span class="mpd-summary-arrow"></span>
+                                        	<div class="mpd-summary">
+                                        	
+	                                            <div ng-switch-when="EDITHTML"> 
+  													<div id="mpdSmrycan">
+	                                                    <div class="mrg-bot-20">
+	                                                        <object>
+	                                                            <div data-ng-bind-html="vm.trustAsHtmlSummary(vm.formdata.htmlPath)"></div>
+	                                                        </object>
+	                                                    </div>
+	                                                </div>
+
+	                                                <!--<div>
+                                                    	<object type="text/html" data="{{vm.formdata.htmlPath}}" width="800px" height="600px" style="overflow:auto;"></object>
+    	                                            </div>-->
+	                                            </div>
+	
+	                                            <div ng-switch-when="HTML">
+	                                                <!--HTML-->
+	
+	                                                <div id="mpdSmrycan">
+	                                                    <div class="mrg-bot-20">
+	                                                        <object>
+	                                                            <div data-ng-bind-html="vm.trustAsHtmlSummary(vm.formdata.html.htmlContent)"></div>
+	                                                        </object>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	
+	                                            <div ng-switch-when="BUILDER">
+	                                                <!--BUILDER-->
+	
+	                                                <div class="row">
+	                                                    <div class="col-xs-12 pdd-top-15">
+	                                                        <div style="margin:auto;">
+	                                                            <h3 class="clr-black-1 word-break">
+	
+	                                                                <div data-ng-bind-html="vm.trustAsHtmlSummary(vm.formdata.builder.description)"></div>
+	                                                            </h3>
+	                                                        </div>
+	                                                    </div>
+	                                                    <div class="">
+	                                                        <div class="col-sm-12 form-group">
+	                                                            <div class="mpd-img-box"><img ng-src={{vm.formdata.builder.selectedImage}} class="img-responsive"
+	                                                                    style="margin: 0;"></div>
+	                                                        </div>
+	                                                    </div>
+	
+	                                                    <div class="col-sm-12">
+                                                            <!--{{vm.formdata.builder.btnStyle}}-->
+                                                            <!--test1223
+                                                            {{vm.formdata.builder.btnStyle}} <br>
+                                                            {{JSON.stringify(vm.formdata.builder.btnStyle)}}-->
+	                                                        <!--ng-style='{{JSON.stringify(vm.formdata.builder.btnStyle)}}'-->
+	                                                        
+	                                                        <div class="mpd-user-button"><div type="text" ng-if="vm.formdata.builder.buttonStyle" ng-style="{{vm.formdata.builder.buttonStyle}}" maxlength="25" class="bg-blue btn-radius clr-white text-center"
+	                                                            style="padding: 12px 6px; min-width: 120px; height: 30px; font-size: 12px; margin: auto; ">{{vm.formdata.builder.btnText}}</div></div>
+	                                                    </div>
+	                                                </div>
+	                                                <!--<div class="col-xs-12">
+	                                                    <div class="mrg-bot-20">
+	                                                        <center>
+	                                                            <div data-ng-bind-html="trustAsHtml(htmlContent)"></div>
+	                                                        </center>
+	                                                    </div>
+	                                                </div>-->
+	                                            </div>
+                                            </div>
+                                        </div>
+										</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="pdd-top-80 col-xs-12">
+                        	<div class="border-bottom-blue-1"></div>
+                        	<div class="pdd-top-bot-25 clr-black font-size-18">Total matching users: {{vm.formdata.segment.count}}</div>
+                    	</div>
+                    	<div class="clearfix"></div>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-black clr-white io-bottom-navbar">
+            <button type="submit" ng-hide="vm.formdata.segment.view"  value="Previous" wz-previous ng-click=vm.previous() class="pagers"><img src="images/icons/back-icon.png" class="mrg-rt-15">Back</button>
+
+            <button type="submit" ng-hide="(vm.launching || vm.formdata.segment.view)" value="Next" ng-click="vm.launch()" class="pull-right pagers pagers-active"><b>Launch <img src="images/icons/next-icon.png" class="mrg-lt-15"></b></button>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</div>

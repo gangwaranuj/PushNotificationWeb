@@ -1,0 +1,518 @@
+<div class="main">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">
+							 {{vm.pageHeading | uppercase}} LAYOUT CUSTOMISATION
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>
+											Create a custom notifcation that can be used to display special offers and deals through a little pop up box in the users'
+											browser.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		<div class="io-page-body subscription-layout no-pdd-bot">
+			<form name="saveForm">
+	           <div class="border-gray-bot cmpn-container welcome-page">
+	                <div class="mrg-bot-20 border-gray-bot pdd-bot-20" ng-hide="vm.customNotificationDetails.type=='native'">
+				       <input type="checkbox" name="pushSecond" id="pushSecond" ng-disabled="vm.customNotificationDetails.type=='native'" ng-model="vm.customNotificationDetails.checkFlag" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                       <label class="io-icon io-checkbox-uncheck" for="pushSecond"></label> Display push notifications permission box after <input ng-disabled="vm.customNotificationDetails.type=='native'"  type="number" step="any" name="second" min="0" value="0" ng-model="vm.customNotificationDetails.delayTime" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" class="sbscrpsn-number" /> seconds.       
+				      </div>
+				      <div class="row" ng-hide="vm.customNotificationDetails.type=='native'">
+				        <div class="col-sm-12">
+				         <div class="add-content-box add-without-content">
+				          <div class="row">
+				           <div class="col-sm-12">
+				           	<div class="cmpn-title-head">
+				             <div class="" id="title"><input type="text" maxlength="48" ng-model="vm.customNotificationDetails.title" class="" placeholder="Title"/></div>
+				            </div>
+				            <div class="cmpn-title-head" ng-hide="{{vm.customNotificationDetails.type==='topline'}}">
+				             <div class="" id="subtitle"><input type="text" maxlength="100" ng-model="vm.customNotificationDetails.message" class="" placeholder="Subtitle" /></div>
+				            </div>
+				            <div class="cmpn-title-head">
+				             <div class="" id="allowBtn"><input type="text" maxlength="10" ng-model="vm.customNotificationDetails.allowText" class="" placeholder="Allow button text" /></div>
+				            </div>
+				            <div class="cmpn-title-head" ng-hide="{{vm.customNotificationDetails.type==='topline'}}">
+				             <div class="" id="allowBtn"><input type="text" maxlength="10" ng-model="vm.customNotificationDetails.dontAllowText" class="" placeholder="Block button text" /></div>
+				            </div>
+				          </div>
+				         </div>
+				         <div class="row cmpn-title-head box-clr-pkr mrg-bot-15">
+				         <div class="col-sm-12">
+				            	<div class="border-gray-bot pdd-bot-20">
+				            	<div class="row">
+				            	
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         			Background Color
+					         			
+					         			    <div id="cp1" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.popupBackgroundColor" class="form-control" placeholder="Color code">
+								          <span class="input-group-addon">
+									          <span class="arrow-bg">
+									          	<i style="background-color: {{vm.customNotificationDetails.popupBackgroundColor}};"></i>
+									          	<span class="caret"></span>
+									          </span>
+									      </span>
+								      </div>
+								      
+					         		
+				         	</div>
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         		
+					         			Text color 
+					         			
+					         			   <div id="cp2" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.popupColor" class="form-control" placeholder="Color code">
+								          <span class="input-group-addon">
+								          	<span class="arrow-bg">
+								          		<i style="background-color: {{vm.customNotificationDetails.popupColor}};"></i>
+								          		<span class="caret"></span>
+								          	</span>
+								          </span>
+								      </div>
+								     
+								     
+					         		</div>
+					         	</div>
+					         	
+					         </div>
+					         
+				         	</div>
+				         </div> 
+				         <div class="row cmpn-title-head box-clr-pkr mrg-bot-15">
+				         
+				           <div class="col-sm-12">
+				            	<div class="border-gray-bot pdd-bot-20 mrg-bot-10">
+				            	<div class="row">
+				            	
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         		
+					         			Allow button color
+					         			   <div id="cp3" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.allowBtnBackgroundColor" class="form-control" placeholder="Color code">
+								          <span class="input-group-addon">
+								          	<span class="arrow-bg">
+								          		<i style="background-color: {{vm.customNotificationDetails.allowBtnBackgroundColor}};"></i>
+								          		<span class="caret"></span>
+								          	</span>
+								          </span>
+								      </div>
+					         		
+				         	</div>
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         		
+					         			Allow button text color
+					         			
+					         			  <div id="cp4" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.allowBtnColor" class="form-control" placeholder="Color code">
+								          <span class="input-group-addon">
+									          <span class="arrow-bg">
+									          	<i style="background-color: {{vm.customNotificationDetails.allowBtnColor}};"></i>
+									          	<span class="caret"></span>
+									          </span>
+									      </span>
+								      </div>
+								      
+					         		
+				         	</div>
+				         </div>
+				         </div>
+				         </div>
+				           </div>
+				         
+				         <div class="row cmpn-title-head box-clr-pkr" ng-hide="{{vm.customNotificationDetails.type==='topline'}}">
+				            <div class="col-sm-12">
+				            	<div class="border-gray-bot pdd-bot-20">
+				            	<div class="row">
+				            	
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         	
+					         			Block button color
+					         			
+					         			   <div id="cp5" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.dontAllowBtnBackgroundColor" class="form-control" placeholder="Color code">
+								          <span class="input-group-addon">
+								          <span class="arrow-bg">
+									          	<i style="background-color: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};"></i>
+									          	<span class="caret"></span>
+								          	</span>
+								          </span>
+								      </div>
+								      
+					         		
+				         	</div>
+				         	<div class="col-sm-3 clpkr-clrfloat">
+				         		
+					         			Block button text color
+					         			
+					         			   <div id="cp6" class="input-group colorpicker-component colorpicker-element">
+								          <input type="text" value="#00AABB" ng-model="vm.customNotificationDetails.dontAllowBtnColor" class="form-control" placeholder="Color code">
+								          	<span class="input-group-addon">
+								          		<span class="arrow-bg">
+								          			<i style="background-color: {{vm.customNotificationDetails.dontAllowBtnColor}};"></i>
+								          			<span class="caret"></span></span>
+								          		</span>
+								      </div>
+								      
+					         		</div>
+					         		
+							   
+				         	</div>
+				         	</div>
+				         	</div>
+				         	</div>
+				       
+				         <div class="clear "></div>
+				     
+				        </div>
+				       </div>
+				      </div>  
+				     </div>
+					 </form>
+				</div>
+				<div class="subscription-button-spance no-border no-pdd-top">
+					<a ui-sref="iopush.auth.subscriptionLayouts" class="welcome-page"><button class="updrade-btn">Back</button></a>
+					<button ng-click="vm.saveCustomNotification(vm.customNotificationDetails)" class="updrade-btn  green-btn pull-right">Save</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="io-box box-shadow subsc-lyot-prv-box">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">PREVIEW</div>
+					</div>
+				</div>
+				<div class="io-page-body subscription-preview">
+
+<!--  Begin overlay-->
+
+					<div ng-show="{{vm.customNotificationDetails.type==='overlay'}}" class="preview-notications">
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Android <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.android[1]}}" ng-click="vm.showhidePreview('android');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.android[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Chrome <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.chrome[1]}}" ng-click="vm.showhidePreview('chrome');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.chrome[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Firefox <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.firefox[1]}}" ng-click="vm.showhidePreview('firefox');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.firefox[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Opera <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.opera[1]}}" ng-click="vm.showhidePreview('opera');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.opera[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div>
+					
+					</div>
+<!-- End overlay-->
+
+<!--  Begin mobile-->
+
+					<div ng-show="{{vm.customNotificationDetails.type==='mobile'}}" class="preview-notications mobile-subpreview">
+						<!-- Notification Preview Items -->
+				<div class="notific-preview overlay">
+							<h5>Android <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.android[1]}}" ng-click="vm.showhidePreview('android');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.android[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Chrome <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.chrome[1]}}" ng-click="vm.showhidePreview('chrome');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.chrome[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Firefox <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.firefox[1]}}" ng-click="vm.showhidePreview('firefox');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.firefox[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+				<!-- 		<div class="notific-preview overlay">
+							<h5>Opera <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.opera[1]}}" ng-click="vm.showhidePreview('opera');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.opera[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div> -->
+					
+					</div>
+<!-- End mobile-->
+
+<!--  Begin native-->
+
+					<div ng-show="{{vm.customNotificationDetails.type==='native'}}" class="preview-notications">
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Android <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.android[1]}}" ng-click="vm.showhidePreview('android');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.android[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> Allow </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> Block </button>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Chrome <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.chrome[1]}}" ng-click="vm.showhidePreview('chrome');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.chrome[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> Allow </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> Block </button>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Firefox <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.firefox[1]}}" ng-click="vm.showhidePreview('firefox');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.firefox[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> Allow </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> Block </button>
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Opera <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.opera[1]}}" ng-click="vm.showhidePreview('opera');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.opera[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div>
+									<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div><br>
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> Allow </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> Block </button>
+								</div>
+							</a>
+						</div>
+					
+					</div>
+<!-- End native-->
+
+<!--  Begin topline-->
+
+					<div ng-show="{{vm.customNotificationDetails.type==='topline'}}" class="preview-notications topline-subpreview">
+						<!-- Notification Preview Items -->
+					<!-- 	<div class="notific-preview overlay">
+							<h5>Android <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.android[1]}}" ng-click="vm.showhidePreview('android');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.android[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div>
+								<div class="topline-box">
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div>
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button>
+								</div>
+							</a>
+						</div> -->
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Chrome <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.chrome[1]}}" ng-click="vm.showhidePreview('chrome');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.chrome[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div>
+								<div class="topline-box">
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<!-- <div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div> -->
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<!-- <button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button> -->
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Firefox <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.firefox[1]}}" ng-click="vm.showhidePreview('firefox');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.firefox[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div>
+								<div class="topline-box">
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<!-- <div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div> -->
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<!-- <button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button> -->
+								</div>
+							</a>
+						</div>
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview overlay">
+							<h5>Opera <span class="pull-right io-icon subprv-show-hide-btn {{vm.previewBoxOpen.opera[1]}}" ng-click="vm.showhidePreview('opera');"></span></h5>
+							<a ng-show="vm.previewBoxOpen.opera[0]" class="notifcation-imgurl" href="javascript:void(0);" target="_blank" style="background: {{vm.customNotificationDetails.popupBackgroundColor}};">
+								<div class="io-icon web-notification" href="javascript:void(0);" target="_blank"></div>
+								<div class="topline-box">
+									<div class="notify-url">
+										<div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.title}}</div>
+										<!-- <div class="ng-binding" style="color: {{vm.customNotificationDetails.popupColor}}">{{vm.customNotificationDetails.message}}</div> -->
+									</div>
+								</div>
+								<div class="subsc-prv-btn">
+									<button style="background: {{vm.customNotificationDetails.allowBtnBackgroundColor}};color: {{vm.customNotificationDetails.allowBtnColor}};"> {{vm.customNotificationDetails.allowText}} </button>
+									<!-- <button style="background: {{vm.customNotificationDetails.dontAllowBtnBackgroundColor}};color: {{vm.customNotificationDetails.dontAllowBtnColor}};"> {{vm.customNotificationDetails.dontAllowText}} </button> -->
+								</div>
+							</a>
+						</div>
+					
+					</div>
+<!-- End topline-->
+
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

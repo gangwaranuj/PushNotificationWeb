@@ -1,0 +1,31 @@
+<div class="modal-body pdd-10" ng-show="del">
+	<div class="manange-modal segment-deleted">
+		<div class="form-group heading text-center text-info mrg-top-20 mrg-bot-30">{{confirmationMessage}}</div>
+		<div class="text-center send-notification-btn">
+			<button type="button" ng-click="confirmNo()" class="btn grdnt-bdr-btn pull-left">No</button>
+			<button type="button" ng-click="confirmYes()" class="btn green-btn pull-right">Yes</button>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+<div class="modal-body pdd-10" ng-show="!del">
+	<div>
+		<div class="pdd-top-bot-15-lt-rt-30 pdd-lt-rt-15"><div class="pull-right" ng-click="closeModal()" data-dismiss="modal"><a href="javascript:void(0);"><i class="io-icon io-cross-alertmsgs" aria-hidden="true"></i></a></div></div>
+		<div class="form-group heading text-center text-info mrg-top-10 pdd-top-bot-30">
+			<div class="">
+				<img src="images/icons/success-msg-icon.png" />
+			</div>
+			<div class="pdd-25 cpnalert-text-normal">{{confirmationMessage}}</div>
+		</div>
+	</div>
+	<!--<div class="pull-right" ng-click="closeModal()"><a href="javascript:void(0);"><i class="io-icon io-cross-msgs" aria-hidden="true"></i></a></div>
+	<div class="manange-modal">
+		<div class="mrg-bot-30 mrg-top-30 text-center">
+			<img src="images/icons/trash.png">
+		</div>
+		<div class="form-group text-center text-info heading mrg-bot-40">
+			{{confirmationMessage}}</div>
+		{{vm}}
+	</div>-->
+</div>

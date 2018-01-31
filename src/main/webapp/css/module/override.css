@@ -1,0 +1,277 @@
+/************override*************/
+.btn-primary {
+  background-color: #2e8ece; }
+
+.btn-secondary {
+  background-color: #7886a0;
+  color: #fff; }
+
+.btn-warning {
+  background-color: #d25400; }
+  .btn-warning span.badge {
+    color: #d25400; }
+
+.btn-primary:hover {
+  background-color: #1968a5; }
+
+.text-secondary {
+  color: #7886a0; }
+
+.btn-secondary:hover {
+  background-color: #59697c;
+  color: #fff !important; }
+
+.navbar-default {
+  background-color: #ffffff;
+  background-image: none; 
+ }
+
+ .ondemands div.main {
+   padding: 0;
+ }
+ 
+ .ondemands div.main .io-box.box-shadow {
+   border: 0px solid #e4ebf1;
+   box-shadow: none;
+ }
+.ondemands div.main .io-box.box-shadow .row.info-body.pdd-bot-20 {
+	padding-left: 0;
+}
+.dropdown-menu {
+  	border-radius: 0;
+  	border: none;
+  	padding: 0 0;
+  	box-shadow: 0 0px 20px rgba(0, 0, 0, 0.35); }
+
+.main .nav-tabs {
+  border-bottom: 1px solid #e4ebf1; }
+
+.main .nav-tabs > li.active > a, .main .nav-tabs > li.active > a:focus, .main .nav-tabs > li.active > a:hover {
+  color: #2ec169;
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+  }
+  .main .nav-tabs > li.active > a:after, .main .nav-tabs > li.active > a:focus:after, .main .nav-tabs > li.active > a:hover:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #2ec169;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+	border-bottom: 0.2em solid;
+}
+.analytics-li-btn .support-box.dropup .caret {
+	border-bottom: 4px solid;
+}
+  
+
+.dropdown-toggle:after {
+	display: none;
+}
+
+.main .nav-tabs > li {
+  margin-bottom: -1px; }
+  /* .main .nav-tabs > li > a {
+    border-radius: 0;
+    font-size: 18px;
+    color: #757785; } */
+
+/* .main .nav > li > a {
+  padding: 22px 15px; } */
+
+.dropdown.nav-icons > a .caret {
+	vertical-align: top;
+  margin-top: 26px;
+}
+.ng-scope.ng-isolate-scope .navbar-form.navbar-right {
+	margin-right: 10px;
+}
+
+.topsite-data .table>tbody>tr>td, .topsite-data .table>tbody>tr>th, .topsite-data .table>tfoot>tr>td, .topsite-data .table>tfoot>tr>th, .topsite-data .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 0px solid #ddd;
+}
+
+.progress {
+    background-color: #eeeeee !important;
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,.0) !important;
+    box-shadow: inset 0 0 0 rgba(0,0,0,.0) !important;
+    border-radius: 0 !important;
+    overflow: visible;
+    background-image: none;
+    height: 5px;
+    margin-bottom: 5px !important;
+    margin-top: 5px;
+}
+
+
+.popover {
+  border-radius: 0 !important;
+  border: 1px solid #dae0e5 !important;
+}
+.progress-hover {
+	text-align: center;
+	color: #000000;
+}
+.daterangepicker.opensleft:before {
+    right: 0px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  
+}
+
+.progress-bar-danger {
+	background-color: #ff4632 !important;
+	background-image: none;
+    box-shadow: none;
+}
+.progress-bar-success {
+    background-color: #3cba54 !important;
+    background-image: none;
+    box-shadow: none;
+}
+.progress-bar-warning {
+    background-color: #ffbe00 !important;
+    background-image: none;
+    box-shadow: none;
+}
+
+.custom-marker.io-marker .row {
+	margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.custom-marker.io-marker {
+	padding-bottom:25px;
+}
+.custom-marker.io-marker .ng-scope {
+	position: relative;
+	background: #fff;
+	width: 250px;
+	padding: 10px 15px;
+}
+.custom-marker.io-marker .ng-scope:after {
+	content: '';
+    display: block;
+    border: 12px;
+    border: 30px solid #fff;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -38px;
+    width: 20px;
+    height: 25px;
+    margin: auto;
+    z-index: 999;
+}
+
+.img-responsive {
+	margin: auto;
+	text-align: center;
+}
+
+.modal-dialog-newtab{
+    display: table !important;
+    width: auto !important;
+    min-width: 600px !important;
+ }
+ 
+.uib-timepicker input[type="text"]{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none !important;
+}
+
+.mpd li a{
+padding: 22px 25px;	
+border: none !important;
+}
+.mpd li a:hover{
+	background: none !important;
+}
+
+.placeholder-text::before {
+	display: inherit;
+}
+.overlap-text-field, .toolbars .form-control .ng-valid {
+	display: inherit;
+}
+
+
+.placeholder-wh ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.placeholder-wh ::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.placeholder-wh :-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.placeholder-wh :-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+button, input, optgroup, select, textarea {
+	font-weight: normal;
+	font-size: 13px !important;
+	font-family: 'Lato' !important;
+}
+.close {
+	font-size: 21px !important;
+}
+.io-profile-page-inputs .profile-textbox input[type="text"], .io-profile-page-inputs input[type="password"], .io-profile-page-inputs input[type="email"]{
+	padding: 0 10px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: #19191c;
+}
+.navbar-nav>li>a {
+	padding: 12px 29px;
+	/* line-height: 0; */
+}
+
+.navbar-nav>li.iopush-topnav>a:hover {
+	position: relative;
+	background: #19191c;
+}
+.navbar-nav>li.iopush-topnav>a:hover:after {
+	content: '';
+	display: block;
+	height: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2ec161; /* Old browsers */
+	background: -moz-linear-gradient(left,  #2ec161 0%, #2ec1b7 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #2ec161 0%,#2ec1b7 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #2ec161 0%,#2ec1b7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ec161', endColorstr='#2ec1b7',GradientType=1 ); /* IE6-9 */
+}
+
+
+
+@media (max-width: 1366px) {
+
+}
+
+.tooltip-inner{
+  max-width: 250px;
+  white-space: normal;
+  word-break: break-all;
+}
+
+#plattrd .highcharts-container{
+  margin-top: -30px;
+}

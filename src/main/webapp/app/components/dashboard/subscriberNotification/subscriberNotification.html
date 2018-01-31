@@ -1,0 +1,214 @@
+<div class="subscribe-box">
+    <div class="col-md-4 subscribe-box-col subscribe-box-overvew">
+        <div class="io-box box-shadow">
+            <div class="io-box-header">
+                <div class="pull-left">
+                    <div class="heading">
+                        <i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i> SUBSCRIBERS OVERVIEW
+                        <div class="io-info-container">
+                            <div class="io-info-box box-shadow">
+                                <div class="info-body">
+                                    <p>Overview of your subscription plan status:
+                                        <ul>
+                                            <li>Total number of subscription allowed in your plan</li>
+                                            <li>Number of users who subscribed to receive notifications</li>
+                                            <li>Number of subscription left for your plan</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-body-row subcrb-ht io-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <p>Subscribers Allowed</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p>{{vm.planData.total}} {{vm.planData.planName}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <p>Active Subscribers</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p>{{vm.planData.used}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <p>Subscribers Left</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p>{{vm.planData.balance}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="see-disabled see-all-btm"><a href="">VIEW ALL</a></div>
+
+        </div>
+    </div>
+    <div class="col-md-4 subscribe-box-col subscribe-box-notific">
+        <div class="io-box box-shadow ">
+            <div class="io-box-header">
+                <div class="pull-left">
+                    <div class="heading">
+                        <i aria-hidden="true" class="io-icon io-info geos-info last-notifyc"></i>  LAST NOTIFICATION
+                        <div class="io-info-container">
+                            <div class="io-info-box box-shadow">
+                                <div class="info-body">
+                                    <p>Overview of last sent campaign statistics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="time-notifyc" ng-if="vm.isShowLastNotificationDate">{{vm.lastNotificationData.date|date:"MMM dd yyyy, hh:mm '(GMT' Z"}} Etc/GMT)</span>
+            </div>
+            <div class="last-notification-area io-body">
+
+                <div class="rowdel">
+                    <div class="rowdelcol">Delivered</div>
+                    <div class="rowdelcol">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{vm.lastNotificationData.deliveredPercentage}}%;background-color: #00b9ee !important"></div>
+                        </div>
+                    </div>
+                    <div class="rowdelcol" align="left">{{vm.lastNotificationData.delivered}}</div>
+                </div>
+                <div class="rowdel">
+                    <div class="rowdelcol">Clicks</div>
+                    <div class="rowdelcol">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{vm.lastNotificationData.clicksPercentage}}%;background-color: #00b9ee !important"></div>
+                        </div>
+                    </div>
+                    <div class="rowdelcol" align="left">{{vm.lastNotificationData.clicked}}</div>
+                </div>
+                <div class="rowdel">
+                    <div class="rowdelcol">Click Rate</div>
+                    <div class="rowdelcol">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{vm.lastNotificationData.clickRatePercentage}}%;background-color: #00b9ee !important"></div>
+                        </div>
+                    </div>
+                    <div class="rowdelcol" align="left">{{(vm.lastNotificationData.clickRatePercentage)|number:0}}%</div>
+                </div>
+                <div class="rowdel">
+                    <div class="rowdelcol">Offer Page URL</div>
+                    <div class="rowdelcol text-right pull-right">
+                        <div class="siteurl" title="{{vm.lastNotificationData.url}}" set-tooltip>{{vm.lastNotificationData.url}}</div>
+                    </div>
+                    <div class="rowdelcol"></div>
+                </div>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 subscribe-box-col subscribe-box-last-notific">
+        <div class="io-box box-shadow">
+            <div class="io-box-header">
+                <div class="heading">
+                    <i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i>PREVIEW LAST NOTIFICATION
+                    <div class="io-info-container">
+                        <div class="io-info-box box-shadow">
+                            <div class="info-body">
+                                <p>Visual view of last sent campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- This is for chrome-->
+            <div ng-show="vm.chrome" class="lst-notyfyad io-body chrome">
+                <!-- ng-src='{{vm.previewLastNotificationData.image}}' -->
+                <!--href='{{vm.previewLastNotificationData.url}}' target='_blank'-->
+                <a class='notifcation-imgurl io-icon web-notification preview-box-notify' >
+                    <div class="clearfix">
+                        <div class="notify-img">
+                            <div class="preview-imgbox">
+                                <image src="{{vm.previewLastNotificationData.image}}"></image>
+                            </div>
+                        </div>
+                        <div class="notify-url">
+                            <div class="nowrap">{{vm.previewLastNotificationData.title}}</div>
+                            <div class="nowrap">{{vm.previewLastNotificationData.description}}</div>
+                            <div class="nowrap tapeurl">{{ vm.productURL}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- This is for ff-->
+            <div ng-show="vm.ff" class="lst-notyfyad io-body">
+                <!-- ng-src='{{vm.previewLastNotificationData.image}}' -->
+
+                <a class='notifcation-imgurl io-icon web-notification firefox-notifc' href='{{vm.previewLastNotificationData.url}}' target='_blank'>
+
+                    <div class="ng-binding notify-url" style="padding-left: 10px; color: #28282d; float: none; clear:both; width: 98%;">
+                        <div class="nowrap" style="line-height: 20px;margin: 0; color: #28282d;"><strong>{{vm.previewLastNotificationData.title}}</strong></div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="notify-img">
+                            <div class="preview-imgbox">
+                                <image src="{{vm.previewLastNotificationData.image}}"></image>
+                            </div>
+                        </div>
+                        <div class="notify-url" style="padding-top: 0;">
+                            <div class="">{{vm.previewLastNotificationData.description}}</div>
+                            <div class="tapeurl">{{ vm.productURL}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- This is for opera-->
+            <div ng-show="vm.opera" class="lst-notyfyad io-body">
+                <!-- ng-src='{{vm.previewLastNotificationData.image}}' -->
+
+                <a class='notifcation-imgurl io-icon web-notification' href='{{vm.previewLastNotificationData.url}}' target='_blank'>
+                    <div class="clearfix">
+                        <div class="notify-img">
+                            <div class="preview-imgbox">
+                                <image src="{{vm.previewLastNotificationData.image}}"></image>
+                            </div>
+                        </div>
+                        <div class="notify-url">
+                            <div class="nowrap">{{vm.previewLastNotificationData.title}}</div>
+                            <div class="">{{vm.previewLastNotificationData.description}}</div>
+                            <div class="tapeurl">{{ vm.productURL}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- This is for android-->
+            <div ng-show="vm.android" class="lst-notyfyad io-body">
+                <!-- ng-src='{{vm.previewLastNotificationData.image}}' -->
+
+                <a class='notifcation-imgurl android-notification' href='{{vm.previewLastNotificationData.url}}' target='_blank'>
+                    <div class="clearfix">
+                        <div class="notify-img">
+                            <div class="preview-imgbox">
+                                <image src="{{vm.previewLastNotificationData.image}}"></image>
+                            </div>
+                        </div>
+                        <div class="notify-url">
+                            <div class="nowrap android-heading">{{vm.previewLastNotificationData.title}}</div>
+                            <div class="">{{vm.previewLastNotificationData.description}}</div>
+                            <div class="io-icon tapeurl">{{ vm.productURL}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="clearfix"></div>
+            <div class="see-all"><a ng-click="vm.redirect()" >VIEW ALL</a></div>
+        </div>
+    </div>
+</div>

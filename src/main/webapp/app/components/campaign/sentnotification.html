@@ -1,0 +1,71 @@
+<div class="main">
+    <div class="col-sm-12 mrg-bot-70">
+        <div class="io-box box-shadow">
+            <div class="io-box-header" ng-if="vm.isOnDemand">
+                <div class="pull-left">
+                    <div class="heading">
+                        <i aria-hidden="true" class="io-icon io-info topsite-info"></i> Notification 
+                        <div class="io-info-container">
+                            <div class="io-info-box box-shadow">
+                                <div class="info-body">
+                                    <p>
+                                        Create a custom notifcation that can be used to display special offers and deals through a little pop up box in the users'
+                                        browser.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div  class="col-sm-12 border-bottom-blue heading mrg-bot-30 pdd-top-bot-20 pdd-lt-30">Create</div>
+            <form name="saveForm">
+                <div class="row info-body pdd-bot-20">
+
+
+                        <div class="col-sm-6 news-feed-contain border-gray pdd-25 mrg-lt-20">
+ 							<!-- ngIf: vm.showDetail -->
+                            <div class="col-xs-12">
+                                <div class="row">
+                                     <input type="text ng-required=" true "" ng-model="vm.notificationimageurl" class="notfi-txtbox notfi-txtbox-h-40" placeholder="Enter Image URL"
+                                    />
+
+                                    <input  ng-model="vm.headline" type="text" class="notfi-txtbox notfi-txtbox-h-60"
+                                        placeholder="Title (48 Characters max)" />
+                                    <textarea  ng-model="vm.textdescription" class="notfi-txtbox notfi-txtbox-h-104"
+                                        placeholder="Message (100 Characters max)"></textarea>
+                                    <input type="text ng-required=" true "" ng-model="vm.url" class="notfi-txtbox notfi-txtbox-h-40" placeholder="Enter URL"
+                                    />
+                                    <!--{{vm.formdata.notification.url}}
+                        {{vm.formdata.notification.headline}}
+                        {{vm.formdata.notification.textdescription}}-->
+
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="pdd-top-bot-20"><button type="submit" ng-click=vm.next() class="pull-right codeimp-read-more"><b>Submit</b></button></div>
+                        </div>
+
+<!--
+                        <div class="col-xs-6 text-right news-feed-contain " style="margin-top: 30px; margin-left: 33px;">
+                            <a ng-click="vm.preview()"><img src="images/icons/view-icon.png"> &nbsp; &nbsp;Preview</a>
+                        </div>-->
+
+
+
+                </div>
+
+
+        </div>
+        </form>
+        <div class="bg-black clr-white">
+            <a  class="pagers" style="visibility: hidden;"><img  class="mrg-rt-15"></a>
+        </div>
+
+    </div>
+</div>
+
+
+</div>

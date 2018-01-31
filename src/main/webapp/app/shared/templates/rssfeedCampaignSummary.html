@@ -1,0 +1,89 @@
+<div class="moder">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="closeModal()" data-dismiss="modal">×</button>
+		<h4 class="modal-title">SUMMARY</h4>
+	</div>
+	<div class="modal-body mng-smry-popup">
+		<div class="form-group" style="width:100%; margin: 0;">
+			<div class="ng-binding">
+				<div class="alert-message-container">
+					<div class="mng-summery-box">
+						<table width="100%">
+							<tr>
+								<td><b>RSS Push name:</b></td>
+								<td>{{summaryDetails.name}}</td>
+							</tr>
+							<tr>
+								<td><b>URL:</b></td>
+								<td>
+									<div class="smr-url">{{summaryDetails.url}}</div>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.platform.selectedOptions.length!=0">
+								<td><b>Platforms:</b></td>
+								<td><span ng-repeat="platform in summaryDetails.platform.selectedOptions">{{platform.Value}}<span ng-show="$index < summaryDetails.platform.selectedOptions.length-1 " > , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.platform.selectedOptions.length==0">
+								<td><b>Platforms:</b></td>
+								<td>Chrome / Firefox / Opera / Android</td>
+							</tr>
+							<tr ng-show="summaryDetails.campaign_schedule_date">
+								<td><b>Campaign Launch Date:</b></td>
+								<td>{{summaryDetails.campaign_schedule_date | datetime2}}</td>
+							</tr>
+							<tr ng-show="summaryDetails.targetGroup">
+								<td><b>Target Group:</b></td>
+								<td>{{summaryDetails.targetGroup}}</td>
+							</tr>
+							<tr ng-show="summaryDetails.countries.selectedOptions.length!=0">
+								<td><b>Countries:</b></td>
+								<td> <span ng-repeat="country in summaryDetails.countries.selectedOptions">{{country.DisplayText}}<span ng-show="$index < summaryDetails.countries.selectedOptions.length-1 " > , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.cities.selectedOptions.length!=0">
+								<td><b>Cities:</b></td>
+								<td><span ng-repeat="city in summaryDetails.cities.selectedOptions">{{city.DisplayText}}<span ng-show="$index < summaryDetails.cities.selectedOptions.length-1 " > , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.internetProviders.selectedOptions.length!=0">
+								<td><b>Internet Providers:</b></td>
+								<td><span ng-repeat="ip in summaryDetails.internetProviders.selectedOptions">{{ip.DisplayText}}<span ng-show="$index < summaryDetails.internetProviders.selectedOptions.length-1 "> , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.segmentTypes.selectedOptions.length!=0">
+								<td><b>Segment Types:</b></td>
+								<td><span ng-repeat="segmentType in summaryDetails.segmentTypes.selectedOptions">{{segmentType.DisplayText}}<span ng-show="$index < summaryDetails.segmentTypes.selectedOptions.length-1 "> , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.segments.selectedOptions.length!=0">
+								<td><b>Segments Name:</b></td>
+								<td><span ng-repeat="segment in summaryDetails.segments.selectedOptions">{{segment.DisplayText}}<span ng-show="$index < summaryDetails.segments.selectedOptions.length-1 "> , </span></span>
+								</td>
+							</tr>
+							<tr ng-show="summaryDetails.subscribed">
+								<td><b>Subscribed From:</b></td>
+								<td>{{summaryDetails.subscribed | date2}} </td>
+							</tr>
+
+							<tr ng-show="summaryDetails.showimagelink">
+								<td><b>Image Preview Link:</b></td>
+								<td><a ng-click="setImage()">{{summaryDetails.logo_path }}</a> </td>
+							</tr>
+							<tr ng-show="showImage">
+								<td colspan="2">
+									<p><img ng-src="{{summaryDetails.logo_path}}" /></p>
+									<td>
+							</tr>
+
+
+						</table>
+					</div>
+				</div>
+				<div align="center">
+					<button type="button" class="codeimp-read-more" ng-click="closeModal()" data-dismiss="modal">Back</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="bg-white">
+    <button type="button" class="dril-closeicon" ng-click="closeModal()" data-dismiss="modal"><img src="images/icons/close.png" alt="close Icon"></button>
+
+    <div>
+        <div class="row">
+
+            <!-- START TABLE -->
+            <div class="col-sm-12">
+                <table class="analytic-table" style="table-layout: fixed;">
+                    <thead>
+                        <tr>
+                            <th><span>COUNTRY</span></th>
+							<th><span><img src="images/icons/android.png"></span></th>
+		                    <th><span><img src="images/icons/Chrome.png"></span></th>
+		                    <th><span><img src="images/icons/Opera.png"></span></th>
+		               		<th><span><img src="images/icons/Firefox.png"></span></th>
+                    		<th width="110"><span>TOTAL USERS</span></th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody data-ng-repeat="country in campaignsDataModel">
+                        <tr id={{country.countryId}} class="clickableRow" title="Click to toggle collapse/expand city summaries for this country." data-ng-click="selectTableRow($index, country.countryId,country.countryName)">
+                            <td id={{country.countryName}}><span>{{country.countryName}}</span></td>
+                       	    <td><span>{{country.platformStat[0].campaignSent}}</span></td>
+                            <td><span>{{country.platformStat[1].campaignSent}}</span></td>
+                            <td><span>{{country.platformStat[3].campaignSent}}</span></td>
+                            <td><span>{{country.platformStat[2].campaignSent}}</span></td>
+                            <td><span>{{country.platformStat[0].campaignSent + country.platformStat[1].campaignSent + country.platformStat[2].campaignSent + country.platformStat[3].campaignSent}}</span><i class="fa fa-angle-down"></i></td>
+                        </tr>
+                        
+	                     <tr ng-show="checkShowRows($parent.$index)" data-ng-repeat="city in country.cityStat" class="con-city-row">
+	                     	<td><span>{{city.city_name}}{{modalScope.hideRows}}</span></td>
+		                  	<td><span>{{city.platform[0].campaignSent}}</span></td>
+		                    <td><span>{{city.platform[1].campaignSent}}</span></td>
+		                    <td><span>{{city.platform[3].campaignSent}}</span></td>
+		                    <td><span>{{city.platform[2].campaignSent}}</span></td>
+		                    <td><span>{{city.platform[0].campaignSent + city.platform[1].campaignSent + city.platform[2].campaignSent + city.platform[3].campaignSent}}</span></td>
+	                        </tr>
+                    </tbody>
+                                    
+                </table>
+            </div>
+            <!-- END TABLE -->
+        </div>
+    </div>
+
+
+</div>
+
+<div class="cleafix"></div>

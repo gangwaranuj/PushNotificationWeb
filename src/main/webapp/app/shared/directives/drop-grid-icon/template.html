@@ -1,0 +1,47 @@
+<form id="upload"  method="POST" enctype="multipart/form-data" ng-show>
+
+    <fieldset>
+        <!--<legend>HTML File Upload</legend>-->
+
+        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+        <div>
+            <!--<label for="fileselect3">Files to upload:</label>-->
+            <input type="file" id="fileselect3" name="fileselect3"/>
+
+        </div>
+
+        <div id="submitbutton3" style="display:none;" >
+            <button type="submit">Upload Image</button>
+        </div>
+
+    </fieldset>
+
+</form>
+
+<div class="border-gray pdd-5 notification">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="notification-img-item">
+                <li ng-click="selectImage(image)"  ng-repeat="image in images">
+                    <div ng-class="{ 'bg-gray' : image.selected }" class="icons-selectbox">
+                      <div style="display: table; margin: auto; position: relative;">
+                    	<a class="select-image-close" ng-click="removeImage(image)" ng-show="image.imgtype === 'custom'" href><i class="glyphicon glyphicon-remove"></i></a>
+                    	<img  style="height:100px;width:100px" id="imgCustom" ng-src="{{image.imageSrc}}"/>
+                      </div>
+                   </div>
+                </li>
+                <li ng-show="showUploadControl()">
+                    <div id="filedrag" class="icons-selectbox">
+                        <img ng-click="uploadFromButton()" src="images/upload-file.png"/>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+</div>

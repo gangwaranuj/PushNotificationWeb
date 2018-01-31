@@ -1,0 +1,281 @@
+<div class="main">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="io-box box-shadow">
+				<div class="io-box-header" ng-if="vm.isOnDemand">
+					<div class="pull-left">
+						<div class="heading">
+							<i aria-hidden="true" class="io-icon io-info topsite-info"></i>CREATE WELCOME NOTIFICATION
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>
+											A Welcome notification is an automatic notification that will be sent to new subscribers directly after they subscribe to
+											receive notifications from your website.
+											<br> You can change the title, text, and image any time and turn this message on/off manually, or set it to be
+											automatically active for a period.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="io-page-body welcome-page-body">
+					<form name="saveForm">
+						<div class="cmpn-container">
+							<div class="grp-select-box cmpn-container">
+							<!-- 	<div class=pull-right><button ng-click="vm.saveWelcome()" class="updrade-btn">Save</button></div> -->
+							
+							
+								<div class="btn-group on-off-btns">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="{{vm.clsOnMessage}}" ng-click="vm.onMessage()">
+											<input type="radio" name="welcomonoff" id="on" value="on" checked>ON
+										</label>
+										<label class="{{vm.clsOffMessage}}" ng-click="vm.offMessage()">
+											<input type="radio" name="welcomonoff" id="off" value="off" >OFF
+										</label>
+									</div>
+								</div>
+								<span class="clr-green mrg-lt-30"  >{{vm.messageStatus}}</span>
+								<!-- 	<div class="cmpn-title-head"><span class="cmpn-title">WELCOME NAME</span><span class="cmpn-mandatory">(mandatory)</span></div> -->
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+								
+										<div class="cmpn-title-head welcomeDuration cmpn-container">
+											<div class="row">
+												<div class="col-sm-3">
+													<input type="radio" name="options" id="unlimited" value="unlimited" ng-model="vm.duration">
+													<label class="io-icon io-radio-select" for="unlimited"> Unlimited duration</label>
+												</div>
+												<div class="col-sm-9">
+													<input type="radio" name="options" id="specific" value="specific" ng-model="vm.duration">
+													<label class="io-icon io-radio-select welcomedateselect" for="specific">
+														<div ng-class="vm.cssDuration" style="position: relative; left: 5px;">
+															<datetimepicker msg="Start date" calenderpos="dropdown" mindate="vm.mindate" datedata="vm.startDate" istime="false" defttime="vm.start"></datetimepicker>
+														</div>
+														<div ng-class="vm.cssDuration">
+															<datetimepicker  msg="End date" calenderpos="dropdown" mindate="vm.mindate" datedata="vm.endDate" istime="false" defttime="vm.end"></datetimepicker>
+														</div>
+													</label>
+												</div>
+											</div>
+										</div>
+									
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="io-select-img-box">
+										<!-- ngIf: vm.showDetail -->
+										<!--<drop-grid image="vm.selectedImage" images="vm.images"></drop-grid>-->
+										<ul class="nav nav-tabs">
+											<li class="{{vm.imgClass}}"><a ng-click="vm.selectImage()">SELECT ICON</a></li>
+											<li class="{{vm.updImgClass}}"><a ng-click="vm.uploadImage()">UPLOAD</a></li>
+										</ul>
+										<div class="tab-content">
+											<div ng-show="vm.isSelectImage">
+												<drop-grid image="vm.selectedImage" images="vm.preImages"></drop-grid>
+											</div>
+											<div ng-show="vm.isuploadImage">
+												<drop-builderimg image="vm.selectedImage" images="vm.uploadedimage"></drop-builderimg>
+											</div>
+										</div>
+									</div>
+
+									<div class="add-content-box">
+										<div class="row">
+											<div class="col-sm-12">
+
+											
+												<div class="cmpn-title-head">
+													<p class="longtext-wraped" id="title"><input ng-model="vm.headline" type="text" class="" placeholder="Title (48 Characters max)" data-emojiable="true"
+															emoji-picker maxlimit="48" /></p>
+												</div>
+												<div class="cmpn-title-head">
+													<p class="longtext-wraped" id="message"><textarea ng-model="vm.textdescription" class="" placeholder="Message (100 Characters max)" data-emojiable="true"
+															emoji-picker maxlimit="100"></textarea></p>
+												</div>
+												<div class="row">
+												
+													<div class="cmpn-title-head col-sm-6">
+													<input ng-model="vm.welcomeName" maxlength="50" ng-disabled="vm.isPending" type="text" placeholder="Welcome name" ng-blur="vm.checkIfExistWelcome()"
+													/>
+												</div>
+												
+												<div class="cmpn-title-head col-sm-6">
+													<p><input type="text" ng-required="true" ng-model="vm.url" class="" placeholder="URL" /></p>
+												</div>
+												</div>
+												
+												<!--{{vm.formdata.notification.url}} {{vm.formdata.notification.headline}} {{vm.formdata.notification.textdescription}}-->
+												<div class="row cmpcnrcsrc">
+													<div class="col-sm-4">
+														<p><input type="text" ng-model="vm.source" placeholder="Campaign" /></p>
+													</div>
+													<div class="col-sm-4">
+														<p><input type="text" ng-model="vm.generic" placeholder="Generic" /></p>
+													</div>
+													<div class="col-sm-4">
+														<p><input type="text" ng-model="vm.urlWelcome" placeholder="Source" /></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="clear "></div>
+								</div>
+							</div>
+						</div>
+
+						
+								<!-- Begin Banner-->
+						<div class="cmpn-container">
+							<div class="col-sm-7 mrg-top-5">
+
+								<input type="checkbox" name="largeImage" ng-click="vm.selectLargeImage()" id="largeImage" ng-model="vm.isLargeImage" class="ng-pristine ng-untouched ng-valid ng-empty">
+								<label class="io-icon io-checkbox-uncheck no-mrg" for="largeImage">ADD LARGE IMAGE TO NOTIFICATION (Optional) </label>
+
+
+								<div class="text-center" style="position: relative; display: block;">
+									<div id="selectIconUpload" class="select-icon-upload  no-mrg-lt no-mrg-bot" ng-show="vm.isLargeImage">
+										<!--<img style="width: auto; height: auto;" src="images/dropImg.png">-->
+										<!--<drop-uploadimg  image="vm.bannerImage" images="vm.imagePaths"></drop-uploadimg>-->
+										<drop-uploadimg image="vm.bannerImage" images="vm.uploadedBaner"></drop-uploadimg>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- End Banner-->
+						
+						<div class="row grp-select-box selectbtnsgrp">
+							<div class="all-send-segment-tabs">
+								<div class="btn-group">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="{{vm.clsAllSubscriber}}" ng-click="vm.allSubscribers()">
+									<input type="radio" name="segOption" id="allSubscribers" value="all" autocomplete="off" checked>SEND TO ALL
+									</label>
+										<label class="{{vm.clsSegments}}" ng-click="vm.segmentedCheck()">
+										<input type="radio" name="segOption" id="segmented" autocomplete="off " value="seg" >SEGMENTED
+									</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+				
+
+
+
+
+
+
+						<div class="multi-select-box grp-select-box">
+							<div ng-hide="vm.isAllSubscriber" class="row">
+								<div class="col-sm-6">
+									<multi-select handler="vm.countries"></multi-select>
+								</div>
+								<div class="col-sm-6" ng-class="{ 'disable-dropdown' : vm.cities.options.length == 0 }">
+									<multi-select handler="vm.cities "></multi-select>
+								</div>
+							</div>
+						</div>
+
+						<div ng-hide="vm.isAllSubscriber" class="cmpn-date-picker multi-select-box grp-select-box">
+							<div class="row ">
+								<div class="col-sm-6 ">
+									<multi-select handler="vm.platforms1"></multi-select>
+								</div>
+								<div class="col-sm-6 ">
+									<div class=" " ng-class="{ 'disable-dropdown' : vm.internetProviders.options.length == 0 }">
+										<multi-select handler="vm.internetProviders "></multi-select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div ng-hide="vm.isAllSubscriber" class="cmpn-date-picker multi-select-box grp-select-box multiselect-dropup">
+							<div class="row ">
+
+								<div class="col-sm-6">
+									<datetimepicker datedata="vm.subscribedStartDate" msg="Subscribed From" calenderpos="dropup" maxdate="vm.maxdate" istime="false"></datetimepicker>
+									<div class="empty-txt-valuebox" ng-show="vm.isSub" ng-click="vm.deleteSubDate()"><i class="io-icon io-crose" aria-hidden="true"></i></div>
+								</div>
+
+								<div class="col-sm-6" ng-class="{ 'disable-dropdown' : vm.segmentTypes.options.length == 0 }">
+									<multi-select handler="vm.segmentTypes"></multi-select>
+								</div>
+							</div>
+						</div>
+
+
+						<div ng-hide="vm.isAllSubscriber" class="cmpn-date-picker multi-select-box grp-select-box multiselect-dropup">
+							<div class="row ">
+								<div class="col-sm-6">
+								</div>
+								<div class="col-sm-6">
+									<div class=" " ng-class="{ 'disable-dropdown' : vm.segments.options.length == 0 }">
+										<multi-select handler="vm.segments "></multi-select>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+						<div class="col-sm-12 text-right"><button ng-click="vm.saveWelcome()" class="updrade-btn green-btn">Save</button></div>
+			</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="io-box box-shadow">
+				<div class="io-box-header" ng-if="vm.isOnDemand">
+					<div class="pull-left">
+						<div class="heading">PREVIEW</div>
+					</div>
+				</div>
+				<div class="io-page-body previewh667">
+					<div class="preview-notications">
+						<!-- Notification Preview Items -->
+
+						<!-- Notification Preview Items -->
+						<!-- Notification Preview Items -->
+						<div class="notific-preview chrome-sss">
+
+							<a class="notifcation-imgurl" href="javascript:void(0);" target="_blank">
+								<div class="clearfix">
+									<div class="notify-img">
+										<div class="preview-imgbox">
+											<img src="{{vm.selectedImage}}"><br>
+										</div>
+									</div>
+									<div class="notify-url">
+										<div class="ng-binding nowrap">{{vm.headline}}</div>
+										<div class="ng-binding descriptionprv">{{vm.textdescription}}</div>
+										<div class="ng-binding tapeurl">{{vm.productURL}}</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+					<div class="preview-note notePos no-border">
+						<div>
+							<p>Note: These previews are for representational purposes only based on how they may look on Mac OS. Actual notifications
+								may differ based on text length and Operating System. If you're adding emojis, Chrome automatically appends a space
+								next to each emoticon in the actual notification.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

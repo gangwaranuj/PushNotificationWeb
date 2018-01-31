@@ -1,0 +1,79 @@
+
+<div class="col-sm-12  pdd-25 bg-white">
+     <button type="button" class="dril-closeicon" ng-click="closeModal()" data-dismiss="modal"><img src="images/icons/close.png" alt="close Icon"></button>
+
+<div >
+    <div  class="row-fluid">
+  
+        <!-- START TABLE -->
+        <div class="col-sm-12">
+            <table class="analytic-table">
+                <thead>
+                    <tr>
+                        <th style="border-left:1px solid"><span>Country</span></th>
+                        <th><span><img src="images/icons/Chrome.png"></span></th>
+                        <th><span><img src="images/icons/Firefox.png"></span></th>
+                        <th><span><img src="images/icons/Opera.png"></span></th>
+                        <th  style="border-right:1px solid"><span>Total Users</span></th>
+                        <!--<th>Sales</th>
+                        <th>Revenue</th>
+                        <th>Employees</th>
+                        <th>Employees H-sum</th>-->
+                    </tr>
+                </thead>
+                
+                <tbody>
+                 
+                   <tr>
+                       <td colspan="5" class="no-pdd td-border">
+
+		<div class="data-scroll">
+		<table class="table table-bordered no-mrg" >
+		<tbody data-ng-repeat="country in campaignsDataModel">
+
+       <tr id={{country.countryId}} class="clickableRow" title="Click to toggle collapse/expand city summaries for this country." data-ng-click="selectTableRow($index, country.countryId,country.countryName)">
+                         <td id={{country.countryName}} ><span>{{country.countryName}}</span></td>
+                        <td><span>{{country.platformStat[0].campaignSent}}</span></td>                     
+                        <td><span>{{country.platformStat[1].campaignSent}}</span></td>
+                        <td><span>{{country.platformStat[2].campaignSent}}</span></td>
+                        <td><span>{{country.platformStat[0].campaignSent + country.platformStat[1].campaignSent + country.platformStat[2].campaignSent}}</span> <i class="fa fa-angle-down"></i></td>
+                        
+                    </tr>
+                    <tr>
+                    
+                        <td colspan="9" class="no-pdd" style="border:none">
+                            <div ng-hide="cityDataCollapse[$index]">
+                                <div class="col-sm-12 pull-right no-pdd">
+                                    <table class="city-table" style="border:none">
+                                 
+                                        <tbody>
+                                            <tr data-ng-repeat="city in country.cityStat">
+                                            
+                                                <td><span>{{city.cityname}}</span></td>
+                                                <td><span>{{city.platform[0].campaignSent}}</span></td>
+                                                <td><span>{{city.platform[1].campaignSent}}</span></td>
+                                                <td style="width: 72px;"><span>{{city.platform[2].campaignSent}}</span></td>
+                                                <td><span>{{city.platform[0].campaignSent + city.platform[1].campaignSent + city.platform[2].campaignSent}}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+</table>
+</div>
+</td>
+             </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END TABLE -->
+    </div>
+</div>
+
+
+</div>
+
+<div class="cleafix"></div>

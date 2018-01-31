@@ -1,0 +1,13 @@
+<div>
+  <div ng-hide="vm.handler">Loading...</div>
+  <div ng-show="vm.handler">
+   <div class="paging">
+    <ul uib-pagination ng-model="vm.handler.currentPage" total-items="vm.handler.totalCount" max-size="vm.handler.maxSize" items-per-page="vm.handler.limit"
+      boundary-links="true" ng-change="vm.pageChanged()" > 
+    </ul>
+    <!-- <div class="total-num"> / {{vm.handler.totalpages}}</div> -->
+    
+   </div>
+   
+  </div>
+</div>

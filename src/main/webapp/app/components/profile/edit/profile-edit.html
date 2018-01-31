@@ -1,0 +1,59 @@
+<div class="io-box box-shadow io-box-profileedit">
+	<div class="io-box-header">
+		<div class="pull-left">
+			<div class="heading">
+				<i aria-hidden="true" class="io-icon io-info topsite-info"></i>Personal details
+				<div class="io-info-container">
+                    <div class="io-info-box box-shadow">
+                        <div class="info-body">
+                            <p>On your profile page you can update your personal info, such as your email, phone number, and company name.</p>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div class="io-page-body col-sm-12 profile-textbox">
+		<form name="personForm" novalidate ng-submit="personForm.$valid ? vm.updateProfile() : ''">
+		<div class="row mrg-bot-30">
+			<div class="col-sm-3 withouttxtbox">Salutation</div>
+			<div class="col-sm-9"><input type="radio" name="sltn" id="mr" ng-model="vm.profileModel.salutation" value="Mr" class="salutation" checked /><label class="io-icon io-radio-select" for="mr">Mr</label><input type="radio" name="sltn" id="mrs"  ng-model="vm.profileModel.salutation" value="Mrs" class="salutation"><label style="margin-left: 30px;" class="io-icon io-radio-select" for="mrs">Mrs</label></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12"><input type="text" class="form-control" placeholder="User Name" ng-model="vm.profileModel.username" disabled /></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12"><input type="text" class="form-control" placeholder="Full Name" ng-model="vm.profileModel.firstName" maxlength="25" /></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12"><input type="text" class="form-control" placeholder="Title" ng-model="vm.profileModel.title" maxlength="25" /></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12"><input type="text" class="form-control" placeholder="Company" ng-model="vm.profileModel.company" maxlength="25" /></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12">
+				<!--<input type="text" class="form-control" ng-model="vm.profileModel.emailid" />-->
+				<input type="text" maxlength="50" class="form-control" placeholder="* Email Address" name="email" ng-model="vm.profileModel.emailId" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
+				<span class="forget-required edit-required " ng-show="personForm.email.$error.required">*</span>
+				<div class="profile-validation">
+					<span class="forget-valid" ng-show="personForm.email.$dirty&&personForm.email.$error.pattern">Please enter valid email</span>
+				</div>
+			</div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-12"><input type="text" maxlength="13" class="form-control" placeholder="Phone Number" ng-model="vm.profileModel.phoneNumber" numbers-only /></div>
+		</div>
+		<div class="row mrg-bot-30">
+			<div class="col-sm-6"><input type="text" ng-disabled="true"  class="form-control" placeholder="Websit URL" ng-model="vm.profileModel.websitURL" /></div>
+			<div class="col-sm-6"><div><input type="text" ng-disabled="true" class="form-control" placeholder="Sub Domain" ng-model="vm.profileModel.subDomain"  /></div></div>
+		</div>
+
+			<div class="col-sm-12 mrg-bot-25">
+<!--ng-click="vm.updateProfile()"-->
+			<input type="submit"  value="Save" class="btn-radius bg-gray clr-white btn-cal green-btn profile-btn">
+		</div>
+		</form>
+	</div>
+	<div class="clearfix"></div>
+</div>

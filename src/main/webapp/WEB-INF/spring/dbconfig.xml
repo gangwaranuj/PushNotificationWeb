@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+			http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+<bean id="sessionFactory"
+  class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+  <property name="dataSource" ref="dataSource" />
+  <property name="packagesToScan" value="com.saphire.iopush.model" />
+  <property name="hibernateProperties">
+   <props>
+    <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+    <prop key="hibernate.show_sql">false</prop>
+    <prop key="hibernate.format_sql">false</prop>
+    <prop key="hibernate.cache.use_second_level_cache">true</prop>
+    <prop key="hibernate.cache.use_query_cache">true</prop>
+    <prop key="org.hibernate.cache.ehcache.configurationResourceName">/ehcache.xml</prop>
+    <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</prop>
+    <prop key="hibernate.hbm2ddl.auto">update</prop>
+    <prop key="hibernate.use_sql_comments">false</prop>
+   </props>
+  </property>
+ </bean>
+
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- access -->
+		<property name="driverClass" value="${db.driver}" />
+		<property name="jdbcUrl" value="${db.url}" />
+		<property name="user" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+
+		<!-- pool sizing -->
+		<property name="initialPoolSize" value="30" />
+     <property name="maxPoolSize" value="60"/>
+     <property name="minPoolSize" value="20"/>
+     <property name="acquireIncrement" value="5"/>
+     <property name="acquireRetryAttempts" value="0"/>
+     <property name="preferredTestQuery" value="select 1"/>
+		
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userDao"	class="com.saphire.iopush.daoImpl.UserDaoImpl">
+		<property name="hibernateTemplate"  ref="hibernateTemplate"/>
+	</bean>
+
+	
+<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+
+			</beans>

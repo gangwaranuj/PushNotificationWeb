@@ -1,0 +1,183 @@
+<div class="main upgrade-plan-box">
+	<div class="row">
+		<div class="col-sm-12 manage-cpn-page">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">PACKAGES
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>Overview of all existing Packages, their current status and the option to access and change Packages settings.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="io-page-body">
+					<div class="all-packagesbox">
+						<div class="phd-heading text-uppercase"><strong>all features are included in all packages</strong></div>
+						<div class="row">
+							
+								<ul class="ulpackage-info">
+									<li>Send unlimited notifications</li>
+									<li>Desktop \ tablet & mobile notifications</li>
+									<li>Chrome, Firefox, Opera & Android support</li>
+									<li>HTTP + HTTPS support</li>
+									
+								</ul>
+							
+							
+								<ul class="ulpackage-info">
+									<li>Custom branding</li>
+									<li>Full campaign management</li>
+									<li>Advanced segmentation</li>
+									<li>Subscriptions segmentation</li>
+									
+								</ul>
+							
+							
+								<ul class="ulpackage-info">
+									<li>Multi language support</li>
+									<li>Emoji support</li>
+									<li>Image and icon support</li>
+									<li>Schedule notifications</li>
+								</ul>
+							
+							
+								<ul class="ulpackage-info">
+									<li>RSS to push</li>
+									<li>Advanced analytics & real-time tracking</li>
+									<li>Quick and easy integration</li>
+									<li>Custom sub-domain</li>
+								</ul>
+								
+									<ul class="ulpackage-info">
+									<li>Welcome push notification</li>
+									<li>Unique subscription layouts</li>
+							
+								</ul>
+							
+						</div>
+					</div>
+					<div class="mrg-top-30">
+						<!-- <p class="phd-heading text-uppercase"><strong>select a package</strong></p> -->
+
+						<div class="row mrg-top-30">
+							<div ng-show="vm.priceForPlans['PREMIUM'].length > 0" class="col-sm-4">
+								<div class="pln-prc-box">
+									<div class="plnprc-txt">
+										<h4 class="phd-color">Premium</h4>
+										<div class="price phd-color">&euro;{{vm.premiumPrice}} / <span>Month</span></div>
+										<h4 class="phd-color" ng-show="vm.priceForPlans['PREMIUM'].length == 1">UP TO {{vm.priceForPlans["PREMIUM"][0].subscribersLimit|number}} SUBSCRIBERS</h4>
+										<div class="subscriber-parent" ng-show="vm.priceForPlans['PREMIUM'].length > 1">
+											<div class="subscriber-box">
+												<div class="value-amnt">
+													<div>UP TO {{vm.priceForPlans["PREMIUM"][0].subscribersLimit/1000}}K</div>
+													<div ng-show="vm.priceForPlans['PREMIUM'].length > 1">UP TO {{vm.priceForPlans["PREMIUM"][1].subscribersLimit/1000}}K</div>
+													<div ng-show="vm.priceForPlans['PREMIUM'].length > 2">UP TO {{vm.priceForPlans["PREMIUM"][2].subscribersLimit/1000}}K</div>
+												</div>
+												<div class="amnt-range-box">
+													<!--<input id="premiumPlansRange" type="text" data-value="0" value="0" style="display:none;">-->
+													<!--<rzslider rz-slider-model="vm.sliderPremium.value" rz-slider-options="vm.sliderPremium.options"></rzslider>-->
+													<div class="horizontal-slider" ya-no-ui-slider="vm.sliderPremium" ya-no-ui-slider-events="vm.sliderPremiumEventHandlers"></div>
+
+												</div>
+												<div class="text-uppercase pdd-top-15 text-center">Subscribers</div>
+											</div>
+										</div>
+										<hr ng-show="vm.priceForPlans['PREMIUM'].length == 1" style="margin-top: 40px;
+    margin-bottom: 68px;
+    border: 0;
+    border-top: 1px solid #eee;" />
+										<div class="mrg-top-15 text-center">
+											<div class="phd-heading text-uppercase"><strong>the package includes All features</strong></div>
+											<p class="text-center text-uppercase">+</p>
+											<p>&bull; Max 1 Website</p>
+											<p>&bull; Email support <br>in German & English</p>
+										</div>
+
+										<div class="btn-box firstbox-50euro">
+											<a href="" class="grdnt-bdr-btn" ng-click="vm.purchasePlan('PREMIUM')">SELECT</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div ng-show="vm.priceForPlans['BUSINESS'].length > 0" class="col-sm-4">
+								<div class="pln-prc-box">
+									<div class="plnprc-txt">
+										<h4 class="phd-color">BUSINESS</h4>
+										<div class="price phd-color">&euro;{{vm.businessPrice}} / <span>Month</span></div>
+										<h4 class="phd-color" ng-show="vm.priceForPlans['BUSINESS'].length == 1">UP TO {{vm.priceForPlans["BUSINESS"][0].subscribersLimit|number}} SUBSCRIBERS</h4>
+										<div class="subscriber-parent" ng-show="vm.priceForPlans['BUSINESS'].length > 1">
+											<div class="subscriber-box">
+												<div class="value-amnt">
+													<div >UP TO {{vm.priceForPlans["BUSINESS"][0].subscribersLimit/1000}}K</div>
+													<div ng-show="vm.priceForPlans['BUSINESS'].length > 1">UP TO {{vm.priceForPlans["BUSINESS"][1].subscribersLimit/1000}}K</div>
+												</div>
+												<div class="amnt-range-box">
+													<!--<input id="premiumPlansRange" type="text" data-value="0" value="0" style="display:none;">-->
+													<!--<rzslider rz-slider-model="vm.sliderBusiness.value" rz-slider-options="vm.sliderBusiness.options"></rzslider>-->
+													<div class="horizontal-slider" ya-no-ui-slider="vm.sliderBusiness" ya-no-ui-slider-events="vm.sliderBusinessEventHandlers"></div>
+												</div>
+												<div class="text-uppercase pdd-top-15 text-center">Subscribers</div>
+											</div>
+										</div>
+										<hr ng-show="vm.priceForPlans['BUSINESS'].length == 1" style="margin-top: 40px;
+    margin-bottom: 68px;
+    border: 0;
+    border-top: 1px solid #eee;" />
+										<div class="mrg-top-15 text-center">
+											<div class="phd-heading text-uppercase"><strong>the package includes All features</strong></div>
+											<p class="text-center text-uppercase">+</p>
+											<p>&bull; Max 3 Websites</p>
+											<p>&bull; Email support in German & English</p>
+											<p>&bull; Reaction within 12 hours</p>
+											<p>&bull; Personal Account Manager</p>
+										</div>
+
+										<div class="btn-box">
+											<a href="" class="grdnt-bdr-btn" ng-click="vm.purchasePlan('BUSINESS')">SELECT</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="pln-prc-box">
+									<div class="plnprc-txt">
+										<div class="custome-header">
+											<h4 class="phd-color">custom made</h4>
+											<div class="price phd-color"><span>starting at 50K subscribers</span></div>
+										</div>
+										<div class="subscriber-parent">
+											<div class="subscriber-box">
+												<div class="custommade-txt">
+													<div class="subcriber-txt">
+													You are an enterprise with a large regular customer base on more than one platform, looking for a new engagement channel.
+												</div>
+												</div>
+											</div>
+										</div>
+										<div class="mrg-top-15 text-center">
+											<div class="phd-heading text-uppercase"><strong>the package includes All features</strong></div>
+											<p class="text-center text-uppercase">+</p>
+											<p>&bull; Unlimited Websites</p>
+											<p>&bull; Email support in German & English</p>
+											<p>&bull; Reaction within 4 hours</p>
+											<p>&bull; Personal Account Manager</p>
+										</div>
+										<div class="btn-box text-center">
+											<a href="" target="_blank" class="grdnt-bdr-btn" ng-click='vm.openContactForm()'>GET IN TOUCH</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

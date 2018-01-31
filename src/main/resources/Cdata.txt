@@ -1,0 +1,74 @@
+INSERT INTO public.iopush_geo_details(
+            geo_id, created_by, creation_date, geo_code, geo_latitude, geo_longititude, 
+            geo_name, modification_date, modificed_by)
+    VALUES (1, '', now(), 'IN', 22.22, 11.11, 
+            'INDIA', now(), '');
+INSERT INTO public.iopush_city_details(
+            city_id, city_code, city_latitude, city_longititude, city_name, 
+            created_by, creation_date, modification_date, modificed_by, fk_geo_id)
+    VALUES (1, 'DL', 22.33, 12.32, 'DELHI', 
+            '', now(), now(), '', 1);
+            
+            
+INSERT INTO public.iopush_product(
+            product_id, product_name)
+    VALUES (1, 'test');
+
+
+
+
+INSERT INTO public.iopush_user(
+            user_id, company, country_code, email_id, first_name, image_path, 
+            is_active, last_name, last_password, login_attempts, middle_name, 
+            password, phone_number, salutation, target_visitors, title, username, 
+            fk_product_id)
+    VALUES (1, 'test', 'IN' , 'test@test.com', 'test', 'test', 
+            'true', 'test', 'cc03e747a6afbbcbf8be7668acfebee5', 1, 'test', 
+            'cc03e747a6afbbcbf8be7668acfebee5', 23156, 'v', 1, 'test_title', 'test', 
+            1);
+            
+            INSERT INTO public.iopush_platform_category values(1,'MOBILE'),(2,'DESKTOP');
+            
+            INSERT INTO public.iopush_platform_details(
+            platform_id, created_by, creation_date, platform_name, category_id)
+    VALUES (1, '', now(), 'CHROME', 2), (2, '', now(), 'ANDROID', 1);
+            
+            
+            insert into iopush_isp values(1,'Vodafone');
+            
+INSERT INTO public.iopush_subscribers(
+            subscribers_id, fcm_token, installation_date, iopush_token, os_language, 
+            os_name, fk_city_id, fk_geo_id, fk_isp_id, fk_platform_id, fk_category_id, 
+            fk_product_id)
+    VALUES (1, 5465654654, now(), 786532465763, 'ENG', 
+            'ANDROID_OS', 1, 1, 1, 2, 1, 
+            1),(2, 5465654654, now(), 786532465763, 'ENG', 
+            'WINDOWS', 1, 1, 1, 1, 2, 
+            1);
+				
+			alter table public.iopush_campaign drop column fk_timezone_id;
+            alter table public.iopush_campaign add column fk_timezone_id integer;
+
+			INSERT INTO public.iopush_campaign(
+            campaign_id, campaign_current_date, campaign_end_date, campaign_end_date_in_edt, 
+            campaign_name, campaign_start_date, campaign_start_date_in_edt, 
+            campaign_status, campaignclick, campaignclose, campaignopen, 
+            campaignsent, created_by, creation_date, eligiblecount, fk_timezone_id, 
+            modification_date, modificed_by, fk_product_id)
+    VALUES (1, '"2017-02-02 17:07:06', '2017-02-02 17:07:26', now(), 
+            'test', '"2017-02-02 17:07:26', now(), 
+            1, 1, 1, 1, 
+            1, 'test', now(), 1, 1, 
+            now(), 'test', 1);
+			
+			
+			INSERT INTO public.iopush_views_clicks(
+            views_clicks_id, click_date, click_hits, sent_date, view_hits, 
+            fk_campaign_id, fk_subscriber_id, fk_product_id, fk_category_id)
+    VALUES (1, now(), 1, now(), 1, 
+            1, 1, 1, 1),(2, now(), 1, now(), 1, 
+            1, 1, 1, 2);
+            
+            
+            
+            alter table iopush_customnotification drop constraint ukgkb6j9qlpokh44r7udn9s30a

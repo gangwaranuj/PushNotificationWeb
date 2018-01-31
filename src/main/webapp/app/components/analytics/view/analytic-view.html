@@ -1,0 +1,102 @@
+<div class="main">
+	<div class="row">
+	    <div class="col-sm-12 mrg-bot-70">
+	        <div class="io-box box-shadow">
+	            <div class="io-box-header">
+	                <div class="pull-left">
+	                    <div class="heading">
+	                        <i aria-hidden="true" class="io-icon io-info topsite-info"></i> CAMPAIGN NOTIFICATIONS ANALYTICS
+	                        <div class="io-info-container">
+	                            <div class="io-info-box box-shadow">
+	                                <div class="info-body">
+	                                    <p>Overview of all existing campaigns, their current status and statistics. </p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="pull-right clr-white text-center paging">
+	                    <paging onaction="vm.onAction" handler="vm.handler"></paging>
+	                </div>
+	                <div class="pull-right position-relative">
+	                    <div class="pull-left searchbtnmng"><input type="search" class="form-control border-gray" ng-model="vm.campaignName" placeholder="Search campaign" ng-blur="vm.search()" ng-enter="vm.search()"></div>
+	                    <div class="pull-left analytic-cal-box">
+		                    <div ng-class="{'io-calender-d' : !vm.showCal , 'io-calender' : vm.showCal || vm.chartType == 'cal'}" id='calView' class="analytic-cal">
+		                        <i cname='io-calender' class="io-icon calender-b-space" aria-hidden="true" ng-class="{'io-calender-d' : !vm.showCal , 'io-calender' : vm.showCal || vm.chartType == 'cal'}"></i>
+		                    </div>
+		                </div>
+	                    <!-- <input type="checkbox" ng-click="vm.search()" ng-model="vm.live" id="live">
+	                    <label class="io-icon io-checkbox-uncheck" for="live">Live</label>
+	                    <input type="checkbox" ng-model="vm.pending" ng-click="vm.search()" id="pending">
+	                    <label class="io-icon io-checkbox-uncheck" for="pending">Pending</label>
+	                    <input type="checkbox" ng-model="vm.expired" ng-click="vm.search()" id="expired">
+	                    <label class="io-icon io-checkbox-uncheck" for="expired">Expired</label>
+	                    <input type="checkbox" ng-click="vm.search()" ng-model="vm.draft" id="draft">
+	                    <label class="io-icon io-checkbox-uncheck" for="draft">Draft</label> -->
+	                </div>
+	            </div>
+	
+	            <div class="row info-body" style="padding: 0;">
+	
+	                <div class="table-responsive col-sm-12">
+	                    <table class="table manage-campagin">
+	                        <thead>
+	                            <tr>
+	                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('creationDate')" id="creationDate">Date</th>
+	                                <th class="td-pdd iosortdown" ng-click="vm.sortingFunc('campaignId')" id="campaignId">ID</th>
+	                                <th class="td-pdd iosortsearch" width="20%" ng-click="vm.sortingFunc('campaignName')" id="campaignName">NAME</th>
+	                               
+	                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('campaignStatus')" id="campaignStatus">Status</th>
+	
+	                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('campaignsent')" id="campaignsent">SENT TO</th>
+	                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('campaignopen')" id="campaignopen">TOTAL VIEWS</th>
+	                           
+	                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('campaignclick')" id="campaignclick">TOTAL ClickS</th>
+	                                <th class="td-pdd">CLICK RATE %</th>
+	
+	                                <th class="td-pdd" style="width: 70px;">DRILL</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr ng-repeat="campaign in vm.campaigns track by campaign.campaign_name">
+	                                <td>{{:: campaign.campaign_schedule_date | date2 }}</td>
+	                                <td>{{:: campaign.campaign_id}}</td>
+	                                <td>
+	                                    <div class="overlap-text-field">
+	                                        <div>{{:: campaign.campaign_name}}</div>
+	                                    </div>
+	                                </td>
+	                           
+	                                <td class="position-relative">
+	                                    <span class="{{campaign.cssClass}}">{{campaign.status}}</span>
+	                                </td>
+	                                <td>{{:: campaign.sent}}</td>
+	                                <td>{{:: campaign.open}}</td>
+	                            
+	                                <td>{{:: campaign.click}}</td>
+	                                <td>{{:: campaign.conversionRate}}</td>
+	                                <td class="position-relative" style="padding: 0;">
+	                                   <div  class="analytic-drills">
+	                                   		<!-- <a ng-show="{{campaign.sent}}" ng-click="vm.drill(campaign.campaign_id,campaign.campaign_type_id)" class="io-icon io-drills" style="display: block; color: #fff !important;"></a> -->
+	                                   		<a ng-click="vm.drill(campaign.campaign_id)" class="io-icon io-drills" style="display: block; color: #fff !important;"></a>
+	                                   </div>
+	                                   
+	                                    <!--<div class="io-info-container-right">
+	                                        <div class="io-info-box-right box-shadow">
+	                                            <div class="info-body">
+	                                                <p>
+	                                                    Full overview of all existing campaigns.
+	                                                </p>
+	                                            </div>
+	                                        </div>
+	                                    </div>-->
+	                                </td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>

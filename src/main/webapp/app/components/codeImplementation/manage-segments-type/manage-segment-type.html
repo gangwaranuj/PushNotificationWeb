@@ -1,0 +1,78 @@
+<div class="main">
+    <div class="row">
+        <div class="col-sm-12 manage-cpn-page">
+            <div class="io-box box-shadow">
+                <div class="io-box-header">
+                    <div class="pull-left">
+                        <div class="heading">
+                            <i aria-hidden="true" class="io-icon io-info topsite-info"></i> EDIT OR DELETE SEGMENT
+                        </div>
+                    </div>
+                    <!--<div class="pull-left searchbtnmng"><input type="search" class="form-control border-gray" ng-model="vm.campaignName" placeholder="Search campaign"  ng-blur="vm.search()" ng-enter="vm.search()"></div>-->
+                    <div class="pull-right clr-white text-center paging">
+                        <paging onaction="vm.onAction" handler="vm.handler"></paging>
+                    </div>
+
+                </div>
+
+                <div class="info-body manage-cpn-body" style="padding: 0;">
+                    <div class="table-responsive">
+                        <table class="table manage-campagin">
+                            <thead>
+                                <tr>
+                                    <th class="td-pdd" width="15%"></th>
+                                    <th class="td-pdd" width="30%"></th>
+                                    <th class="td-pdd" width="15%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="segment in vm.segments track by $index">
+                                    <td class="" ng-if="!vm.editClicked[$index]">{{:: segment.DisplayText}}</td>
+                                    <td class="" ng-if="vm.editClicked[$index]"><input type="text" ng-model="segment.DisplayText" />
+                                        <td style="padding: 0;">
+                                            <div class='mng-cmpn-status'>
+                                                <a ng-click="vm.edit($index)" class="manage-anchor io-icon io-cpn-edit">
+                                                    <div class="io-info-container-right">
+                                                        <div class="io-info-box-right box-shadow">
+                                                            <div class="info-body">
+                                                                <p>
+                                                                    Edit Segment Type
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td style="padding: 0;">
+                                            <div class='mng-cmpn-status'>
+                                                <a ng-click="vm.deleteconfirmationMessage('Delete segmentation?',segment.segmentId)" class="manage-anchor io-icon io-cpn-delete">
+                                                    <div class="io-info-container-right">
+                                                        <div class="io-info-box-right box-shadow">
+                                                            <div class="info-body">
+                                                                <p>
+                                                                    Delete Segmentation Type
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <button ng-click="vm.saveChanges()"> Save Changes </button>
+                        <button> Cancel </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

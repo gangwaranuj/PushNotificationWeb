@@ -1,0 +1,238 @@
+<div class="main">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">
+							<i aria-hidden="true" class="io-icon io-info topsite-info"></i> CREATE RSS PUSH
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>Add your RSS URL. After adding your RSS URL we check your feed periodically. When a new RSS update is detected,
+											an automatic push notification will be sent to all subscribed (segmented) users.</p>
+										<p>To track the statistics of your RSS PUSH notifications (delivered count, clicks count and click-rate), go to the
+											Analytics tab. You'll also find the statistics of all your camping notifications there.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="io-page-body">
+					<form name="saveForm">
+
+						<div class="cmpn-container rss-container mrg-bot-20">
+							<div class="heading">
+								<!-- <i aria-hidden="true" class="io-icon io-info topsite-info"></i> -->URL OPTIONS
+								<!-- 	<div class="io-info-container">
+									<div class="io-info-box box-shadow">
+										<div class="info-body">
+											<p>You can add 1 or more parameters to your RSS URL (not mandatory) to have your own statistic regarding the notifications
+												clicks, on top of what you can find under the Analytics page.</p>
+										</div>
+									</div>
+								</div> -->
+
+							</div>
+						</div>
+						<div class="cmpn-container">
+							<div class="row cmpcnrcsrc">
+								<div class="form form-fields col-sm-6" style="width:40%"><input ng-model="vm.url" type="text" ng-blur="vm.loadUrlMetaData()" placeholder="RSS URL" /></div>
+
+								<div class="col-sm-2" style="width:20%">
+									<input type="text" ng-model="vm.source" maxlength="60" placeholder="Campaign  (Optional)" />
+								</div>
+								<div class="col-sm-2" style="width:20%">
+									<input type="text" ng-model="vm.generic" maxlength="60" placeholder="Generic  (Optional)" />
+								</div>
+								<div class="col-sm-2" style="width:20%">
+									<input type="text" ng-model="vm.urlCampaign" maxlength="60" placeholder="Source  (Optional)" />
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-12 mrg-top-20">
+
+									<button ng-disabled="vm.next" ng-click="vm.loadUrlMetaData()" class="updrade-btn green-btn">GENERATE</button>
+
+									<span class="mrg-lt-20" ng-class="{'vis-hidden': vm.next==false}">
+								<span  class="loader">VERIFYING URL  &nbsp; &nbsp;<img src="images/loader.gif" width="25" /></span>
+									</span>
+
+								</div>
+							</div>
+
+						</div>
+
+
+
+
+					</form>
+
+					<form name="saveForm">
+						<div class="cmpn-container row">
+
+							<div class="form form-fields col-sm-6" style="width:40%"><input ng-disabled="vm.isEdit" ng-model="vm.campaignName" type="text" maxlength="50" placeholder="RSS name" /></div>
+
+							<div class="pull-left top-5 hidden" style="margin-left: 150px;">
+								<input type="checkbox" name="sendNotificatin" id="sendNotificatin">
+								<label class="io-icon io-checkbox-uncheck no-mrg" for="sendNotificatin">Send notification every</label>
+							</div>
+
+							<div class="col-sm-1 mrg-lt-10 hidden">
+								<input type="text" />
+
+							</div>
+
+							<div class="col-sm-1 top-5 hidden">
+								<label>minutes.</label>
+							</div>
+
+
+
+						</div>
+
+
+						<div class="col-sm-12 cmpn-container">
+
+							<div class="heading">SELECT IMAGE / ICON</div>
+
+							<div class="rss-container">
+								<p class="pdd-top-15">
+									<input type="radio" ng-model="vm.setImage" name="slctImg" id="slctImgAutomated" ng-click="vm.getImageType('D')" value="Automated"
+									/>
+									<label class="io-icon io-radio-select" for="slctImgAutomated"> Use RSS automated Image</label>
+								</p>
+								<p>
+									<input type="radio" ng-model="vm.setImage" name="slctImg" ng-click="vm.getImageType('C')" id="slctImg" value="getImage" />
+									<label class="io-icon io-radio-select" for="slctImg"> Select Image/Icon</label>
+								</p>
+							</div>
+							<div ng-if="vm.imageType==='C'" class="cmpn-container rss-container clearfix">
+								<div class="io-select-img-box mrg-top-30">
+									<!-- ngIf: vm.showDetail -->
+									<!--<drop-grid image="vm.selectedImage" images="vm.images"></drop-grid>-->
+									<ul class="nav nav-tabs">
+										<li class="{{vm.imgClass}}"><a ng-click="vm.selectImage()">SELECT ICON</a></li>
+										<li class="{{vm.updImgClass}}"><a ng-click="vm.uploadImage()">UPLOAD</a></li>
+									</ul>
+									<div class="tab-content">
+										<div ng-show="vm.isSelectImage">
+											<drop-grid image="vm.selectedImage" images="vm.preImages"></drop-grid>
+										</div>
+										<div ng-show="vm.isuploadImage">
+											<drop-builderimg image="vm.selectedImage" images="vm.uploadedimage"></drop-builderimg>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<!-- 	<div class="cmpn-container rss-container">
+							<div class="heading">
+								<i aria-hidden="true" class="io-icon io-info topsite-info"></i> SEGMENT
+								<div class="io-info-container">
+									<div class="io-info-box box-shadow">
+										<div class="info-body">
+											<p>In this section you can target users per their location, platform, and ISP - those are optional fields.</p>
+										</div>
+									</div>
+								</div>
+								<span class="cmpn-mandatory">(optional)</span>
+							</div>
+						</div> -->
+
+						<div class="heading mrg-bot-20">SEGMENT <span style="color:#a0a0a0; font-weight: 400;">(OPTIONAL)</span></div>
+
+						<div class="col-sm-7">
+							<div class="row">
+								<div class="cmpn-container rss-container">
+									<div class="row cmpcnrcsrc cmpn-date-picker multi-select-box">
+										<div class="col-sm-6">
+											<multi-select handler="vm.countries"></multi-select>
+										</div>
+
+										<div class="col-sm-6" ng-class="{ 'disable-dropdown' : vm.internetProviders.options.length == 0 }">
+											<multi-select handler="vm.internetProviders "></multi-select>
+										</div>
+
+
+									</div>
+								</div>
+								<div class="rss-container cmpn-date-picker multi-select-box">
+									<div class="row cmpcnrcsrc">
+
+										<div class="col-sm-6" ng-class="{ 'disable-dropdown' : vm.cities.options.length == 0 }">
+											<multi-select handler="vm.cities "></multi-select>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="cmpn-container rss-container cmpn-date-picker multi-select-box grp-select-box">
+												<div class="" ng-class="{ 'disable-dropdown' : vm.segmentTypes.options.length == 0 }">
+													<multi-select handler="vm.segmentTypes"></multi-select>
+												</div>
+											</div>
+
+										</div>
+
+
+
+									</div>
+								</div>
+
+								<div class="cmpn-container rss-container cmpn-date-picker multi-select-box">
+									<div class="row cmpcnrcsrc">
+										<div class="col-sm-6">
+											<multi-select handler="vm.platforms1"></multi-select>
+										</div>
+										<div class="col-sm-6">
+											<div class="cmpn-date-picker multi-select-box">
+												<div class="" ng-class="{ 'disable-dropdown' : vm.segments.options.length == 0 }">
+													<multi-select handler="vm.segments "></multi-select>
+												</div>
+											</div>
+										</div>
+
+
+
+									</div>
+								</div>
+
+								<div class="cmpn-container rss-container cmpn-date-picker multi-select-box">
+									<div class="row cmpcnrcsrc">
+
+
+										<div class="col-sm-6">
+											<datetimepicker datedata="vm.subscribedStartDate" msg="Subscribed from" calenderpos="dropup" maxdate="vm.maxdate" istime="false"></datetimepicker>
+											<div class="empty-txt-valuebox" ng-show="vm.isSub" ng-click="vm.deleteSubDate()"><i class="io-icon io-crose" aria-hidden="true"></i></div>
+										</div>
+
+
+										<!--<div class="col-sm-6">
+									<datetimepicker format="dd/MM/yyyy HH:mm:ss" msg="Subscribed from" calenderpos="dropup" mindate="vm.mindate" datedata="vm.campignStartDate"
+										istime="true" defttime="vm.start"></datetimepicker>
+									<div class="empty-txt-valuebox" ng-show="vm.isCampignStartDate" ng-click="vm.deleteCampignStartDate()"><i class="io-icon io-crose" aria-hidden="true"></i></div>
+								</div>-->
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+
+							<div class="clearfix"></div>
+							<button ng-disabled="vm.launching" ng-click="vm.launchCampaign()" class="updrade-btn pull-right green-btn">ACTIVATE</button>
+							<button ng-disabled="vm.saving" ng-click="vm.saveCampaign('','Save')" class="updrade-btn green-border-btn">SAVE</button>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

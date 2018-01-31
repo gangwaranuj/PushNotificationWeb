@@ -1,0 +1,126 @@
+ul.news-feed-checkbox {
+	list-style:none;
+	background:#f9fafb;
+	border:1px solid #dce1e6;
+	margin: 0;
+    padding: 0;
+}
+
+ul.news-feed-checkbox li {
+	border-bottom:1px solid #dce1e6;
+	padding:40px 21px;
+}
+ul.news-feed-checkbox li:last-child {
+border-bottom:none;
+}
+ .news-feed .io-radio:before{
+    margin-right: 11px;
+    bottom: 3px;
+    position: relative;
+    }
+ .news-feed-checkbox .io-radio:before {
+    background: url(../../images/icons/io-radio-icon.png) no-repeat center;
+    position: relative;
+    bottom: 2px;
+    left: -8px;
+}
+
+.form-control.url-search-input {
+	width: calc(100% - 130px);
+	float:left;
+}
+.url-gnrt-btn {
+	width: 130px;
+	float:left;
+	border-left-width: 0 !important;
+}
+    
+ .news-feed-box{
+ background:#f8f9fa;
+ border:1px solid #dce1e6;
+ padding:15px;
+ }
+ .news-feed-contain{
+ width:50%;
+ }
+ .news-feed-thumb-img{
+ position: relative;
+    right: 15px
+    
+  }
+ .no-margin{
+     margin: 0px !important;
+ }
+ .height-91{
+     height: 91px;
+     }
+    .newsfeed-heading{   
+      width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .display-table{
+    display: table;
+    }
+    
+    .display-table-cell {
+    display: table-cell;
+    }
+    
+    
+    .vertical-middle{
+    vertical-align: middle;
+    }
+    
+    .flt-none{
+    float: none;
+    }
+    .full-width{
+    width: 100%;
+    }
+
+.smry-newsfeedrow .smry-newsfeedcol:nth-child(1) {
+	display: table-cell;
+	vertical-align: middle;
+	width: 40px;
+}
+.smry-newsfeedrow .smry-newsfeedcol:nth-child(2) {
+	display: table-cell;
+	padding-left: 10px;
+	vertical-align: top;
+}
+
+.smry-newsfeedrow .smry-newsfeedcol:nth-child(2) h4.newsfeed-heading {
+	font-size: 16px;
+	}
+.smry-newsfeedrow .smry-newsfeedcol:nth-child(2) p.font-12-md {
+	font-size: 13px;
+	margin-bottom: 0;
+}
+
+    
+@media(max-width:2200px){
+      .news-feed-thumb-img{
+	    width: 70px;
+}
+     }
+
+
+ @media(max-width:1500px){
+ 
+.news-feed-thumb-img{
+	    height: 70px;
+}
+
+  .news-feed-contain{
+ width:70%;
+ }
+ .font-size-18{
+ font-size:16px;
+ }
+ .font-12-md{
+ font-size: 12px;
+ }
+
+ }

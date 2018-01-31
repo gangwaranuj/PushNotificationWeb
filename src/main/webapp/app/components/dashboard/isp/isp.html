@@ -1,0 +1,72 @@
+<div class="col-md-6">
+    <!-- Geo PopUp -->
+
+    <div class="io-box box-shadow geoisp-height-rmvd">
+        <div class="io-box-header">
+            <div class="pull-left">
+                <div class="heading">
+                    <i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i>  INTERNET SERVICE PROVIDERS
+                    <div class="io-info-container">
+                        <div class="io-info-box box-shadow">
+                            <div class="info-body">
+                                <p>Overview of your subscribers Internet Service Provider </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="geo-box-bottom">
+      <!--       <table class="geo-chart-box-head isprovider" width="100%" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;padding-left: 25px;" class="heading" colspan="2">PROVIDER</th>
+                        <th></th>
+                        <th class="heading">SUBSCRIBERS</th>
+                    </tr>
+                </thead>
+            </table> -->
+            <div class="geo-chart-body">
+                <table class="geo-chart-box isprovider" width="100%" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="geo-chart c-pointer" ng-repeat="ispItem in vm.ispItems">
+
+                            <td>{{ispItem.ispName}}</td>
+
+                            <td>
+                                <div class="progress" style="width:100%;">
+
+                                    <div popover-append-to-body="true" uib-data-container="body" popover-trigger="'mouseenter'" uib-popover-template='{{"\""+key+"isp.html\""}}'
+                                        class="progress-bar" role="progressbar" style="width:{{(ispItem[key+'Count'] / ispItem.totalusers) * 100}}%;background-color: {{value.color}}!important"
+                                        ng-repeat="(key,value) in vm.platformDetail"></div>
+            </div>
+            </td>
+            <td>{{ispItem.totalusers}}</td>
+
+            <script type="text/ng-template" id="chromeisp.html">
+                <div class='progress-hover'> Chrome: {{ispItem.chromeCount}} Subscribers</div>
+            </script>
+
+            <script type="text/ng-template" id="firefoxisp.html">
+                <div class='progress-hover'> Firefox: {{ispItem.firefoxCount}} Subscribers</div>
+            </script>
+            <script type="text/ng-template" id="androidisp.html">
+                <div class='progress-hover'> Android: {{ispItem.androidCount}} Subscribers</div>
+            </script>
+            <script type="text/ng-template" id="operaisp.html">
+                <div class='progress-hover'> Opera: {{ispItem.operaCount}} Subscribers</div>
+            </script>
+            <script type="text/ng-template" id="safariisp.html">
+                <div class='progress-hover'> Safari: {{ispItem.safariCount}} Subscribers</div>
+            </script>
+
+            </tbody>
+            </tr>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+        <div class="see-all-btm see-disabled"><a href="">VIEW ALL</a></div>
+    </div>
+</div>
+</div>

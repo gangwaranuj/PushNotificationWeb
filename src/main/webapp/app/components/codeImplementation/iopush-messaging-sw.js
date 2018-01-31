@@ -1,0 +1,1 @@
+importScripts('https://www.iopushtech.com/iopush-messaging-sw.js');

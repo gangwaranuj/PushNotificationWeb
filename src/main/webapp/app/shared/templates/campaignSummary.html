@@ -1,0 +1,56 @@
+<div class="moder">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="closeModal()" data-dismiss="modal">×</button>
+		<h4 class="modal-title">SUMMARY</h4>
+	</div>
+	<div class="modal-body mng-smry-popup">
+		<div class="form-group" style="width:100%; margin: 0;">
+			<div class="ng-binding">
+				<div class="alert-message-container">
+					<ul>
+						<li><b>Campaign name:</b> {{summaryDetails.campaign_name}}</li>
+						<li ng-show="summaryDetails.platform.selectedOptions.length!=0"><b>Platforms:  </b><span ng-repeat="platform in summaryDetails.platform.selectedOptions">{{platform.Value}}<span ng-show="$index < summaryDetails.platform.selectedOptions.length-1 " > , </span></span>
+						</li>
+						<li ng-show="summaryDetails.platform.selectedOptions.length==0"><b>Platforms:  </b>Chrome / Firefox / Opera / Android</li>
+						<li ng-show="summaryDetails.campaign_schedule_date"><b>Campaign launch date: </b> {{summaryDetails.campaign_schedule_date | datetime2}}</li>
+						<li ng-show="summaryDetails.campaign_end_date"><b>Campaign end date: </b> {{summaryDetails.campaign_end_date | datetime2}}</li>
+						<li ng-show="summaryDetails.targetGroup"><b>Target group:  </b>{{summaryDetails.targetGroup}}</li>
+						<!--
+	                    <li ng-show="summaryDetails.countries"><b>Countries:  </b> <span ng-repeat="country in summaryDetails.countries.options">{{country.DisplayText}}<span ng-show="$index < summaryDetails.countries.options.length-1 " > , </span></span> </li>
+	                    <li ng-show="summaryDetails.cities"><b>Cities:  </b><span ng-repeat="city in summaryDetails.cities.options">{{city.city_name}}<span ng-show="$index < summaryDetails.cities.options.length-1 " > , </span></span></li>
+	                    <li ng-show="summaryDetails.internetProviders"><b>Internet Providers: </b><span ng-repeat="ip in summaryDetails.internetProviders.options">{{ip.DisplayText}}<span ng-show="$index < summaryDetails.internetProviders.options.length-1 " > , </span></span></li>
+-->
+						<li ng-show="summaryDetails.countries.selectedOptions.length!=0"><b>Countries:  </b> <span ng-repeat="country in summaryDetails.countries.selectedOptions">{{country.DisplayText}}<span ng-show="$index < summaryDetails.countries.selectedOptions.length-1 " > , </span></span>
+						</li>
+						<li ng-show="summaryDetails.cities.selectedOptions.length!=0"><b>Cities:  </b><span ng-repeat="city in summaryDetails.cities.selectedOptions">{{city.DisplayText}}<span ng-show="$index < summaryDetails.cities.selectedOptions.length-1 " > , </span></span>
+						</li>
+						<li ng-show="summaryDetails.internetProviders.selectedOptions.length!=0"><b>Internet providers: </b><span ng-repeat="ip in summaryDetails.internetProviders.selectedOptions">{{ip.DisplayText}}<span ng-show="$index < summaryDetails.internetProviders.selectedOptions.length-1 "> , </span></span>
+						</li>
+						<li ng-show="summaryDetails.subscribed"><b>Subscribed from:</b> {{summaryDetails.subscribed | date2}} </li>
+
+						<li ng-show="summaryDetails.segmentTypes.selectedOptions.length!=0"><b>Segment Types: </b><span ng-repeat="ip in summaryDetails.segmentTypes.selectedOptions">{{ip.DisplayText}}<span ng-show="$index < summaryDetails.segmentTypes.selectedOptions.length-1 "> , </span></span>
+						</li>
+
+						<li ng-show="summaryDetails.segments.selectedOptions.length!=0"><b>Segments Name: </b><span ng-repeat="ip in summaryDetails.segments.selectedOptions">{{ip.DisplayText}}<span ng-show="$index < summaryDetails.segments.selectedOptions.length-1 "> , </span></span>
+						</li>
+
+						<li><b>Title:</b> {{summaryDetails.title}} </li>
+						<li><b>Message:</b> {{summaryDetails.description}} </li>
+						<li><b>Image preview link:</b> <a ng-click="setImage()">{{summaryDetails.imagePath}}</a>
+							<p ng-show="showImage"><img ng-src="{{summaryDetails.imagePath}}" /></p>
+						</li>
+
+
+						<li><b>URL:</b> {{summaryDetails.forwardUrl}} </li>
+
+
+						<li ng-show="summaryDetails.eligiblecount>0"><b>Total matching users:</b> {{summaryDetails.eligiblecount}}</li>
+					</ul>
+				</div>
+				<div align="center">
+					<button type="button" class="codeimp-read-more" ng-click="closeModal()" data-dismiss="modal">Back</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

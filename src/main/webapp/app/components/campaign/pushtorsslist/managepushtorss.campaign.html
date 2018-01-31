@@ -1,0 +1,140 @@
+<div class="main">
+    <div class="row">
+        <div class="col-sm-12 manage-cpn-page">
+            <div class="io-box box-shadow">
+                <div class="io-box-header">
+                    <div class="pull-left">
+                        <div class="heading">
+                            <i aria-hidden="true" class="io-icon io-info topsite-info"></i> MANAGE RSS PUSH
+                            <div class="io-info-container">
+                                <div class="io-info-box box-shadow">
+                                    <div class="info-body">
+                                        <p>Overview of all existing RSS PUSH for this account, their status, last RSS check
+                                            and to edit them accordantly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- <div class="pull-left searchbtnmng"><input type="search" class="form-control border-gray" ng-model="vm.rssName" placeholder="Search campaign"  ng-blur="vm.search()" ng-enter="vm.search()" style="margin-left:290px;"></div> -->
+                     <!-- <div ng-init='showStatus=false' ng-click='showStatus=!showStatus'>Filter status</div> -->
+                     <!-- <div >sfdsfsdf</div> -->
+                    <div class="pull-right clr-white text-center paging">
+                        <paging onaction="vm.onAction" handler="vm.handler"></paging>
+                    </div>
+                    <div class="pull-right status-checkbox">
+                        <input type="checkbox" ng-click="vm.search()" ng-model="vm.live" id="live">
+                        <label class="io-icon io-checkbox-uncheck" for="live">Active</label>
+                        <input type="checkbox" ng-click="vm.search()" ng-model="vm.draft" id="draft">
+                        <label class="io-icon io-checkbox-uncheck"  for="draft">Inactive</label>
+                    </div>
+
+
+                </div>
+
+                <div class="info-body manage-cpn-body" style="padding: 0;">
+                    <div class="table-responsive">
+                        <table class="table manage-campagin">
+                            <thead>
+                                <tr>
+                                    <th class="td-pdd iosortdown" width="15%" ng-click="vm.sortingFunc('id')" id="id">ID</th>
+                                    <th class="td-pdd iosortsearch" width="35%" ng-click="vm.sortingFunc('name')" id="name">NAME</th>
+                                    <th class="td-pdd iosortsearch" width="10%" ng-click="vm.sortingFunc('notification')" id="notification">STATUS</th>
+                                    <th class="td-pdd iosortsearch" width="20%" ng-click="vm.sortingFunc('modificationDate')" id="modificationDate" >LAST CHECK</th>
+                                    <th class="td-pdd" width="15%">OPTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="campaign in vm.campaigns track by campaign.id">
+                                    <td class="">{{:: campaign.id}}</td>
+                                    <td class="">
+                                        <div class="overlap-text-field">
+                                            <div>{{:: campaign.name}}</div>
+                                        </div>
+                                    </td>
+
+                                    <td class="position-relative">
+                                        <span class="{{campaign.cssClass}}">{{campaign.status}}</span>
+                                    </td>
+                                    <!--<td class="td-pdd">{{:: campaign.campaignType}}</td>-->
+
+                                    <td class="">{{:: campaign.modificationDate | datetime2 }}</td>
+                                    <td class="" width="150" style="padding: 0;">
+                                        <div class='mng-cmpn-status'>
+
+                                            <a ng-click="vm.viewSummary(campaign.id)" class="manage-anchor io-icon io-cpn-view">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>Full overview of all existing RSS push.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a ng-if="campaign.launch" class="manage-anchor io-icon io-launch" ng-click="vm.launchConfirmationMessage('RSS activated successfully!',campaign.id,campaign.notification,'active')">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Activate a RSS Push that is ready to launch.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a ng-if="campaign.pause" class="manage-anchor io-icon io-pause" ng-click="vm.launchConfirmationMessage('RSS paused successfully!',campaign.id,'','inactive')">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Pause a RSS Push that is Activate.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+
+                                            <a ng-if="campaign.edit" ng-click="vm.edit(campaign.id)" class="manage-anchor io-icon io-cpn-edit">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Edit RSS Push
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a ng-if="campaign.del" ng-click="vm.deleteconfirmationMessage('',campaign.id)" class="manage-anchor io-icon io-cpn-delete">
+                                                <div class="io-info-container-right">
+                                                    <div class="io-info-box-right box-shadow">
+                                                        <div class="info-body">
+                                                            <p>
+                                                                Delete RSS Push
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            
+                                            <a ng-if="campaign.view" class="manage-anchor io-icon io-cpn-edit btn-disabled"></a>
+                                            <a ng-if="campaign.view" class="manage-anchor io-icon io-cpn-delete btn-disabled"></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

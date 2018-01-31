@@ -1,0 +1,768 @@
+
+
+/***Topsites***/
+.topsite-data {
+	height: 405px;
+	overflow: auto;
+	padding: 0 5px 0 0;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+.topsite-data table {
+    width: 100%;
+    border-right: 1px solid #dce1e6;
+}
+.topsite-data table td {
+    padding: 25px 0px !important;
+    border-bottom: 1px solid #dce1e6;
+    background-color: #fff;
+    border-top: 0px solid #dce1e6;
+    font-size: 18px;
+}
+.topsite-data table tr td:first-child {
+    padding: 10px 10px 10px 20px ;
+    width: 60px;
+    border-bottom: 1px solid #dce1e6;
+}
+.topsite-data table tr td:last-child {
+	padding-right: 15px !important;
+	}
+.topsite-data .table-striped tbody>tr:nth-child(odd)>td, .topsite-data .table-striped tbody>tr:nth-child(odd)>th {
+  background-color: #fff;
+}
+
+.topsite-info, .last-notifyc {
+    cursor: pointer;
+}
+.topsite-info:hover + .io-info-container { 
+    display: block;
+}
+
+.favicons {
+	padding: 0px;
+	margin: 0px auto;
+	width: 24px;
+	height: 24px;
+	border: 0px solid #dce1e6;
+	border-radius: 4px;
+	line-height: 22px;
+	text-align: center;
+	overflow: hidden;
+}
+
+/***Topsites***/
+
+/******** Subscriber Panel **********/
+.time-notifyc {
+	float: right;
+	font-size: 11px;
+	top: 3px; 
+	position: relative;
+	color: #aba8a8;
+	right: 0;	
+}
+.temp-smily.select-smily:before {
+	position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.last-notification-area table tr td{
+	padding: 7px;
+	font-weight: 600;
+}
+.last-notification-area .rowdel .siteurl{
+	width: 100%;
+	max-width: 400px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    padding-right: 20px;
+}
+
+.rowdel {
+	width: 100%;
+	margin-bottom: 12px;
+	font-size:12px;
+}
+
+.rowdel:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.rowdel .rowdelcol {
+	float: left;
+}
+
+.rowdel .rowdelcol:first-child {
+	width: 115px;
+}
+
+.rowdel .rowdelcol:nth-child(2) {
+	width: calc(100% - 175px);
+}
+.rowdel .rowdelcol:last-child {
+	width: calc(60px - 15px);
+	margin-left: 15px
+}
+.android-notification {
+	box-shadow: 0px 1px 4px 0px #7b7b7b;
+}
+.android-notification .notify-img {
+	 width: 70px;
+	padding-left: 6px;
+	padding-top: 5px;
+}
+.subscribe-box-last-notific .android-notification .notify-img, .subscribe-box-last-notific .android-notification .preview-imgbox, .subscribe-box-last-notific .android-notification .notify-img .preview-imgbox img {
+    width: 70px;
+    height: 70px;
+}
+.android-notification .notify-img .preview-imgbox img {
+    max-width: 70px;
+    max-height: 70px;
+}
+.android-notification .notify-url {
+    width: calc(100% - 80px);
+}
+.android-notification .preview-imgbox {
+	/* padding: 10px; */
+	width :70px;
+	height: 70px;
+}
+.android-notification .notify-img .preview-imgbox img {
+	width: 96%;
+}
+
+.android-notification .android-heading {
+	font-size: 15px;
+	font-weight: bold;
+}
+.android-notification p.io-icon {
+	border-top: 1px solid #dcdcdc;
+	padding-top: 5px;
+}
+.android-notification div.io-icon:before {
+	background-position: -278px -103px;
+	width: 26px !important;
+	height: 26px !important;
+	margin: 0px 5px 0 0;
+}
+
+.web-notification {
+	box-shadow: 0px 1px 4px 0px #7b7b7b;
+}
+.web-notification:before {
+	background-position: -108px -81px;
+	position: absolute;
+	right: 8px;
+	top: 5px;	
+	width: 12px !important;
+	height: 12px !important;
+}
+.web-notification:after {
+	background-image: url(../../images/icons/iopush-icons.png);
+    background-repeat: no-repeat;
+	background-position: -41px 0px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;	
+	width: 16px !important;
+	height: 16px !important;
+}
+.subscribe-box-last-notific .web-notification:before {
+	top: 5px;	
+
+}
+/* notification for chrome*/
+.subscribe-box-last-notific .chrome .web-notification:after{
+	right: 33px;
+    top: 4px;
+}
+.chrome .web-notification:after{
+	right: 25px;
+    top: 4px;
+}
+
+.chrome .notify-url{
+	width: calc(100% - 98px);
+}
+.preview-box-notify:after, .preview-box-notify:before{
+	background:none !important;
+}
+
+.notifcation-imgurl {
+	display: block;
+	background: #f6f6f6;
+	border: 1px solid #dcdcdc;
+	cursor: default;
+	padding-right: 20px;
+	position: relative;
+	font-weight: 400;
+	
+}
+.notifcation-imgurl:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.notify-img, .notify-url {
+	float: left;
+}
+.notify-img {
+	width: 90px;
+}
+.firefox-notifc .notify-img {
+	width: 76px;
+}
+.firefox-notifc .preview-imgbox {
+	width: 76px;
+	height: 76px;
+}
+.firefox-notifc .notify-img .preview-imgbox img {
+	max-width: 76px;
+	max-height: 76px;
+}
+
+.preview-imgbox {
+	width: 73px;
+	height: 73px;
+	position: relative;
+}
+.notify-img .preview-imgbox img {
+	max-width: 73px;
+	max-height: 73px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.notify-url {
+	padding-left: 15px;
+	width: calc(100% - 100px);
+}
+
+.notify-url div {
+	max-width: 330px;
+	margin: 12px 0;
+	width: 100%;
+	/* overflow: hidden; */
+	/* text-overflow: ellipsis; */
+	line-height: 16px;
+	/* white-space: nowrap; */
+	word-break: break-word;
+	color: #28282d;
+}
+
+.subscribe-box-last-notific .notify-url div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 16px;
+	white-space: nowrap;
+	word-break: inherit;
+}
+
+.notify-url .nowrap {
+	max-width: 315px;
+	margin: 5px 0;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 16px;
+	white-space: nowrap;
+	color: #28282d;
+}
+
+ .notify-url div.tapeurl {
+	color: #848484;
+}
+.android-notification .notify-url div {
+	margin: 8px 0;
+	line-height: 22px;
+}
+
+subscribe-box:after {
+	content: '';
+	display: block;
+	clear:both;
+}
+.subscribe-box-col {
+	float: left;
+}
+.subscribe-box-overvew {
+	width: 30% !important;
+}
+.subscribe-box-notific {
+	width: 40% !important;
+}
+.subscribe-box-last-notific {
+	width: 30% !important;
+}
+
+.last-notification-area {
+	height: 131px;
+}
+.subcrb-ht {
+	height: 95px;
+	white-space: nowrap;
+}
+	.subcrb-ht p {
+	    font-size: 12px;
+	    top: 5px;
+	    position: relative;
+	}
+
+.subscribe-box-last-notific .lst-notyfyad {
+	height: 96px;
+	padding: 10px 20px;
+}
+
+/*******Internet service provider*********/
+
+.isp-text {
+	text-align: center;
+	color: #9d9d9c;
+	/* border-right: 1px solid #eeeeee; */
+	position: relative;
+}
+
+.isp-chart-body .col-sm-3 .isp-text:after {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 1px;
+	background: #eeeeee;
+	position: absolute;
+	right: -15px;
+	top: 0;
+}
+.isp-chart-body .col-sm-3:last-child .isp-text:after {
+	background: none;
+	content: none;
+	display: none;
+}
+
+.isp-text div.isp-title {
+	color: #000;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.isp-chart-body div.ng-isolate-scope[chartconfig="data.chartObj"] {
+	margin-left: 5px;
+}
+
+.isprovider, .geomaptbls {
+	width: 100%;
+}
+.isprovider tr td:first-child, .isprovider tr th:first-child {
+	width: 110px;
+}
+.isprovider tr td:nth-child(2), .isprovider tr th:nth-child(2) {
+	width: calc(100% - 225px);
+}
+.isprovider tr td:nth-child(3), .isprovider tr th:nth-child(3) {
+	width: 110px;
+}
+
+.geomaptbls tr td:first-child img {
+	margin-right: 15px;
+	margin-left: -7px;
+}
+
+.geomaptbls tr td:first-child, .geomaptbls tr th:first-child {
+	width:150px;
+}
+.geomaptbls tr td:nth-child(2), .geomaptbls tr th:nth-child(2) {
+	width: calc(100% - 225px);
+}
+.geomaptbls tr td:nth-child(3), .geomaptbls tr th:nth-child(3) {
+	width: 115px;
+}
+
+
+/***Platforms***/
+#chartdiv {
+	width		: 100%;
+	height		: 100%;
+	font-size	: 11px;
+	position: relative;
+	left: -25px;
+}	
+
+.plateform-details {
+	position: absolute;
+	bottom: 45px;
+	right: 5px;
+    left: -25px;
+    background: #fff;
+}
+.plt-separate-details {
+	padding: 20px 20px;
+	border-bottom: 1px solid #dce1e6;
+}
+.plt-separate-details:last-child {
+	border-bottom: 0px solid #dce1e6;
+}
+.platform-info {
+    cursor: pointer;
+}
+
+.total-view-click li:first-child {
+    margin-right: 0;
+}
+.platform-info:hover + .io-info-container, .geos-info:hover + .io-info-container, .installs-info:hover + .io-info-container, .last-notifyc:hover + .io-info-container { 
+    display: block;
+}
+.total-view-click input[type="radio"] {
+    display: none;
+}
+.total-view-click input[type="radio"]:checked + label.io-icon.radio-check:before{
+    /* background: url(../../images/icons/io-radio-icon-select.png) no-repeat center; */
+    
+}
+
+.total-veiw-click-info:hover + .io-info-container {
+    display: block;
+}
+
+
+.platform-separate-table {
+    display: table;
+    width: 100%;
+}
+.platform-separate-table .platform-separate {
+    width: 250px;
+    height: 420px;
+}
+.platform-separate-table .platform-separate canvas {
+   width: 320px !important;
+   height: 320px !important;
+   position: absolute;
+   bottom: 20px;
+   left: -5px;
+}
+.platform-separate {
+    display: table-cell;
+    width: 50%;
+    position: relative;
+}
+
+#chartPlateformContainer {
+    margin-top: 71px !important;
+    height: 322px !important;
+    width: 100% !important;
+    padding-bottom: 71px !important;
+}
+.plt-btn {
+	height:224px;
+}
+/***Platforms***/
+
+
+/***Total View & Total Clicks***/
+
+.viewclick:before {
+	margin-right: 10px;
+}
+
+.viewclick:before {
+	content: '';
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+	margin-left: 20px;
+	border-radius: 20px;
+	margin-bottom: -4px;
+}
+.viewclick-view:before {
+	background-color: #757785;
+}
+.viewclick-click:before { 
+	background-color: #00bed2;
+}
+
+.view-backward {
+    position: absolute;
+    left: 15px;
+    bottom: 19px;
+}
+.view-forward {
+    position: absolute;
+    right: 0;
+    bottom: 19px;
+    cursor: default;
+}
+.io-articles table {
+	margin-bottom: 0px;
+}
+.io-articles table tr td {
+	font-size: 16px;
+	padding: 12px 5px;	
+}
+.io-text-ellipsis div:first-child {
+	width: 270px;
+	padding-left: 15px;
+	overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+.io-text-ellipsis div:last-child {
+	width: 405px;
+	padding-left: 15px;
+	overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: normal;
+    font-size: 14px;
+    height: 36px;
+}
+/***Total View & Total Clicks***/
+
+/** Total Install**/
+#chartConfig {
+	height: 400px !important;
+}
+
+
+.total-installs-box {
+	position: relative;
+}
+.total-installs-box .view-forward {
+	right: -5px;
+    bottom: 15px;
+}
+.total-installs-box .view-backward {
+    left: 0px;
+    bottom: 15px;
+}
+
+/* TrendChart*/
+.trend-chart{
+    margin: 31px 0px;
+    font-weight: 400;
+    color: #28282d;
+}
+.trend-chart th{
+	padding-bottom: 15px;
+}
+.trend-chart td, .trend-chart th{
+	padding: 8px 12px;
+}
+
+
+/***Geos***/
+.geoisp-height {
+	height: 430px;
+}
+
+.geomap {
+	position: relative;
+}
+.geomap .hdr-right-info li {
+	border-left: 0px solid #dcdcdc;
+	padding-left: 15px;
+}
+.geo-map {
+	height: 200px !important;
+}
+.geo-user-value  {
+    margin: 55px 0;
+}
+.progress-bar {
+    position: relative;
+    max-width: 100%;
+}
+.geo-chart-body {
+	overflow: auto;
+	height: 164px;
+	font-weight: 400;
+	color: #28282d;
+}
+.isp-chart-body {
+	overflow: auto;	
+	height: 315px;
+}
+.geo-chart-body .geo-chart-box tr {
+	border-left: 3px solid transparent;
+}
+.geo-chart-body .geo-chart-box tr:hover {
+	background-color: #f6f6f6;
+	border-left: 3px solid #2ec16e;
+}
+.geo-seeall {
+	border-top: 1px solid #dce1e6;
+	padding: 20px;
+	text-align: center;
+}
+.geo-seeall a {
+	display: block;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #757785;
+	text-decoration: none;
+	cursor: not-allowed;
+}
+.geo-chart-box-head tr:first-child {
+/* 	border-bottom: 1px solid #dce1e6; */
+	font-size: 18px;
+}
+.geo-chart-box {
+	width: 100%;
+	vertical-align: top;
+}
+.geo-chart-box-head th{
+	vertical-align: top;
+    padding: 20px 15px;
+    height: 20px;
+}
+.geo-chart-box td{
+	vertical-align: middle;
+	padding: 12px 8px;
+	height: 20px;
+	font-size: 12px;
+}
+.geo-chart-box td:first-child {
+	padding-left: 25px;
+}
+.geo-chart-box td:nth-child(4) {
+	padding-right: 25px;
+}
+.geo-chart {
+    width: 100%;
+}
+
+
+#map {
+    height: 478px;
+    width: 398px;
+    box-shadow: 3px 3px 10px gray;
+    float: none;
+    border: 0px solid white;
+    border-radius: 0px;
+    margin-right: 0px;
+}
+
+.chartContainer1 {
+	height: 300;
+	width: 500px;
+}
+
+
+
+.map-inside-box {
+  	width: 200px;
+    margin: 0;
+  }
+  .map-inside-box .pull-left {
+  	margin: 0;
+  	line-height: 28px;
+  	
+  }
+  .map-inside-box .pull-left:nth-child(2) {
+  	border-right: 1px solid #dce1e6;
+    padding: 0px 0px;
+  }
+  .map-inside-box .pull-left:nth-child(3) {
+  	border-right: 1px solid #dce1e6;
+    padding: 0px 0px; 
+  }
+  .map-inside-box .pull-left > div {
+    padding: 0px 0px;
+  }
+  .map-heading {
+  	border-bottom: 1px solid #dce1e6;
+  	margin: 0 5px;
+  }
+  
+  img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+    display: none;
+}
+
+.gm-style-iw, .ng-map-info-window {
+	width: 200px !important;
+}
+
+
+/***Media screen styles ***/
+@media (max-width: 1600px) {
+	.platform-separate-table .platform-separate {
+		width: 250px;
+		height: 364px;
+	}
+	.platform-separate-table .platform-separate canvas {
+	   width: 270px !important;
+	   height: 270px !important;
+	   position: absolute;
+	   bottom: 20px;
+	   left: -5px;
+	}
+	.plateform-details {
+    	/* right: -10px;
+    	left: 15px; */
+	}
+
+	.topsite-data table td {
+		font-size: 16px;
+		color: #757785;
+	}
+	.geo-seeall {
+		border-top: 1px solid #dce1e6;
+		padding: 15px;
+		text-align: center;
+	}
+	.geo-seeall a {
+		display: block;
+		text: center;
+	}
+/* 	.plateform-details .io-box .io-box-header{
+		height: 56px;
+		padding: 15px 20px;
+	} */
+	.topsite-data {
+		height: 355px;
+		overflow: auto;
+		padding: 0 5px 0 0;
+	}
+	/* .plt-separate-details {
+    	padding: 16px 20px;
+	} */
+	.topsite-data table td {
+    	padding: 20px 0px !important;
+	}
+
+	.chartContainer1 {
+		height: 250px;
+		width: 400px;
+	}
+	#map {
+	    height: 423px;
+	    width: 398px;
+	    box-shadow: 3px 3px 10px gray;
+	    float: none;
+	    border: 0px solid white;
+	    border-radius: 0px;
+	    margin-right: 0px;
+	}
+	#chartConfig {
+		height: 350px !important;
+	}
+	.isp-chart-body div.ng-isolate-scope[chartconfig="data.chartObj"] {
+    	margin-left: -15px;
+	}
+}
+@media (max-width: 1500px) {
+	.time-notifyc {
+		font-size: 10px;
+		line-height: 18px;
+	}
+}

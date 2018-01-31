@@ -1,0 +1,13 @@
+{
+  "name": "iosis",
+  "description": "Getting started with IOPUSH POC",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.3.1",
+    "textAngular": "^1.5.9"
+  }
+}

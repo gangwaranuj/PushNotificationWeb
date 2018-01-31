@@ -1,0 +1,141 @@
+<div class="main">
+	<div class="row">
+    <div class="col-sm-12 manage-cpn-page">
+        <div class="io-box box-shadow">
+            <div class="io-box-header">
+                <div class="pull-left">
+                    <div class="heading">
+                        <i aria-hidden="true" class="io-icon io-info topsite-info"></i> MANAGE WELCOME PUSH
+                        <div class="io-info-container">
+                            <div class="io-info-box box-shadow">
+                                <div class="info-body">
+                                    <p>Overview of all existing welcome messages, their current status and the option to access and change welcome message settings. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left searchbtnmng"><input type="search" class="form-control border-gray" ng-model="vm.welcomeName" placeholder="Search Welcome Message"  ng-blur="vm.search()" ng-enter="vm.search()"></div>
+                <div class="pull-right clr-white text-center paging">
+                   	<paging  onaction="vm.onAction" handler="vm.handler"></paging>
+                </div>
+                <div class="pull-right status-checkbox">
+                    <input type="checkbox" ng-click="vm.search()" ng-model="vm.live" id="live">
+                    <label class="io-icon io-checkbox-uncheck" for="live">Live</label>
+                    <input type="checkbox" ng-model="vm.pending" ng-click="vm.search()" id="pending">
+                    <label class="io-icon io-checkbox-uncheck" for="pending">Pending</label>
+                    <input type="checkbox" ng-model="vm.expired" ng-click="vm.search()" id="expired">
+                    <label class="io-icon io-checkbox-uncheck" for="expired">Expired</label>
+                    <input type="checkbox" ng-click="vm.search()" ng-model="vm.draft" id="draft">
+                    <label class="io-icon io-checkbox-uncheck" for="draft">Draft</label>
+                </div>
+                
+              
+            </div>
+
+            <div class="info-body manage-cpn-body" style="padding: 0;">
+                <div class="table-responsive">
+                    <table class="table manage-campagin">
+                        <thead>
+                            <tr>
+                                <th class="td-pdd iosortdown" ng-click="vm.sortingFunc('welcomeId')" id="welcomeId">ID</th>
+                                <th class="td-pdd iosortsearch" width="33%" ng-click="vm.sortingFunc('welcomeName')" id="welcomeName">Name</th>
+                                <th class="td-pdd iosortsearch" width="33%" ng-click="vm.sortingFunc('platform')" id="platform">PLATFORM</th>
+                                <th class="td-pdd iosortsearch" width="110" ng-click="vm.sortingFunc('welcomeStatus')" id="welcomeStatus">STATUS</th>     
+                                <th class="td-pdd iosortsearch" width="130" ng-click="vm.sortingFunc('welcomeScheduleDate')" id="welcomeScheduleDate">LAUNCHED</th>
+                                <th class="td-pdd iosortsearch" ng-click="vm.sortingFunc('modificationDate')" id="modificationDate">EDITED</th>
+                                <th class="td-pdd">OPTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="message in vm.welcomeMessages track by message.welcomeId">
+                                <td class="">{{:: message.welcomeId}}</td>
+                                <td class=""><div class="overlap-text-field"><div>{{:: message.welcomeName}}</div></div></td>
+                                <td> {{message.platform}}</td>
+                               
+                                <td class="position-relative">
+                                    <span class="{{message.cssClass}}">{{message.status}}</span>
+                                </td>
+                                <!--<td class="td-pdd">{{:: message.messageType}}</td>-->
+                                <td class="" >{{:: message.welcomeScheduleDate }}</td>
+                                <td class="">{{:: message.modificationDate | date2 }}</td>
+                                <td class="" width="150" style="padding: 0;">
+                                	<div class='mng-cmpn-status'>
+                                    <a ng-if="message.view" ng-click="vm.viewSummary(message.welcomeId)" class="manage-anchor io-icon io-cpn-view">
+                                    	<div class="io-info-container-right">
+                                            <div class="io-info-box-right box-shadow">
+                                                <div class="info-body">
+                                                    <p>Full overview of all existing welcome messages</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a> 
+                                    
+                                      <a ng-if="message.view && message.welcomeStatus===3" class="manage-anchor io-icon io-launch btn-disabled"></a>
+                                      
+                                   <a ng-if="message.pause" class="manage-anchor io-icon io-cpn-view btn-disabled"></a>
+                                    
+                                    
+                                    <a ng-if="message.pause" class="manage-anchor io-icon io-launch" ng-click="vm.launchConfirmationMessage('',message.welcomeId,message.welcomeScheduleDate,message.welcomeEndDate,message.active,message.welcomeStatus)">
+                                        <div class="io-info-container-right">
+                                            <div class="io-info-box-right box-shadow">
+                                                <div class="info-body">
+                                                    <p>
+                                                        Activate this welcome notification
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a ng-if="message.play" class="manage-anchor io-icon io-play" ng-click="vm.launchConfirmationMessage('',message.welcomeId,message.welcomeScheduleDate,message.welcomeEndDate,message.active,message.welcomeStatus)">
+                                        <div class="io-info-container-right">
+                                            <div class="io-info-box-right box-shadow">
+                                                <div class="info-body">
+                                                    <p>
+                                                        Pause this welcome notification
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <a ng-if="message.edit" ng-click="vm.edit(message.welcomeId)" class="manage-anchor io-icon io-cpn-edit">
+                                    	<div class="io-info-container-right">
+                                            <div class="io-info-box-right box-shadow">
+                                                <div class="info-body">
+                                                    <p>
+                                                        Edit Welcome Message
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a ng-if="message.view" class="manage-anchor io-icon io-cpn-edit btn-disabled"></a> 
+                                    <a ng-if="message.del" ng-click="vm.deleteconfirmationMessage('',message.welcomeId)" class="manage-anchor io-icon io-cpn-delete">
+                                    	<div class="io-info-container-right">
+                                            <div class="io-info-box-right box-shadow">
+                                                <div class="info-body">
+                                                    <p>
+                                                        Delete Welcome Message
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <a ng-if="message.view" class="manage-anchor io-icon io-cpn-delete btn-disabled"></a>
+                                      
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div>
+            </div>
+
+        </div>
+       
+    	</div>
+
+	</div>
+
+</div>

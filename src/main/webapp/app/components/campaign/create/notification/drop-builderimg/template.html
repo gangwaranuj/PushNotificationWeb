@@ -1,0 +1,45 @@
+<form id="upload" method="POST" enctype="multipart/form-data" ng-show>
+    <fieldset>
+        <!--<legend>HTML File Upload</legend>-->
+        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+        <div>
+            <!--<label for="fileselect">Files to upload:</label>-->
+            <input type="file" id="fileselect" name="fileselect" />
+        </div>
+        <div id="submitbutton" style="display: none;">
+            <button type="submit">Upload Image</button>
+        </div>
+    </fieldset>
+</form>
+
+<div class="notification">
+	<div id="outerDiv" class="text-center">
+	    <ul style="margin:0px; padding:0px; list-style:none">
+	        <li ng-click="selectImage(image)" ng-repeat="image in images">
+	            <div ng-class="{ 'bg-gray' : image.selected }" class="text-center mpd-selected-img">
+	            <div class="uploaded-img">
+	               <a class="select-image-close" ng-click="removeImage(image)" ng-show="image.imgtype === 'custom'" href>
+	                   <i class="glyphicon glyphicon-remove"></i>
+	               </a>
+					<img style="max-height:120px; max-height:120px" ng-src="{{image.imageSrc}}" />
+	               </div>
+				</div>
+	           </li>
+	           <li ng-show="showUploadControl()">
+	               <div id="filedrag" ng-click="uploadFromButton()" class="text-center" style="position:relative;">
+	            	<div id="selectIconUpload" class="select-icon-upload">
+						<div class="bg-gray-1 border-dashed-gray pdd-top-bot-15">
+                        <img style="width: auto;height: auto;" src="images/icons/addIcon.png">
+                        <p class="clr-gray-1 mrg-top-20"><b>DROP IMAGE</b></p>
+                        <!-- <button class="upload-btn">upload file</button> -->
+                        <p style="color: #706f6f;">192X192 Pixels max</p>
+                        <!-- ngRepeat: image in images -->
+					   </div>
+					<div class="text-center clr-green top-10">OR BROWSE</div>
+	                	<!-- <img style="width: auto; height: auto;" src="images/drop-img.png"> -->
+	                </div>
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+</div>

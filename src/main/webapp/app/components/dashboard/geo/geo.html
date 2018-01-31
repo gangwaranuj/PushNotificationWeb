@@ -1,0 +1,125 @@
+<div class="col-md-6">
+	<!-- Geo PopUp -->
+	<div draggable class="io-popup-container" ng-show="vm.showMap">
+		<div class="io-box box-shadow">
+			<div class="io-popup-box box-shadow">
+				<div class="io-box-header anchor clear-fix">
+					<div class="pull-left">
+						<div class="heading">Map</div>
+					</div>
+					<div class="pull-right">
+						<ul class="hdr-right-info">
+							<!-- <li><i class="io-icon io-move"></i></li>-->
+							<li><i class="io-icon io-crose" ng-click="vm.showMap=false" aria-hidden="true"></i></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div>
+						<ng-map id="geoMap" class="geo-map" lazy-init="true" center="{{vm.lat}},{{vm.lng}}" zoom="5">
+							<info-window id="foo-iw">
+								<div ng-non-bindable="">
+									<div style="border-bottom: 1px solid #e2e2e2;padding-bottom: 5px;margin-bottom: 8px;">
+										{{vm.shop.name}}
+									</div>
+									<div ng-repeat="(key,val) in vm.platformDetail">
+										<div class="pull-left">
+											<div class="col-xs-12 map-inside-box" style="padding: 0px;">
+												<div class="text-left pull-left" style="padding: 0px; width:30px">
+													<img ng-src='{{vm.getImage(vm.shop["browser"+$index].toLowerCase())}}'></img>
+												</div>
+												<div class="text-left pull-left" style="width:55px">
+													{{vm.shop['browser'+$index]}}
+												</div>
+												<div class="text-center pull-left" style="width:40px">
+													{{vm.shop['browser'+$index+'P']}}%
+												</div>
+												<div class="text-center pull-left" style="width:70px">
+													{{vm.shop['browser'+$index+'C']}}
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</info-window>
+
+							<marker id='{{shop.id}}' style="cursor: pointer;" icon="images/mapmarker.png" position="{{shop.position}}" ng-repeat="shop in vm.shops"
+								on-mouseover="vm.showDetail(shop)" on-mouseout="vm.hideDetail()"></marker>
+
+						</ng-map>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Geo PopUp -->
+	<div class="io-box box-shadow geoisp-height-rmvd">
+		<div class="io-box-header">
+			<div class="pull-left">
+				<div class="heading">
+					<i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i>GEOS
+					<div class="io-info-container">
+						<div class="io-info-box box-shadow">
+							<div class="info-body">
+								<p>A total number of users using a specific platform based on their geographical location. Clicking on a specific country
+									will open up a regional map with a breakdown of percentage and an actual number of users per region.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="geo-box-bottom">
+		<!-- 	<table class="geo-chart-box-head geomaptbls" width="100%" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th width="120" style="text-align: left;padding-left: 25px;" class="heading">COUNTRY</th>
+						<th width="65%"></th>
+						<th width="80" class="heading">SUBSCRIBERS</th>
+					</tr>
+				</thead>
+			</table> -->
+			<div class="geo-chart-body">
+				<table class="geo-chart-box geomaptbls" width="100%" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr class="geo-chart c-pointer" ng-repeat="geoItem in vm.geosItems" ng-click="vm.openAsdf(geoItem)">
+							<td>
+								<div class='right-size'><img width="26" ng-src={{geoItem.geoFlag}} /> {{geoItem.geoName}}</div>
+							</td>
+							<td>
+								<div class="progress" style="width:100%;">
+									<div popover-append-to-body="true" uib-data-container="body" popover-trigger="'mouseenter'" uib-popover-template='{{"\""+key+".html\""}}'
+										class="progress-bar" role="progressbar" style="width:{{(geoItem[key+'Count'] / geoItem.totalusers) * 100}}%;background-color: {{value.color}}!important"
+										ng-repeat="(key,value) in vm.platformDetail"></div>
+									</div>
+							</td>
+							<td>{{geoItem.totalusers}}</td>
+
+			<script type="text/ng-template" id="chrome.html">
+				<div class='progress-hover'> Chrome: {{geoItem.chromeCount}} Subscribers</div>
+			</script>
+
+			<script type="text/ng-template" id="firefox.html">
+				<div class='progress-hover'> Firefox: {{geoItem.firefoxCount}} Subscribers</div>
+			</script>
+			<script type="text/ng-template" id="android.html">
+				<div class='progress-hover'> Android: {{geoItem.androidCount}} Subscribers</div>
+			</script>
+			<script type="text/ng-template" id="opera.html">
+				<div class='progress-hover'> Opera: {{geoItem.operaCount}} Subscribers</div>
+			</script>
+			<script type="text/ng-template" id="safari.html">
+				<div class='progress-hover'> Safari: {{geoItem.safariCount}} Subscribers</div>
+			</script>
+
+			</tbody>
+			</tr>
+			</table>
+		</div>
+		<div class="clearfix"></div>
+		<div class="see-disabled see-all-btm"><a href="">VIEW ALL</a></div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+
+<security:http pattern="/index.html" security="none"/>
+<security:http pattern="/app/**" security="none"/>
+	<security:http pattern="/css/**" security="none"/>
+	<security:http pattern="/images/**" security="none"/>
+	<security:http pattern="/lib/**" security="none"/>
+
+	<security:http use-expressions="true">
+	
+	<security:headers disabled="true"/>	
+	<security:csrf disabled="true"/>
+		<security:intercept-url pattern="/failure"  access="permitAll" />
+		<security:intercept-url pattern="/v2/api-docs" access="hasRole('admin')"/>
+		<security:intercept-url pattern="/rest/user/failedAuthentication" access="permitAll"/>
+  		<security:intercept-url pattern="/rest/externalapi/**" access="permitAll"/>
+		<security:intercept-url pattern="/**" access="authenticated"/>
+		
+		<security:form-login login-processing-url="/rest/authenticate" login-page="/rest/user/failedAuthentication"
+			username-parameter="username" password-parameter="password" authentication-success-handler-ref="restsuccesshandler" 
+			authentication-failure-handler-ref="restfailurehandler"/>
+
+		<security:logout logout-url="/rest/logout" delete-cookies="JSESSIONID" success-handler-ref="successlogouthandler" />
+<security:remember-me token-repository-ref="tokenRepository" user-service-ref="userDetailsService" token-validity-seconds="7200"/>
+	</security:http>
+
+<bean id="successlogouthandler" class="org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler"></bean>
+<bean id="restsuccesshandler" class="com.saphire.iopush.security.RestAuthenticationSuccessHandler">
+</bean>
+<bean id="restfailurehandler" class="com.saphire.iopush.security.RestAuthenticationFailureHandler"></bean>
+
+ <bean id="daoAuthenticationProvider"
+ class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+  <property name="userDetailsService" ref="userDetailsService"/>
+</bean>
+
+
+<bean id="userDetailsDao" class="com.saphire.iopush.daoImpl.UserDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+</bean>
+
+<bean id="userDetailsService" class="com.saphire.iopush.serviceImpl.UserDetailsServiceImpl">
+	<property name="userDao" ref="userDetailsDao"></property>
+</bean>
+
+<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+<constructor-arg name="providers" >
+		<list>
+			<ref bean="daoAuthenticationProvider"/>
+		</list>
+	</constructor-arg>
+</bean>
+
+<bean id="tokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+     <property name="createTableOnStartup" value="false" />
+     <property name="dataSource" ref="dataSource"/>
+</bean>
+
+<!-- <bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter"    >
+     <property name="rolePrefix" value=""/>
+ </bean>
+ 
+   <bean id="authVoter" class="org.springframework.security.access.vote.AuthenticatedVoter">               
+          </bean> -->
+
+<bean id="accessDecisionManager" class="org.springframework.security.access.vote.UnanimousBased">
+    <constructor-arg>
+        <list>
+            <bean class="org.springframework.security.web.access.expression.WebExpressionVoter" />
+
+            <bean class="org.springframework.security.access.vote.RoleVoter" />
+            <bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+        </list>
+    </constructor-arg>
+</bean>
+
+
+<security:authentication-manager>
+  <security:authentication-provider user-service-ref="userDetailsService">
+   <!-- <password-encoder hash="md5"/> -->
+
+<!--    <security:password-encoder hash="md5"/> -->
+
+  </security:authentication-provider>
+ </security:authentication-manager>
+
+</beans>

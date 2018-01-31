@@ -1,0 +1,30 @@
+<!--<div class='input-group date' id='datetimepicker1'>
+	<input type='text' value="{{vm.datedata ? (vm.datedata |date2: vm.dateformat) : ''}}" class="form-control" popup-placement="auto" ng-click="vm.openCalendar($event, 'picker6')" button-bar="vm.picker6.buttonBar" max-date="vm.maxdate" min-date="vm.mindate" default-time="{{vm.time}}"  enable-time="vm.istime" 
+						 datetime-picker ng-model="vm.datedata" is-open="vm.picker6.open" show-button-bar="false" timepicker-options="vm.picker6.timepickerOptions" datepicker-options="vm.picker6.datepickerOptions" />
+
+-->
+	<!-- <span class="input-group-addon">
+		<span class="glyphicon">
+			<div class="calenders-form">
+				<div class="datepicker-position">
+					<span popup-placement="auto" ng-click="vm.openCalendar($event, 'picker6')" button-bar="vm.picker6.buttonBar" max-date="vm.maxdate" min-date="vm.mindate" default-time="{{vm.time}}"  enable-time="vm.istime" 
+						 datetime-picker ng-model="vm.datedata" is-open="vm.picker6.open" show-button-bar="false" timepicker-options="vm.picker6.timepickerOptions" datepicker-options="vm.picker6.datepickerOptions">
+						<span class="io-icon io-calender-d"></span>
+					</span>
+				</div>
+			</div>
+		</span>
+	</span> -->
+<!--</div>-->
+ <div class='{{ vm.cls}}' id='datetimepicker1'>
+  <span date ng-click="vm.openCalendar($event, 'picker6')" style="display: block; overflow: hidden;" button-bar="vm.picker6.buttonBar" max-date="vm.maxdate" min-date="vm.mindate" default-time="{{vm.time}}"  enable-time="vm.istime" 
+    datetime-picker ng-model="vm.datedata" is-open="vm.picker6.open" show-button-bar="false" timepicker-options="vm.picker6.timepickerOptions" datepicker-options="vm.picker6.datepickerOptions">
+   <!--<img ng-hide="vm.datedata" src="images/icons/calender-1.png">
+   <span ng-show="vm.datedata" min-date="mindate">{{vm.datedata |date2: vm.dateformat  }}</span>-->
+<!--{{vm.datedata ? (vm.datedata |date2: vm.dateformat) : ''}}-->
+    <div class="input-group">
+     <input type='text' readonly min-date="mindate" placeholder="{{vm.msg}}"  value="{{vm.datedata ? (vm.datedata |date2: vm.dateformat) : ''}}" class="form-control" />
+  <span class="input-group-addon bg-white"><img src="images/icons/calender-d-icon.png"></span>
+  </div>
+  </span>
+ </div>

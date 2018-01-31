@@ -1,0 +1,62 @@
+<div class="main">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">
+							<i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i> CODE AND IMPLEMENTATION
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>What does the code do? <br>The code enables websites to ask visitors for permission to send push notifications.
+											<br>You can choose to add code only on the page(s) on which you want permission box-shadowfor notifications to
+											appear. <br>The permission box to ask for permission will not appear unless you add this code on your website
+											page(s).
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--<form method="get" action="app/components/codeImplementation/sw.js">
+					<button type="submit">Download!</button>
+				</form>-->
+				<div class="io-body">
+					<div class="">
+						<p>Copy and Paste this code before {{head}} tag on your website page(s)</p>
+						<div>
+							<textarea class="code-placed" cols="30" id="smart_code" name="smart_code" placeholder="Code will be here" readonly rows="5"
+							 onclick="this.focus();this.select()">
+&lt;script type="text/javascript"&gt;
+{{codeImpString}}
+							</textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="code-alert io-body color" style="color: black;">
+				<p>If you are using HTTPS certificate, please download this service worker file and place it in the root folder of your site.</p>
+				<p><a class="updrade-btn green-btn" href="{{currentHostURL}}/service-worker/iopush-messaging-sw.js" download>DOWNLOAD</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="code-alert io-body" style="color: black;">
+				<p>Please read the <a  href="http://staging.iosis.io/web-push-setup.html" title="documentation" target="_blank"> documentation </a> to learn how to implement ioPush on your website.</p>
+				
+				<!-- <a href="javascript:void(0)" class="codeimp-read-more">READ MORE</a> -->
+			</div>
+		</div>
+	</div>
+</div>

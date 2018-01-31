@@ -1,0 +1,54 @@
+<div class="main subscriber-segment">
+	<div class="row">
+		<div class="col-md-6 subscriber-segment">
+			<div class="io-box box-shadow">
+				<div class="io-box-header">
+					<div class="pull-left">
+						<div class="heading">
+							<i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i> SUBSCRIBER SEGMENTATION
+							<div class="io-info-container">
+								<div class="io-info-box box-shadow">
+									<div class="info-body">
+										<p>This feature allows you to automatically segment your subscribers according to the content type and category of
+											the page they subscribed from.</p>
+										<p>After adding segmentation to your web pages, when a user subscribes to the push notifications for your website,
+											he will be automatically market and segmented.</p>
+										<p>For example: </p>
+										<p>Different pages on your website (f.e: shoe page, bags page, shirts page etc.) can be segmented with the "Segment
+											Type": Fashion. Using the "Segment Name" will allow you to differentiate between the pages.</p>
+										<p>Subscriber segmentation will allow you to send targeted notifications to your website subscribers; f.e to all the
+											subscribers who segmented as "Fashion" (Segment Type) and/or send a specific campaign only to subscribers who
+											arrived from the "shoe page" (Segment Name).</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="io-body code-implementation-section">
+					<div class="cmpn-container">
+						<div class="cmpn-title-head">
+							<p><input type="text" maxlength="30" placeholder="Segment Name" ng-model="vm.segmentName"></p>
+						</div>
+						<div class="cmpn-title-head">
+							<p>
+								<select class="form-control" id="sel1" ng-model='vm.selectedSegmentType' ng-disabled='(vm.segmentId) && (vm.matchingUserCount)'>
+									<option ng-repeat="key in vm.segmentTypeList" value="{{key.Value}}">{{key.DisplayText}}</option>
+									</select>
+							</p>
+						</div>
+						<div class="cmpn-title-head addbutton-box" ng-show="vm.selectedSegmentType=='other'">
+							<p class="clearfix">
+								<input type="text" maxlength="50" placeholder="Type New Segment" ng-model='vm.newSegmentType'>
+								<button ng-click="vm.addNewSegmentType()">Add</button>
+							</p>
+						</div>
+						<div>
+							<button class="updrade-btn green-btn" ng-click="vm.validateAndSaveSegment()">SUBMIT</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

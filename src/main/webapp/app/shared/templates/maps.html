@@ -1,0 +1,22 @@
+<div class="io-box box-shadow io-height">
+    <div class="io-box-header anchor">
+        <div class="pull-left">
+            <div class="heading">Map</div>
+        </div>
+        <div class="pull-right">
+        	<ul class="hdr-right-info">
+        		<li><i class="io-icon io-move"  aria-hidden="true"></i></li>
+         		<li><i class="io-icon io-close"  aria-hidden="true" ng-click="cancel()"></i></li>
+        	</ul>
+        </div>
+    	</div>
+        <uib-tabset active="activeForm">
+        <uib-tab index="0" >
+            <div class="topsite-data" style="padding:0;">
+                <map center="[{{lat}}, {{lng}}]" zoom-control="true" zoom="8"> </map>
+            </div>
+            <div class="popup-view-all text-center"><strong>See all</strong></div>
+        </uib-tab>
+    </uib-tabset>
+</div>
+<div style="clear:both;"></div>

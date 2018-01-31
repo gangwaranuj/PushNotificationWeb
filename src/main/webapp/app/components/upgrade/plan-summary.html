@@ -1,0 +1,40 @@
+<div class="main upgrade-plan-box">
+	<div class="row">
+	    <div class="col-sm-7">
+	        <div class="io-box box-shadow">	
+	            <div class="">
+		        	<div class="iosmrybox">
+		            	<div class="iosmryimgbox">
+							<img src="images/icons/thankyoulist.png" />
+						</div>
+		            	<div class="plan-singlebox">
+		            		<div class="plan-headerbox">
+								<div class="text-left">
+									<h5 class="phd-color text-uppercase"><b>Thank You!</b></h5>
+									<p>Your account had been successfully upgraded.</p>
+									<p>See a detailed summary of your invoice below.</p>
+									<p>If you have any questions, please contact us at: <a href="mailto:support@iosis.io" class="clr-black"><strong>support@iosis.io</strong></a></p>
+								</div>
+							</div>
+							<div class="plan-status-box">
+								<p>Order Number: {{vm.orderId}}</p>
+								<p>Package: {{vm.planName}}</p>
+								<p>Number of Subscribers: {{vm.subscriberLimit}}</p>
+							</div>
+							<div class="plan-status-ftr">
+								<h5>TOTAL AMOUNT: &euro;{{vm.totalCost}} / MONTH</h5>
+							</div>
+						</div>
+					</div>
+	            </div>
+	        </div> 
+	        
+	        <div class="row">
+	        <div class="col-sm-12 mrg-top-40">
+	        <a class="updrade-btn green-btn" href="#/dashboard" ui-sref="iopush.auth.dashboard"><i class="fa fa-angle-left mrg-rt-10" aria-hidden="true"></i> BACK TO OVERVIEW</a>
+	        </div>    
+	        </div>
+	              
+    	</div>
+	</div>
+</div>

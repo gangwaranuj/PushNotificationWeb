@@ -1,0 +1,229 @@
+<div class="main">
+	<div class="row">
+	<div class="col-sm-12 mrg-bot-70">
+		<div class="io-box box-shadow">
+			<div class="io-box-header ">
+				<div class="pull-left segment-header">
+					<div class="heading ">
+						<i aria-hidden="true" class="io-icon io-info topsite-info"></i> Segment
+						<div class="io-info-container">
+							<div class="io-info-box box-shadow">
+								<div class="info-body">
+									<p>Access a full overview of all your campaign details including user installation information such as time, location
+										and platform type, as well as more detailed information, such as extension clicks and websites accessed.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pull-right strt-end-contain">
+
+				</div>
+
+			</div>
+			<form name="saveForm" class="segment-table-data">
+				<div class="row info-body">
+					<div class="col-sm-12">
+						<table class="table segment">
+							<tbody>							
+								<tr>
+									<td width="70%" class="td-pdd" style="position: relative;">
+										<div class="campaigns-text-plain"><div class="camp-req-box">*</div>
+											<input maxlength="50" ng-disabled="vm.formdata.segment.edit || vm.formdata.segment.isCampaignName" ng-blur="vm.checkIfExist()" type="text" class="form-control" name="name" placeholder="Type campaign name" ng-model="vm.formdata.segment.name">
+										</div>
+									</td>
+									<td width="12%" class="strt-end-label">Start</td>
+									<td class="strt-end-label" width="12%">End</td>
+								</tr>
+
+								
+									<tr>
+									<td width="70%" class="td-pdd" style="position: relative;">
+										<div class="campaigns-text-plain"><div class="camp-req-box">*</div>
+											<input maxlength="50"  type="text" class="form-control" name="Sourcename" placeholder="Type source name" ng-model="vm.formdata.segment.sourceName">
+										</div>
+									</td>
+									<td width="12%" class="strt-end-label"></td>
+									<td class="strt-end-label" width="12%"></td>
+								</tr>
+									<tr>
+									<td width="70%" class="td-pdd" style="position: relative;">
+										<div class="campaigns-text-plain"><div class="camp-req-box">*</div>
+											<input maxlength="50"   type="text" class="form-control" name="genericname" placeholder="Type generic name" ng-model="vm.formdata.segment.genericName">
+										</div>
+									</td>
+									<td width="12%" class="strt-end-label"></td>
+									<td class="strt-end-label" width="12%"></td>
+								</tr>
+								
+								
+								<tr>
+									<td width="70%" class="td-pdd"><span class="position-rel"><i
+											aria-hidden="true" class="io-icon io-info-1 topsite-info"></i>
+											<div class="io-info-container toltip-position">
+												<div class="io-info-box box-shadow">
+													<div class="info-body">
+														<p>Overview of the location of users who have
+															installed the extension, based on country at the time of
+															installation.</p>
+													</div>
+												</div>
+											</div> </span> <input ng-model="vm.formdata.segment.country" ng-change="vm.countryChange()" type="checkbox" id="Countries">										<label for="Countries" class="io-icon io-checkbox-uncheck"></label>
+										<multi-select handler="vm.formdata.segment.countries"></multi-select>
+									</td>
+
+									<td width="12%" class="text-center td-pdd"></td>
+									<td class="text-center td-pdd" width="12%"></td>
+								</tr>
+
+								<tr ng-show="vm.formdata.segment.countries.selectedOptions.length==1 && vm.formdata.segment.country==true">
+
+									<td width="70%" class="td-pdd"><span class="position-rel"><i
+											aria-hidden="true" class="io-icon io-info-1 topsite-info"></i>
+
+											<div class="io-info-container toltip-position">
+												<div class="io-info-box box-shadow">
+													<div class="info-body">
+														<p>Overview of the location of users who have
+															installed the extension, based on city at the time of
+															installation.</p>
+													</div>
+												</div>
+											</div> </span> <input ng-model="vm.formdata.segment.city" type="checkbox" id="cities" ng-change="vm.cityChange()">										<label for="cities" class="io-icon io-checkbox-uncheck"></label>
+										<multi-select handler="vm.formdata.segment.cities"></multi-select>
+									</td>
+
+									<td width="12%" class="text-centert td-pdd"></td>
+									<td class="text-center td-pdd" width="12%"></td>
+								</tr>
+								
+								<tr>
+									<td width="70%" class="td-pdd" style="position: relative;">
+										<div class="campaigns-text-plain"><div class="camp-req-box">*</div>Campaign Dates</div>
+									</td>
+
+									<td width="12%" class="text-center">
+										<datetimepicker format="dd/MM/yyyy HH:mm:ss" mindate="vm.mindate" datedata="vm.formdata.segment.campignStartDate" istime="true"
+											defttime="vm.start"></datetimepicker>
+
+										<!-- <input type="text"  value="vm.formdata.segment.campignStartDate"/> -->
+
+									</td>
+
+									<td class="text-center" width="12%">
+										<!--<datetimepicker format="dd/MM/yyyy HH:mm:ss" mindate="vm.mindate" datedata="vm.formdata.segment.campignEndDate" istime="true"
+											defttime="vm.end"></datetimepicker>-->
+									</td>
+								</tr>
+								
+
+									<tr>
+									<td width="70%" class="td-pdd" style="position: relative;">
+										<div class="campaigns-text-plain"><div class="camp-req-box">*</div>Subscribed Dates</div>
+									</td>
+
+									<td width="12%" class="text-center">
+										<datetimepicker  datedata="vm.formdata.segment.subscribedStartDate"  maxdate="vm.maxdate"  istime="false"
+											defttime="vm.start"></datetimepicker>
+
+										<!-- <input type="text"  value="vm.formdata.segment.campignStartDate"/> -->
+
+									</td>
+
+									<td class="text-center" width="12%">
+										<datetimepicker  datedata="vm.formdata.segment.subscribedEndDate" maxdate="vm.maxdate"  istime="false"
+											defttime="vm.end"></datetimepicker>
+									</td>
+								</tr>
+								
+							
+
+
+							
+
+								
+
+							
+
+								<tr>
+
+									<td width="70%" class="td-pdd"><span class="position-rel"><i
+											aria-hidden="true" class="io-icon io-info-1 topsite-info"></i>
+
+											<div class="io-info-container toltip-position">
+												<div class="io-info-box box-shadow">
+													<div class="info-body">
+														<p>Overview of existing versions of the extension as
+															well as the ability to specifiy and limit campaigns to
+															certain versions only.</p>
+													</div>
+												</div>
+											</div> </span> <input ng-model="vm.formdata.segment.version" type="checkbox" id="ExtensionVersion" ng-change="vm.versionChange()"><label for="ExtensionVersion" class="io-icon io-checkbox-uncheck"></label>
+										<multi-select handler="vm.formdata.segment.extensionVersion"></multi-select>
+
+									</td>
+
+									<td width="12%" class="text-right td-pdd"></td>
+									<td class="text-center" width="12%"></td>
+								</tr>
+
+
+								<tr>
+
+									<td width="70%" class="td-pdd"><span class="position-rel"><i
+											aria-hidden="true" class="io-icon io-info-1 topsite-info"></i>
+
+											<div class="io-info-container toltip-position">
+												<div class="io-info-box box-shadow">
+													<div class="info-body">
+														<p>Overview of users Internet Service Provider (in installing and as re-installing extensions) 
+															and the ability to specify and limit campaigns to a certain ISP.</p>
+													</div>
+												</div>
+											</div> </span> <input ng-model="vm.formdata.segment.internetProvider" type="checkbox" id="internetProvider" ng-change="vm.internetProviderChange()">
+										<label for="internetProvider" class="io-icon io-checkbox-uncheck"></label>
+										<multi-select handler="vm.formdata.segment.internetProviders"></multi-select>
+
+									</td>
+
+									<td width="12%" class="text-right td-pdd"></td>
+									<td class="text-center" width="12%"></td>
+								</tr>
+
+				
+
+
+							</tbody>
+						</table>
+
+
+					</div>
+					<div class="row mrg-bot-70">
+						<div class="col-xs-12">
+							<div class="col-xs-9">
+								<input type="button" ng-click="vm.getUserCount()" class="btn-radius bg-blue clr-white btn-cal" value="Calculate">
+
+								<span class="live"><b>{{vm.formdata.segment.count}}
+										Matching users</b></span>
+							</div>
+							<div class="col-xs-3 text-right">
+								<button ng-disabled="vm.saving" ng-click="vm.formdata.segment.saveCampaign()" class="bg-none">
+									<img src="images/icons/save-icon.png"> &nbsp; &nbsp;Save
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="bg-black clr-white io-bottom-navbar">
+
+			<a type="submit" ng-hide="vm.formdata.segment.edit || vm.formdata.segment.saved" value="Previous" wz-previous ng-click=vm.previous()
+				class="pagers"><img src="images/icons/back-icon.png" class="mrg-rt-15">Back</a> <a type="submit" value="Next" ng-click=vm.next() class="pull-right pagers pagers-active"><b>Next
+					<img src="images/icons/next-icon.png" class="mrg-lt-15">
+			</b></a>
+		</div>
+		</div>
+	</div>
+</div>

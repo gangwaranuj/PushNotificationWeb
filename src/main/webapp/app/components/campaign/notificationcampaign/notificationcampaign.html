@@ -1,0 +1,18 @@
+<wizard template="app/shared/templates/wizard.tpl.html">
+    <wz-step wz-title="Create">
+        <notification formdata="vm.form"></notification>
+        <!--<input class="btn btn-primary" type="submit" value="Next" wz-next ng-click="vm.b1()" />-->
+    </wz-step>
+    <wz-step wz-title="Segment">
+        <segment formdata="vm.form" on-save="vm.segmentSaved"></segment>
+        <!--<input class="btn btn-primary" type="submit" value="Next" wz-next ng-click="vm.b2()" />-->
+    </wz-step>
+    <wz-step wz-title="Summary">
+        <summary formdata="vm.form"></summary>
+        <!--<input class="btn btn-primary" type="submit" value="Next" wz-next ng-click="vm.b3()" />-->
+    </wz-step>
+    <wz-step wz-title="Confirmation">
+        <confirmation formdata="vm.form" ></confirmation>
+        <!--<input class="btn btn-primary" type="submit" value="Next" wz-next ng-click="vm.b4()" />-->
+    </wz-step>
+</wizard>

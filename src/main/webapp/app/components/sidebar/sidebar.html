@@ -1,0 +1,63 @@
+<div>
+    <div class="logo-container">
+        <a ui-sref="iopush.auth.dashboard"><img src="images/logo.png" alt="ThinkSys Inc" /></a>
+    </div>
+    <ul class="nav nav-sidebar">
+        <li ng-class="{'active': dashboard}" ><a ui-sref="iopush.auth.dashboard"><i class="io-icon io-dashboard"></i> OVERVIEW</a></li>
+        <li ng-class="{'active': campaignType}" ><a ui-sref="iopush.auth.notificationcampaign"><i class="io-icon io-circle-plus"></i> CREATE CAMPAIGN</a></li>
+        <li ng-class="{'active': campaign}" ><a ui-sref="iopush.auth.campaign"><i class="io-icon io-setting"></i> MANAGE CAMPAIGN</a></li>
+        <li ng-class="{'active': pushtorsscreate}" ><a ui-sref="iopush.auth.pushtorssCreate"><i class="io-icon io-create-rss"></i> CREATE RSS PUSH</a></li>
+        <li ng-class="{'active': managepushtorss}" ><a ui-sref="iopush.auth.managepushtorss"><i class="io-icon io-manage-rss"></i> MANAGE RSS PUSH</a></li>
+        <li ng-class="{'active': welcomeNotification}" ><a ui-sref="iopush.auth.welcomeNotification"><i class="io-icon io-welcomepush"></i> CREATE WELCOME PUSH </a></li>
+
+        <li ng-class="{'active': manageWelcomeNotification}" ><a ui-sref="iopush.auth.manageWelcomeNotification"><i class="io-icon io-manage-welcomepush"></i> MANAGE WELCOME PUSH </a></li>
+        <!--ng-click="isBoxOpenAnalytic();"-->
+        <!--ui-sref="iopush.auth.analytic"-->
+        <!--class="analytics-li-btn"-->
+        <!--class="caret"-->
+
+        <!--<li ng-class="{'active': analyticCampaign}">
+        	<a  class="{{suportClassAnalytic}} support-box" ><i class="io-icon io-analytic"></i> ANALYTICS <span ></span></a>
+        	<!--<div class="support-container" ng-show="setBoxOpenAnalytic">
+        		<div class='analytics-sidebar'><a ui-sref="iopush.auth.analytic" ng-class="{'active': analytic}" ng-click="changeClass(7)">Campaign notifications</a></div>
+        		<div class='analytics-sidebar'><a ui-sref="iopush.auth.rsspushanalytic" ng-class="{'active': rsspushanalytic}" ng-click="changeClass(10)">RSS notification</a></div>
+        		<div class='analytics-sidebar'><a ui-sref="iopush.auth.welcomeanalytic" ng-class="{'active': welcomeanalytic}" ng-click="changeClass(11)">Welcome message</a></div>
+        	</div>
+        </li>-->
+
+        <li ng-class="{'active': analyticCampaign}">
+            <a class="{{suportClassAnalytic}} support-box" ui-sref="iopush.auth.analytic" ng-click="isBoxOpenAnalytic();"><i class="io-icon io-analytic"></i> ANALYTICS <span class="caret"></span></a>
+            <div class="analytic-sub-container" ng-show="setBoxOpenAnalytic">
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.analytic" ng-class="{'active': analytic}" >Campaign notifications</a></div>
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.rsspushanalytic" ng-class="{'active': rsspushanalytic}" >RSS notification</a></div>
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.welcomeanalytic" ng-class="{'active': welcomeanalytic}">Welcome message</a></div>
+            </div>
+        </li>
+
+        <li ng-class="{'active': codeImplementations}">
+            <a class="{{suportClassCodeImplementation}} support-box" ui-sref="iopush.auth.codeImplementation" ng-click="isBoxOpenCodeImplementation();"><i class="io-icon io-codes"></i> CODE IMPLEMENTATION <span class="caret"></span></a>
+            <div class="analytic-sub-container" ng-show="setBoxOpenCodeImplementation">
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.codeImplementation" ng-class="{'active': uniqueCode}" >UNIQUE CODE</a></div>
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.subscriberSegmentation" ng-class="{'active': subscribersegmentation}" >Subscriber segmentation</a></div>
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.manageSegments" ng-class="{'active': managesegmentation}" >Manage Segmentation</a></div>
+                <!--<div class='analytics-sidebar'><a ui-sref="iopush.auth.manageSegmentsType" ng-class="{'active': managesegmentationtype}" >Manage Segmentation Type</a></div>-->
+            </div>
+        </li>
+
+
+        <!--iopush.auth.welcomeNotification-->
+        <!--<li ng-class="{'active': codeImplementation}" ng-click="changeClass(5)"><a ui-sref="iopush.auth.codeImplementation"><i class="io-icon io-codes"></i> CODE IMPLEMENTATION </a></li>-->
+        <li ng-class="{'active': subscriptionLayouts}" ><a ng-click="isBoxOpenDesktopMobile();" ui-sref="iopush.auth.subscriptionLayouts" class="support-box support-box"><i class="io-icon io-subscription"></i> SUBSCRIPTION LAYOUTS <span class="caret"></span></a>
+        
+         <div class="analytic-sub-container" ng-show="setBoxOpenDesktopMobile">
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.subscriptionLayouts" ng-class="{'active': subLayoutDesktop}" >DESKTOP</a></div>
+                <div class='analytics-sidebar'><a ui-sref="iopush.auth.mobileSubscriptionLayouts" ng-class="{'active': subLayoutMobile}" >MOBILE</a></div>
+               
+            </div>
+            
+        </li>
+
+        <!-- <li ng-class="{'active': customNotification}" ng-click="changeClass(8)"><a ui-sref="iopush.auth.customNotification"><i class="io-icon io-customnotify"></i> CUSTOM NOTIFICATION </a></li> -->
+
+    </ul>
+</div>

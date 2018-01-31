@@ -1,0 +1,333 @@
+.login-body input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #757785;
+}
+.login-body input::-moz-placeholder { /* Firefox 19+ */
+  color: #757785;
+}
+.login-body input:-ms-input-placeholder { /* IE 10+ */
+  color: #757785;
+}
+.login-body input:-moz-placeholder { /* Firefox 18- */
+  color: #757785;
+}
+
+.login-container {
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: 9999;
+	background-image: url(../../images/login_bg.jpg);
+	background-color: #333;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.login-box {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+.login-box-container {
+	display: table;
+	margin: auto;
+	position: absolute;
+	top: -6%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 570px;
+	min-height: 320px;
+    background: #ffffff;
+}
+
+.login-header {
+	background-color: #28282d;
+	padding: 10px 0 10px 30px;
+	position: relative;
+}
+
+.login-close {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	z-index: 10;
+}
+
+.login-close .io-icon:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-heading {
+	padding: 20px;
+	font-size: 20px;
+	color: #28282d;
+	text-align: center;
+	background: #f6f6f6;
+	border-bottom: 1px solid #dcdcdc;
+	line-height: 24px;
+}
+
+.login-body {
+	padding: 45px 45px 45px 45px ;
+	margin: auto;
+}
+
+.form-user {
+	background: url(../../images/icons/user-icon.png) 24px no-repeat #f6f6f6;
+	padding-left: 65px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	overflow: hidden;
+	background-size: 20px;
+	margin-bottom: 40px;
+}
+.form-user input {
+	background-size: 18px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"], .login-box input[type="email"] {
+	border: 0;
+	padding: auto auto;
+}
+.form-password {
+	background: url(../../images/icons/lock-icon.png) 24px no-repeat #f6f6f6;
+	padding-left: 65px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	overflow: hidden;
+	background-size: 20px;
+	margin-bottom: 40px;
+}
+
+.login-body input {
+	border: 0 !important;
+	outline: 0;
+	border-radius: 0;
+	width: 100%;
+	background-size: 18px;
+	padding: 10px 0 !important;
+	background-color: #f6f6f6;
+	font-size: 14px;
+	
+}
+
+.login-body {
+	font-size: 14px;
+}
+
+.login-body input[type="password"] {
+	border: 0 !important;
+	outline: 0;
+	border-radius: 0;
+	width: 100%;
+	background-size: 18px;
+	padding: 10px 0;
+	background-color: #f6f7fa;
+	
+}
+.form-forget-box label:before {
+	content: '';
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background: url(../../images/login-checkbox.png) 0px no-repeat;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.form-forget-box input[type="checkbox"]:checked + label:before
+	{
+	background: url(../../images/login-checkbox.png) -19px no-repeat;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c8d2d2;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #c8d2d2;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #c8d2d2;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #c8d2d2;
+}
+
+.forgot-password {
+	text-align: center;
+	font-size: 24px;
+	color: #c8d2d2;
+	margin: 80px 0;
+}
+.forgot-password a {
+	font-size: 24px;
+	color: #c8d2d2;
+}
+
+.form-forget-box {
+	margin: 0;
+}
+
+.form-submit-box {
+	text-align: center;
+	margin: 27px 0 0;
+}
+.form-submit, .back-form-submit {
+    text-align: center;
+    min-width: 142px;
+    padding: 10px 20px;
+    font-size: 16px;
+    position: relative;
+    color: #fff !important;
+    display: inline-block;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.sendmail-submit {
+	text-align: center;
+    width: 185px;
+    padding: 12px 20px;
+    font-size: 16px;
+    position: relative;
+    color: #fff !important;
+    display: inline-block;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+
+
+.hdr-login-button  {
+	text-align: right;
+	font-size: 24px;
+	color: #fff;
+}
+.hdr-login-button a {
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
+.form-fields form input:-webkit-autofill {
+	background-color: #2a2a2a !important;
+	color: #2a2a2a !important;
+	-webkit-background-fill-color: red;
+	background-color: red !important;
+	background: url(../../images/icons/user-icon.png) left no-repeat;
+}
+
+.forget-password-box .reset-password-btn-box {
+	margin-top: 40px;
+}
+
+.forget-password-box .forget-box {
+	margin-top: 20px;
+	background: url(../../images/icons/email.png) 22px no-repeat #f6f6f6;
+	padding-left: 65px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	position: relative;
+}
+
+.forget-back-btn {
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	top: 18px;
+	right: 36px;
+}
+
+.forget-back-btn a {
+	display: block;
+	font-size: 16px;
+	text-align: center;
+	color: #28282d;
+	opacity: 0.5;
+	line-height: 28px;
+	cursor: pointer;
+}
+.forget-back-btn a:hover {
+	opacity: 1;
+}
+
+.forget-box .forget-required {
+	position: absolute;
+	top: 10px;
+	right: -20px;
+	font-size: 24px;
+}
+
+.forget-box .forget-valid{
+	position: absolute;
+	left: 65px;
+	bottom: -28px;
+	margin: auto;
+	color: red;
+	font-size: 14px;
+	
+}
+
+.mailsent-response {
+	margin: 7px 0 58px;
+}
+.pswdsent p{
+	color: #000;
+	margin: 20px 0;
+}
+.forget-plane-icon {
+	background: url(../../images/icons/sent-plane.png) no-repeat center;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+}
+.bg-danger.unauthorized {
+	color: #757785;
+	text-align: center;
+	padding: 5px;
+}
+
+
+@media(max-width: 1600px) {
+
+	.forgot-password {
+	    margin: 50px 0;
+	}
+	.login-box-container {
+		width: 570px;
+	}
+	
+}
+@media(max-width: 1599px) {
+	.forgot-password {
+	    margin: 40px 0;
+	}
+	.login-box-container {
+		width: 570px;
+	}
+	.form-submit {
+		padding: 12px 20px;
+	}
+	.form-submit:after {
+		top: 13px;
+    	right: 30px;
+	}
+	.form-forget-box {
+		margin: 30px 0;
+	}
+	
+}
+

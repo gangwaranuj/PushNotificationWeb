@@ -1,0 +1,96 @@
+.io-page-body.welcome-page-body {
+	padding-top: 30px;
+}
+.welcomeDuration label {
+	width: 100%;
+}
+.welcomeDuration label.io-radio-select {
+	line-height: 31px;
+	white-space: nowrap;
+	color:#9d9d9c;
+}
+.welcomeDuration label.io-radio-select .input-group input.form-control {
+	font-size: 12px;
+	padding-left: 5px;
+    padding-right: 5px;
+}
+.welcomeDuration label.io-radio-select:before {
+	margin-top: 8px;
+}
+.welcomecal {
+	display: inline-block;
+    width: calc(100% - 37px);
+    margin-left: 8px;
+}
+.welcome-page .grp-select-box .btn-primary {
+	width: 136px;
+}
+.cmpn-container.welcome-page {
+	padding: 0 0 0;
+    margin-bottom: 0;
+    border-bottom: 0px solid #eeeeee;
+}
+.welcomedateselect {
+	height: 40px;
+}
+.welcomedateselect .wel-strt-date {
+	display: inline-block;
+	width: 48.2%;
+}
+input[type="radio"]:not(checked) + label.welcomedateselect .dropdown-menu {
+	display: none !important;
+}
+input[type="radio"]:checked + label.welcomedateselect .dropdown-menu {
+	display: block !important;
+}
+
+.notific-preview.welcome-preview {
+	margin-bottom: 535px;
+}
+
+.welcome-page .updrade-btn{
+	border: 1px solid #2ec18b ;
+    color: #2ec18b  !important;
+    background: #fff !important;
+    padding: 10px 12px !important;
+    transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+.welcome-page .updrade-btn:hover {
+	background: #2ec18b !important;
+ /*    background: -moz-linear-gradient(left, #2ec161 0%, #2ec1b7 100%) !important;
+    background: -webkit-linear-gradient(left, #2ec161 0%,#2ec1b7 100%) !important;
+    background: linear-gradient(to right, #2ec161 0%,#2ec1b7 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ec161', endColorstr='#2ec1b7',GradientType=1 ) !important; */
+    color: #fff !important;
+}
+
+
+.on-off-btns .btn.active{
+	background:#2ec18b !important;
+	color:#fff !important;
+}
+
+.on-off-btns .btn{
+	background:#f6f6f6 !important;
+	color:#000000 !important;
+    border: 1px solid #dcdcdc !important;
+        padding: 11px 12px;
+}
+
+@media(max-width: 1600px) {
+	.notific-preview.welcome-preview {
+		margin-bottom: 123px;
+	}
+	.welcomedateselect .wel-strt-date {
+		width: 46%;
+	}
+}
+@media(max-width: 1366px) {
+	.welcomedateselect .wel-strt-date {
+		width: 46%;
+	}
+}

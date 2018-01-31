@@ -1,0 +1,13 @@
+.rss-container {
+	border-bottom: 0px solid transparent !important;
+	padding-bottom: 0;
+	position: relative;
+}
+
+.rss-container .io-info-container {
+	top: 45px;
+    left: -30px;
+}
+.vis-hidden {
+	visibility: hidden;
+}

@@ -1,0 +1,85 @@
+<div class="main">
+	<div class="row">
+		<div class="col-md-12">
+		    <div class="io-box box-shadow">
+		        <div class="io-box-header">
+		            <div class="pull-left">
+		                <div class="heading">
+		                    <i aria-hidden="true" class="io-icon io-info geos-info topsite-info"></i> MOBILE SUBSCRIPTION LAYOUTS
+		                    <div class="io-info-container">
+		                        <div class="io-info-box box-shadow">
+		                            <div class="info-body">
+		                                <p>
+										Customize your subscription layout window (Permission Message) for web push notifications.<br>
+
+Promotion message will be shown on your website and will ask the users to give your website a 
+permission to send to them push notifications. Without this permission, users will not be able to 
+successfully subscribe to your website and receive notifications. <br>
+
+Customized promotion messages improve the user experience of your website and increase the 
+likelihood that users will want to receive notifications from your website.<br>
+
+Mobile subscription Layout will be shown on your website for all users who are browsing your
+ website using a mobile device. You can set up a specific subscription layout for mobile and a different one for desktop.
+		                                </p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+				
+		        <div class="io-page-body subcription-layout-page">
+		        	<div class="row">
+						<div class="col-sm-12 clearfix">
+							<div class="sub-layouts-box">
+								<div class="sub-layouts clearfix">
+									<input type="radio" name="subscription" id="native" ng-model="vm.subscriptionLayout.type" value="native" />
+									<label class="io-icon io-radio-select clearfix" for="native">
+										<div class="layout-text clearfix">
+											<div class="col-img">
+												<img src="images/native.png" style="width:auto"/>
+											</div>
+											<div class="layout-txt-box">
+												<span class="headtitle">NATIVE</span> <br/> This layout is used by default and it is not available for editing. You can use a prompt message. (Recommended).
+											</div>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div class="sub-layouts-box">
+								<div class="sub-layouts clearfix">
+									<input type="radio" name="subscription" id="box" ng-model="vm.subscriptionLayout.type" value="mobile"/>
+									<label class="io-icon io-radio-select clearfix" for="box">
+										<div class="layout-text clearfix">
+											<div class="col-img">
+												<img src="images/mobileLayout.png" style="width:auto"/>
+											</div>
+											<div class="layout-txt-box">
+												<span class="headtitle">MOBILE LAYOUT</span> <br/> Change the title and request body to your liking in
+corresponding windows. You can also change the background color, the color of the text, and buttons.
+											</div>
+										</div>
+									</label>
+								</div>
+							</div>
+							
+						
+					
+							
+						
+							
+						
+						
+							
+							<div class="button-spance" >
+								<button ng-click="vm.typeSelection(vm.subscriptionLayout.type)" class="updrade-btn green-btn pull-right">Next</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
